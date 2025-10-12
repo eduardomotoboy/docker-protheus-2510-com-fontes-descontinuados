@@ -13,7 +13,7 @@ e depois <br>
 No Docker Desktop, o nome do grupo de conteiners será o mesmo do nome da pasta onde foi dado o comando.
 4. Acessar o <b>Protheus</b> através do smartclient através na porta <b>1234</b>. O nome do ambiente é <b>P2510</b>. Após subida dos containeres, aguarde 5 minutos até entrar pela primeira vez no sistema, pois logo na primeira construção do container o banco de dados será criado e restaurado o backup inicial. 
 5. Acessar o <b>Protheus WebApp</b> através do navegador do endereço <b>http://localhost:4321</b>.
-6. Usuário: Admin , senha: msadm
+6. Usuário: Admin , senha: $$I7jfba00$$
 7. Primeiro entre em SIGACFG / Cadastros / Configuração do Tipo de Ambiente -> Definir como "Desenvolvimento"
 8. O SmartView já vem instalado e pré-configurado em uma máquina virtual chamada smartview-2510 com as portas 7017 e 7019 expostas:
     - Para verificar o status do serviço do SmartView: http://localhost:7019/diagnostic
@@ -34,3 +34,4 @@ Notas:
 4) Se já possuir conteiners com a versão 2310 ou 2410, é preciso que estas vm estejam paradas para que as da versão 2510 possam subir, uma vez que usam as mesmas portas.
 5) Existe um conteiner para acesso exclusivo (protheus-2510-exclusivo), que não sobe serviços de Rest e permite alterar a base em modo exclusivo.
 Acesse a porta 4322 para o appserver de modo excluisivo. Antes, porém, pare a execução da vm 'protheus'.
+![alt text](image.png)
