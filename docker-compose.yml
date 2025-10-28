@@ -94,9 +94,11 @@ services:
         depends_on:
             - dbaccess
     protheus-exclusivo:
-        image: emebatista/protheus-2510-exclusivo:latest
+        image: emebatista/protheus-2510:latest
         platform: linux/amd64
         container_name: protheus-2510-exclusivo
+        profiles:
+            - exclusivo
         ports:
             - "1235:1235"
             - "4322:4322"
