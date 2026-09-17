@@ -9,6 +9,9 @@ servidor_vscode/tds-vscode-master.zip
 .DS_Store
 Thumbs.db
 desktop.ini
+servers.json
+
 
 # Logs
 *.log
+
