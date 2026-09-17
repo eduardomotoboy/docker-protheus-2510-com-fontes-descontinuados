@@ -1,6 +1,0 @@
-{
-    "advpl.alpha_sorting":  true,
-    "totvsLanguageServer.welcomePage":  false,
-    "totvsLanguageServer.workspaceServerConfig": true,
-    "totvsLanguageServer.editor.linter.includes": "c:/Apache24/htdocs/ORGANIZACAO_AJE/docker-protheus-2510/servidor_vscode/include"
-}
