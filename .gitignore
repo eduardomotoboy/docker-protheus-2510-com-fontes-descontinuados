@@ -1,0 +1,14 @@
+# Dados do Banco de Dados e Temporarios do Docker
+volume/
+
+# Codigo-fonte e zip da extensao TDS do VSCode (muito pesado para o Git)
+servidor_vscode/tds-vscode-master/
+servidor_vscode/tds-vscode-master.zip
+
+# Arquivos do Sistema Operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log

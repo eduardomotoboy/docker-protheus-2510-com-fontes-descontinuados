@@ -1,0 +1,36 @@
+0001#STR0001#ALL#Este programa imprimira el Bal. Parcial de Verific. Modelo 3 (132 Columnas), a
+0002#STR0002#ALL#cuenta e impresa limitandose a 20 caracteres y su descripcion a 30 caract.,  
+0003#STR0003#ALL#Balanc. Parc. Aux. de Verificac. 
+0004#STR0004#ALL#|  CODIGO                     |      D E S C R I P C .                          |            SALDO              |
+0005#STR0005#ALL#|  CODIGO               |   D  E  S  C  R  I  P  C  .    |      SALDO        |
+0006#STR0006#ALL#BALANC. PARC. DE VERIFIC. DE
+0007#STR0007#ALL# A   
+0008#STR0008#ALL# EN 
+0009#STR0009#ALL#BALANC. PARC. VERIFIC. DE   
+0010#STR0010#ALL#***** ANULADO POR EL OPERADOR *****
+0011#STR0011#ALL#T O T A L E S  D E L  P E R I O D O: 
+0012#STR0012#ALL#Seleccionando Registros...
+0013#STR0013#ALL#A rayas
+0014#STR0014#ALL#Administracion
+0015#STR0015#ALL#Creando Archivo Temporal...
+0016#STR0016#ALL#los valores impresos son saldo anterior, debito, credito y saldo actual del periodo.
+0017#STR0017#ALL#BALANCE PARCIAL DE VERIFICACION DE 
+0018#STR0018#ALL# (PRESUPUESTADO)
+0019#STR0019#ALL#(GERENCIAL)
+0020#STR0020#ALL#T O T A L E S  D E L  G R U P O (
+0021#STR0021#ALL#DIV.
+0022#STR0022#ALL#|  CODIGO                     |      D E S C R I P C I O N                      |              SALDO                |
+0023#STR0023#ALL#Microsiga Software S/A
+0024#STR0024#ALL#Hora Finalizacion: 
+0025#STR0025#ALL#Por favor, rellene los parametros Grupos Ingresos/Gastos y Fecha Sld Ant. Ingresos/Gastos o
+0026#STR0026#ALL#deje el parametro Ignora Sl Ant.Ing/Gas = No 
+0027#STR0027#ALL#Plan de cuentas
+0028#STR0028#ALL#Cuenta
+0029#STR0029#ALL#Descripcion
+0030#STR0030#ALL#Saldo anterior
+0031#STR0031#ALL#Debito
+0032#STR0032#ALL#Credito
+0033#STR0033#ALL#Movimiento del periodo
+0034#STR0034#ALL#   Saldo   
+0035#STR0035#ALL#Ignora Sl Ant.Ing/Gas
+0036#STR0036#ALL#Mov Período

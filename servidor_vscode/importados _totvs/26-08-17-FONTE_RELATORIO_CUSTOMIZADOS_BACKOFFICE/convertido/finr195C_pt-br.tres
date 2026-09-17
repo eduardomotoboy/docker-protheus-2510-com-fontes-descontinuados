@@ -1,0 +1,18 @@
+0001#STR0001#ALL#Este programa ira demonstrar os rateio Realizados/Previstos
+0002#STR0002#ALL#dentro do periodo informado nos parametros.
+0003#STR0003#ALL#Zebrado
+0004#STR0004#ALL#Administracao
+0005#STR0005#ALL#Mapa Rateio - 
+0006#STR0006#ALL#Prf Numero     Prc TP  Fornecedor                        Emissao       Vencimento 
+0007#STR0007#ALL#Selecionando Registros...
+0008#STR0008#ALL#CANCELADO PELO OPERADOR
+0009#STR0009#ALL#Natureza - 
+0010#STR0010#ALL#Total da Natureza - 
+0011#STR0011#ALL#Total 
+0012#STR0012#ALL#Total Geral
+0013#STR0013#ALL#Realizado 
+0014#STR0014#ALL#Previsto 
+0015#STR0015#ALL#Conta
+0016#STR0016#ALL#Código         Empresa                                      Unidade de Negócio            Filial
+0017#STR0017#ALL# (Filiais selecionadas para o relatorio)
+0018#STR0018#ALL#Total Filial

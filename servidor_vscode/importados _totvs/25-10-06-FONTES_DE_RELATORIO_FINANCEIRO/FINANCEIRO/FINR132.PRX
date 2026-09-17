@@ -1,0 +1,985 @@
+#INCLUDE "FINR132.CH"
+#IFDEF WINDOWS
+   #Include "FIVEWIN.Ch"
+#ELSE
+   #Include "InKey.Ch"
+   #Include "SetCurs.Ch"
+   #Include "Siga.Ch"
+#ENDIF
+
+Static __oFinr132
+
+/*/
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
+±±³Fun‡…o    ³ FINR132 ³ Autor ³Jose Lucas/Diego Rivero³ Data ³ 09.09.99 ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Descri‡…o ³ Razonete de Cliente/Fornecedores                          ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Sintaxe e ³ FINR132(void)                                             ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Parametros³                                                           ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³ Uso      ³ Localizacoes paises ConeSul...                            ³±±
+±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*/
+Function FinR132()
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Define Variaveis                                             ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+LOCAL cDesc1  := STR0001  //"Este relatorio ir  imprimir o razonete de Clientes ou"
+LOCAL cDesc2  := STR0002  //"Fornecedores. Poder  ser emitida toda a movimenta‡„o "
+LOCAL cDesc3  := STR0003  //"dos mesmos, ou somente os valores originais."
+LOCAL wnrel
+LOCAL limite  :=  220
+LOCAL Tamanho := "G"
+LOCAL cString := "SE1"
+
+PRIVATE titulo := STR0004
+PRIVATE cabec1 := ""
+PRIVATE cabec2 := ""
+PRIVATE aReturn := { STR0005, 1, STR0006 , 1, 2, 1, "",1 }  //"Zebrado"###"Administracao"
+PRIVATE nomeprog:= "FINR132"
+PRIVATE aLinha := {},nLastKey := 0
+PRIVATE  cPerg := "FIN132"
+
+dFechaV030 := dDataBase - 30
+dFechaV060 := dDataBase - 60
+dFechaV090 := dDataBase - 90
+dFechaV120 := dDataBase - 120
+dFechaV150 := dDataBase - 150
+dFechaV180 := dDataBase - 180
+
+dFechaA030 := dDataBase + 30
+dFechaA060 := dDataBase + 60
+dFechaA090 := dDataBase + 90
+dFechaA120 := dDataBase + 120
+dFechaA150 := dDataBase + 150
+dFechaA180 := dDataBase + 180
+
+cTipos := ""
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Verifica as perguntas selecionadas                           ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+pergunte("FIN132",.F.)
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Envia controle para a funcao SETPRINT                        ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+wnrel := "FINR132"            //Nome Default do relatorio em Disco
+wnrel := SetPrint(cString,wnrel,cPerg,@titulo,cDesc1,cDesc2,cDesc3,.F.,"",.F.,Tamanho,"",.F.)
+
+If nLastKey == 27
+   Return
+Endif
+
+SetDefault(aReturn,cString)
+
+If nLastKey == 27
+   Return
+Endif
+
+#IFDEF WINDOWS
+   RptStatus({|lEnd| Fa132Imp(@lEnd,wnRel,cString)},STR0004)
+#ENDIF
+
+Set Device To Screen
+If aReturn[5] = 1
+   Set Printer To
+   Commit
+   Ourspool(wnrel)
+Endif
+MS_FLUSH()
+
+Return
+
+/*/
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
+±±³Fun‡…o    ³ FA132Imp ³ Autor ³ Lucas                 ³ Data ³ 11.11.99 ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Descri‡…o ³ Razonete de Cliente/Fornecedores                           ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Sintaxe e ³ FA132Imp(lEnd,wnRel,cString)                               ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Parametros³ lEnd    - A‡Æo do Codeblock                                ³±±
+±±³          ³ wnRel   - T¡tulo do relat¢rio                              ³±±
+±±³          ³ cString - Mensagem                                         ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³ Uso      ³ Generico                                                   ³±±
+±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+*/
+Static Function FA132Imp(lEnd,wnRel,cString)
+
+LOCAL CbCont,CbTxt
+
+LOCAL tamanho:="G"
+
+LOCAL nQuebra:=0,lImprAnt := .F.
+LOCAL cNome,nTotDeb:=0,nTotCrd:=0,nSaldoAtu:=0,nTotDebG:=0,nTotCrdG:=0,nSalAtuG:=0,nSalAntG:=0
+LOCAL aSaldos:={},j,dEmissao:=CTOD(""),dVencto:=CTOD("")
+LOCAL nRec,nPrim,cPrefixo,cNumero,cParcela,cTipo,cNaturez,nValliq
+LOCAL nAnterior:=0,cAnterior,cFornece,dDtDigit,cRecPag,nRec1,cSeq
+LOCAL nTotAbat
+LOCAL nRegistro
+LOCAL lNoSkip := .T.
+LOCAL lFlag := .F.
+LOCAL nSaldoFinal:=0
+LOCAL aCampos:={},aTam:={}
+LOCAL aInd:={}
+LOCAL cCondE1:=cCondE2:=cCondE5:=" "
+LOCAL cIndE1 :=cIndE2 :=cIndE5 :=cIndA1 :=cIndA2 :=" "
+LOCAL nRegAtu,lImprime
+
+LOCAL nRegSe1Atu := SE1->(RecNo())
+LOCAL nOrdSe1Atu := SE1->(IndexOrd())
+LOCAL lBaixa     := .F.
+LOCAL nRegSe2Atu := SE2->(RecNo())
+LOCAL nOrdSe2Atu := SE2->(IndexOrd())
+LOCAL cChaveSe1
+LOCAL cChaveSe2
+Local cRazSocial
+Local cVendedor
+Local cTelefone
+Local nI := 0
+
+Private cCodClie
+Private cLojaCli
+
+PRIVATE cClieProv := ""
+PRIVATE cLoja := ""
+
+PRIVATE cClieIni  := mv_par01
+PRIVATE cClieFim  := mv_par02
+PRIVATE cLojaIni  := mv_par03
+PRIVATE cLojaFim  := mv_par04
+PRIVATE dFechaIni := mv_par05
+PRIVATE dFechaFim := mv_par06
+PRIVATE nInforme  := mv_par07
+PRIVATE nSituacao := mv_par08
+PRIVATE dDataA181 := ( mv_par14 - 1 )
+PRIVATE dDataA180 := ( mv_par14 )
+PRIVATE dDataA150 := ( mv_par13 )
+PRIVATE dDataA120 := ( mv_par12 )
+PRIVATE dDataA090 := ( mv_par11 )
+PRIVATE dDataA060 := ( mv_par10 )
+PRIVATE dDataA030 := ( mv_par09 )
+
+PRIVATE dDataP030 := ( mv_par15 )
+PRIVATE dDataP060 := ( mv_par16 )
+PRIVATE dDataP090 := ( mv_par17 )
+PRIVATE dDataP120 := ( mv_par18 )
+PRIVATE dDataP150 := ( mv_par19 )
+PRIVATE dDataP180 := ( mv_par20 )
+PRIVATE dDataP181 := ( mv_par20 + 1 )
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Variable para imprimir en forma Siga/Informe o Excel/Archivo  ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+PRIVATE lFormSiga := If( mv_par21==1,.T.,.F.)
+PRIVATE lImpCabec := .T.
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Verifica as perguntas selecionadas                           ³
+//³ mv_par22 = parametro da moeda                                ³
+//³ mv_par23 = parametro de impressao multi-moedas.              ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+PRIVATE dFechaBase := dDataBase
+
+If nSituacao == 1
+	If !Pergunte("FI132A",.T.)
+ 		Return
+  	Endif
+    dFechaBase := Min(dDataBase,MV_PAR01)
+EndIf
+
+PRIVATE nVlCliAnt  := 0.00
+PRIVATE nVlCli180A := 0.00
+PRIVATE nVlCli150A := 0.00
+PRIVATE nVlCli120A := 0.00
+PRIVATE nVlCli090A := 0.00
+PRIVATE nVlCli060A := 0.00
+PRIVATE nVlCli030A := 0.00
+PRIVATE nVlCli030P := 0.00
+PRIVATE nVlCli060P := 0.00
+PRIVATE nVlCli090P := 0.00
+PRIVATE nVlCli120P := 0.00
+PRIVATE nVlCli150P := 0.00
+PRIVATE nVlCli180P := 0.00
+PRIVATE nVlCliApos := 0.00
+PRIVATE nTotChq    := 0.00
+PRIVATE nSalCliFim := 0.00
+
+PRIVATE nVlVenAnt := 0.00
+PRIVATE nVlVen180A := 0.00
+PRIVATE nVlVen150A := 0.00
+PRIVATE nVlVen120A := 0.00
+PRIVATE nVlVen090A := 0.00
+PRIVATE nVlVen060A := 0.00
+PRIVATE nVlVen030A := 0.00
+PRIVATE nVlVen030P := 0.00
+PRIVATE nVlVen060P := 0.00
+PRIVATE nVlVen090P := 0.00
+PRIVATE nVlVen120P := 0.00
+PRIVATE nVlVen150P := 0.00
+PRIVATE nVlVen180P := 0.00
+PRIVATE nVlVenApos := 0.00
+PRIVATE nSalVenFim := 0.00
+
+PRIVATE nVlGerAnt := 0.00
+PRIVATE nVlGer180A := 0.00
+PRIVATE nVlGer150A := 0.00
+PRIVATE nVlGer120A := 0.00
+PRIVATE nVlGer090A := 0.00
+PRIVATE nVlGer060A := 0.00
+PRIVATE nVlGer030A := 0.00
+PRIVATE nVlGer030P := 0.00
+PRIVATE nVlGer060P := 0.00
+PRIVATE nVlGer090P := 0.00
+PRIVATE nVlGer120P := 0.00
+PRIVATE nVlGer150P := 0.00
+PRIVATE nVlGer180P := 0.00
+PRIVATE nVlGerApos := 0.00
+PRIVATE nTotGerChq := 0.00
+PRIVATE nSalGerFim := 0.00
+
+PRIVATE cPicture1 := "@E 9999999.99"
+PRIVATE cPicture2 := "@E 99999999.99"
+PRIVATE ndecs := Msdecimais(mv_par22)
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Variaveis utilizadas para Impressao do Cabecalho e Rodape    ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+cbtxt    := SPACE(10)
+cbcont   := 0
+li       := 80
+m_pag  := 1
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Definicao dos cabecalhos                                     ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+Titulo := STR0007
+
+Titulo += Space(10)
+Titulo += OemToAnsi(STR0033)+mv_par02+OemToAnsi(STR0034)+mv_par03 // " Desde Cliente: " ## " Hasta Cliente: "
+Titulo += OemToAnsi(STR0035)+DTOC(mv_par05)+OemToAnsi(STR0036)+DTOC(mv_par06) // " De Emision: " ## " Hasta : "
+Titulo += "   "+If(nInforme==1,OemToAnsi(STR0037),OemToAnsi(STR0038)) //"Analitico" ## "Sintetico"
+Titulo += ", "+If(nSituacao==2,OemToAnsi(STR0040),OemToAnsi(STR0039)) //"Historico" ## "Actual"
+
+//lBrokVend := If(nInforme==2,.T.,.F.)
+//cNomArq := SldClieArg( mv_par02,mv_par03,mv_par25,lBrokVend,"FINR132" )
+
+AADD(aCampos,{"CODIGO"  ,"C",06,0})
+AADD(aCampos,{"LOJA"    ,"C",02,0})
+AADD(aCampos,{"CLIENTE" ,"C",25,0})
+AADD(aCampos,{"TELEFONE","C",15,0})
+AADD(aCampos,{"VENDEDOR","C",06,0})
+AADD(aCampos,{"NOMEVEND","C",25,0})
+AADD(aCampos,{"TELEVEND","C",15,0})
+AADD(aCampos,{"NATUREZA","C",10,0})
+AADD(aCampos,{"EMISSAO" ,"D",08,0})
+AADD(aCampos,{"PREFIXO" ,"C",03,0})
+AADD(aCampos,{"NUMERO"  ,"C",15,0})
+AADD(aCampos,{"TIPO"    ,"C",03,0})
+AADD(aCampos,{"PARCELA" ,"C",01,0})
+AADD(aCampos,{"BANCO"   ,"C",03,0})
+AADD(aCampos,{"BAIXA"   ,"D",08,0})
+AADD(aCampos,{"VENCTO"  ,"D",08,0})
+AADD(aCampos,{"VENCREA" ,"D",08,0})
+AADD(aCampos,{"HISTOR"  ,"C",20,0})
+AADD(aCampos,{"VALOR"   ,"N",18,2})
+AADD(aCampos,{"DEBITO"  ,"N",18,2})
+AADD(aCampos,{"CREDITO" ,"N",18,2})
+AADD(aCampos,{"SALDO"   ,"N",18,2})
+AADD(aCampos,{"SALTIT"   ,"N",18,2})
+AADD(aCampos,{"DC"      ,"C", 1,0})
+AADD(aCampos,{"SIGLA" 	 ,"C",03,0})
+AADD(aCampos,{"VALORANT" ,"N",18,2})
+AADD(aCampos,{"VALOR180A","N",18,2})
+AADD(aCampos,{"VALOR150A","N",18,2})
+AADD(aCampos,{"VALOR120A","N",18,2})
+AADD(aCampos,{"VALOR090A","N",18,2})
+AADD(aCampos,{"VALOR060A","N",18,2})
+AADD(aCampos,{"VALOR030A","N",18,2})
+AADD(aCampos,{"VALOR030P","N",18,2})
+AADD(aCampos,{"VALOR060P","N",18,2})
+AADD(aCampos,{"VALOR090P","N",18,2})
+AADD(aCampos,{"VALOR120P","N",18,2})
+AADD(aCampos,{"VALOR150P","N",18,2})
+AADD(aCampos,{"VALOR180P","N",18,2})
+AADD(aCampos,{"VALORAPOS","N",18,2})
+AADD(aCampos,{"TOTCHEQ"  ,"N",18,2})
+AADD(aCampos,{"SALDOFIM" ,"N",18,2})
+
+If(__oFinr132 <> NIL)
+	
+	__oFinr132:Delete()
+	__oFinr132 := NIL
+
+EndIf
+
+//Criando a tabela temporaria
+__oFinr132 := FwTemporaryTable():New("TRB")
+//Setando as colunas
+__oFinr132:SetFields(aCampos)
+//Criando o indicie 
+__oFinr132:AddIndex("1",{"CODIGO","LOJA","CLIENTE","EMISSAO"})
+//Criando a Tabela Temporaria
+__oFinr132:Create()
+
+Processa({|lEnd| GeraTra()},,OemToAnsi(STR0042)) // "Preparando Transit¢rio..."
+
+R132Fechas()
+
+//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+//³ Inicia rotina de impressao                                   ³
+//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+dbSelectArea("TRB")
+dbGoTop()
+
+nTotClie := 0
+nTotVend := 0
+
+SetRegua(RecCount())
+
+   nVlGerAnt  := 0.00
+   nVlGer180A := 0.00
+   nVlGer150A := 0.00
+   nVlGer120A := 0.00
+   nVlGer090A := 0.00
+   nVlGer060A := 0.00
+   nVlGer030A := 0.00
+   nVlGer030P := 0.00
+   nVlGer060P := 0.00
+   nVlGer090P := 0.00
+   nVlGer120P := 0.00
+   nVlGer150P := 0.00
+   nVlGer180P := 0.00
+   nVlGerApos := 0.00
+   nSalGerFim := 0.00
+
+	While ! Eof()
+
+	   If li > 50
+  	      R132CabRes(titulo,cabec1,cabec2,nomeprog,tamanho,IIF(aReturn[4]==1,15,18))
+  		End
+
+  	  nVlCliAnt  := 0.00
+      nVlCli180A := 0.00
+      nVlCli150A := 0.00
+      nVlCli120A := 0.00
+      nVlCli090A := 0.00
+      nVlCli060A := 0.00
+      nVlCli030A := 0.00
+      nVlCli030P := 0.00
+      nVlCli060P := 0.00
+      nVlCli090P := 0.00
+      nVlCli120P := 0.00
+      nVlCli150P := 0.00
+      nVlCli180P := 0.00
+      nVlCliApos := 0.00
+      nTotChq    := 0.00
+      nSalCliFim := 0.00
+
+      cCodClie    := TRB->CODIGO
+      cLojaCli    := TRB->LOJA
+      cRazSocial  := TRB->CLIENTE
+      cVendedor   := TRB->VENDEDOR
+      cTelefone   := TRB->TELEFONE
+
+      lImpClie := .T.
+
+      cCondWClie := "!Eof().and.TRB->CODIGO==cCodClie.and.TRB->LOJA==cLojaCli"
+
+      While &( cCondWClie )
+
+         IncRegua()
+         #IFNDEF WINDOWS
+         	Inkey()
+            If LastKey() = K_ALT_A
+               lEnd := .t.
+            End
+         #ENDIF
+         If lEnd
+         	Exit
+         EndIf
+
+	    //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+   	    //³ Le registros com data anterior a data inicial (para compor   ³
+      	//³ os saldos anteriores) ate a data final.                      ³
+      	//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+         If li>50
+	         R132CabRes(titulo,cabec1,cabec2,nomeprog,tamanho,IIF(aReturn[4]==1,15,18))
+         End
+
+         If nInforme == 1 .And. TRB->TIPO <> "CH "//Detallado
+				If lImpClie
+
+               R132CabCli()
+               lImpClie := .F.
+					If lFormSiga
+						li++
+						li++
+					Else
+						li++
+					EndIf
+				EndIf
+            @li,  0 PSAY VENCTO
+            @li,  9 PSAY SIGLA
+            @li, 13 PSAY NUMERO
+            @li, 29 PSAY PARCELA
+            @li, 35 PSAY VALORANT       Picture PesqPict("SE1","E1_VALOR",10,mv_par22)  //cPicture1
+            @li, 47 PSAY VALOR180A      Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+            @li, 58 PSAY VALOR150A      Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+            @li, 69 PSAY VALOR120A      Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+            @li, 80 PSAY VALOR090A      Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+            @li, 91 PSAY VALOR060A      Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+            @li,102 PSAY VALOR030A      Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+            @li,113 PSAY VALOR030P      Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+            @li,124 PSAY VALOR060P      Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+            @li,135 PSAY VALOR090P      Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+            @li,146 PSAY VALOR120P      Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+            @li,157 PSAY VALOR150P      Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+            @li,168 PSAY VALOR180P      Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+            @li,179 PSAY VALORAPOS      Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+            @li,208 PSAY SALDOFIM		 Picture PesqPict("SE1","E1_SALDO",10,mv_par22)
+            @li,219 PSAY If(SALDOFIM<0,"C","D")
+				li++
+			EndIf
+   	   nVlCliAnt  += TRB->VALORANT
+         nVlCli180A += TRB->VALOR180A
+         nVlCli150A += TRB->VALOR150A
+         nVlCli120A += TRB->VALOR120A
+         nVlCli090A += TRB->VALOR090A
+         nVlCli060A += TRB->VALOR060A
+         nVlCli030A += TRB->VALOR030A
+         nVlCli030P += TRB->VALOR030P
+         nVlCli060P += TRB->VALOR060P
+         nVlCli090P += TRB->VALOR090P
+         nVlCli120P += TRB->VALOR120P
+         nVlCli150P += TRB->VALOR150P
+         nVlCli180P += TRB->VALOR180P
+         nVlCliApos += TRB->VALORAPOS
+         nTotChq    += TRB->TOTCHEQ
+         nSalCliFim += TRB->SALDOFIM
+      	dbSelectArea("TRB")
+         dbSkip()
+      End
+		If nInforme == 1 //Detallado
+			nTotClie ++
+			li++
+			If lFormSiga
+				@li, 0 PSAY Repl("-",220)
+				li++
+			EndIf
+      @li,  0 PSAY OemtoAnsi(STR0043)+cCodClie+"-"+cLojaCli // "Total Cliente: "
+         @li, 35 PSAY nVlCliAnt	      Picture PesqPict("SE1","E1_VALOR",10,mv_par22)//cPicture1
+         @li, 47 PSAY nVlCli180A       Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li, 58 PSAY nVlCli150A      	Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li, 69 PSAY nVlCli120A      	Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li, 80 PSAY nVlCli090A     	Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li, 91 PSAY nVlCli060A      	Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,102 PSAY nVlCli030A      	Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,113 PSAY nVlCli030P       Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,124 PSAY nVlCli060P       Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,135 PSAY nVlCli090P       Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,146 PSAY nVlCli120P       Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,157 PSAY nVlCli150P       Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,168 PSAY nVlCli180P       Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,179 PSAY nVlCliApos       Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,190 PSAY nTotChq          Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,208 PSAY nSalCliFim			Picture PesqPict("SE1","E1_SALDO",10,mv_par22)
+         @li,219 PSAY If(nSalCliFim<0,"C","D")
+			li++
+			If lFormSiga
+				@li, 0 PSAY Repl("-",220)
+				li++
+			EndIf
+		ElseIf nInforme == 2 //Sint‚tico
+			nTotClie ++
+         @li,  0 PSAY cCodClie+"-"+cLojaCli
+         @li, 11 PSAY Subs(cRazSocial,1,16)
+         @li, 28 PSAY cVendedor
+         @li, 35 PSAY nVlCliAnt        Picture PesqPict("SE1","E1_VALOR",10,mv_par22) //cpicture1
+         @li, 47 PSAY nVlCli180A       Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li, 58 PSAY nVlCli150A      	Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li, 69 PSAY nVlCli120A      	Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li, 80 PSAY nVlCli090A     	Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li, 91 PSAY nVlCli060A      	Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,102 PSAY nVlCli030A      	Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,113 PSAY nVlCli030P       Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,124 PSAY nVlCli060P       Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,135 PSAY nVlCli090P       Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,146 PSAY nVlCli120P       Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,157 PSAY nVlCli150P       Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,168 PSAY nVlCli180P       Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,179 PSAY nVlCliApos       Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,190 PSAY nTotChq          Picture PesqPict("SE1","E1_VALOR",10,mv_par22)
+         @li,208 PSAY nSalCliFim			Picture PesqPict("SE1","E1_SALDO",10,mv_par22)
+         @li,219 PSAY If(nSalCliFim<0,"C","D")
+			If lFormSiga
+				li++
+				li++
+			Else
+				li++
+			EndIf
+		EndIf
+	   nVlGerAnt  += nVlCliAnt
+		nVlGer180A += nVlCli180A
+	   nVlGer150A += nVlCli150A
+  		nVlGer120A += nVlCli120A
+	   nVlGer090A += nVlCli090A
+  		nVlGer060A += nVlCli060A
+	   nVlGer030A += nVlCli030A
+	   nVlGer030P += nVlCli030P
+  		nVlGer060P += nVlCli060P
+		nVlGer090P += nVlCli090P
+   	nVlGer120P += nVlCli120P
+	  	nVlGer150P += nVlCli150P
+   	nVlGer180P += nVlCli180P
+	  	nVlGerApos += nVlCliApos
+      nTotGerChq += nTotChq
+      nSalGerFim += nSalCliFim
+	End
+
+If nTotClie > 1 .or. nTotVend > 0
+	If li>50
+      R132CabRes(titulo,cabec1,cabec2,nomeprog,tamanho,IIF(aReturn[4]==1,15,18))
+	EndIf
+	If lFormSiga
+		li++
+		@li, 0 PSAY Repl("-",220)
+		li++
+	EndIf
+   @li,  0 PSAY OemtoAnsi(STR0044) // "T o t a l   G e n e r a l "
+   @li, 35 PSAY nVlGerAnt        Picture TM(nVlGerAnt   ,10,MsDecimais(mv_par22))//cPicture1
+   @li, 47 PSAY nVlGer180A       Picture TM(nVlGer180A  ,10,MsDecimais(mv_par22))
+   @li, 58 PSAY nVlGer150A       Picture TM(nVlGer150A  ,10,MsDecimais(mv_par22))
+   @li, 69 PSAY nVlGer120A       Picture TM(nVlGer120A  ,10,MsDecimais(mv_par22))
+   @li, 80 PSAY nVlGer090A       Picture TM(nVlGer090A  ,10,MsDecimais(mv_par22))
+   @li, 91 PSAY nVlGer060A       Picture TM(nVlGer060A  ,10,MsDecimais(mv_par22))
+   @li,102 PSAY nVlGer030A       Picture TM(nVlGer030A  ,10,MsDecimais(mv_par22))
+   @li,113 PSAY nVlGer030P       Picture TM(nVlGer030P  ,10,MsDecimais(mv_par22))
+   @li,124 PSAY nVlGer060P       Picture TM(nVlGer060P  ,10,MsDecimais(mv_par22))
+   @li,135 PSAY nVlGer090P       Picture TM(nVlGer090P  ,10,MsDecimais(mv_par22))
+   @li,146 PSAY nVlGer120P       Picture TM(nVlGer120P  ,10,MsDecimais(mv_par22))
+   @li,157 PSAY nVlGer150P       Picture TM(nVlGer150P  ,10,MsDecimais(mv_par22))
+   @li,168 PSAY nVlGer180P       Picture TM(nVlGer180P  ,10,MsDecimais(mv_par22))
+   @li,179 PSAY nVlGerAPOS       Picture TM(nVlGerAPOS  ,10,MsDecimais(mv_par22))
+   @li,190 PSAY nTotGerChq       Picture TM(nTotGerChq  ,10,MsDecimais(mv_par22))
+   @li,208 PSAY nSalGerFim       Picture TM(nSalGerFim  ,10,MsDecimais(mv_par22))
+	@li,219 PSAY If(nSalGerFim<0,"C","D")
+	If lFormSiga
+		li++
+		@li, 0 PSAY Repl("-",220)
+	Else
+		li++
+	EndIf
+EndIf
+
+If lFormSiga
+	Roda( cbCont, cbTxt, Tamanho )
+EndIf
+
+dbSelectArea("TRB")
+dbCloseArea()
+
+dbSelectArea("SA1")
+RetIndex("SA1")
+dbSetOrder(1)
+DbClearFilter()
+
+dbSelectArea("SE1")
+RetIndex("SE1")
+dbSetOrder(1)
+DbClearFilter()
+
+dbSelectArea("SE2")
+RetIndex("SE2")
+dbSetOrder(1)
+DbClearFilter()
+
+dbSelectArea("SE5")
+RetIndex("SE5")
+dbSetOrder(1)
+DbClearFilter()
+
+For nI:=1 to Len(aInd)
+   if File(aInd[nI]+OrdBagExt())
+      //Ferase(aInd[nI]+OrdBagExt())
+   Endif
+Next
+
+Return
+
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
+±±³Fun‡…o    ³ R450CabRes³ Autor ³ Jose Lucas           ³ Data ³ 24.09.99 ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Descri‡…o ³ Impressao do Cabecalho do Resumo.                          ³±±
+±±³          ³                                                            ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Sintaxe e ³ R450CabRes(void)                                           ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Parametros³                                                            ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³ Uso      ³ MATR450                                                    ³±±
+±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+*/
+Static Function R132CabRes(titulo,cabec1,cabec2,nomeprog,tamanho)
+
+If lFormSiga
+	cabec(titulo,cabec1,cabec2,nomeprog,tamanho,15)
+	//cabec1 := STR0030
+	//cabec2 := STR0031
+	@ li,000 PSAY Replicate("*",220)
+	li++
+	@ li,000 PSAY STR0030
+	li++
+   @ li,000 PSAY STR0031
+	li++
+
+   If nInforme == 1
+      @ li,000 PSAY STR0032
+   Endif
+
+   @ li,037 PSAY dDataA181
+	@ li,049 PSAY dDataA180
+	@ li,060 PSAY dDataA150
+	@ li,071 PSAY dDataA120
+	@ li,082 PSAY dDataA090
+	@ li,093 PSAY dDataA060
+	@ li,104 PSAY dDataA030
+   @ li,115 PSAY dDataP030
+   @ li,126 PSAY dDataP060
+   @ li,137 PSAY dDataP090
+   @ li,148 PSAY dDataP120
+   @ li,159 PSAY dDataP150
+   @ li,170 PSAY dDataP180
+   @ li,181 PSAY dDataP181
+	li++
+	@ li,000 PSAY Replicate("*",220)
+	li := 10
+Else
+	If lImpCabec
+		li := 0
+		@ li,000 PSAY Subs(STR0031,1,30)
+		@ li,035 PSAY "' "+DTOC(dDataA181)
+		@ li,047 PSAY "' "+DTOC(dDataA180)
+		@ li,058 PSAY "' "+DTOC(dDataA150)
+		@ li,069 PSAY "' "+DTOC(dDataA120)
+		@ li,080 PSAY "' "+DTOC(dDataA090)
+		@ li,091 PSAY "' "+DTOC(dDataA060)
+		@ li,103 PSAY "' "+DTOC(dDataA030)
+      @ li,113 PSAY "' "+DTOC(dDataP030)
+      @ li,124 PSAY "' "+DTOC(dDataP060)
+      @ li,135 PSAY "' "+DTOC(dDataP090)
+      @ li,146 PSAY "' "+DTOC(dDataP120)
+      @ li,157 PSAY "' "+DTOC(dDataP150)
+      @ li,168 PSAY "' "+DTOC(dDataP180)
+      @ li,179 PSAY "' "+DTOC(dDataP181)
+		@ li,213 PSAY "Saldo"
+		lImpCabec := .F.
+		li++
+	EndIf
+EndIf
+Return( Nil )
+
+/*/
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
+±±³Fun‡…o    ³R132Grav  ³ Autor ³ Jose Lucas            ³ Data ³ 03.11.99 ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Descri‡…o ³Grava um registro no arquivo de trabalho para impressao     ³±±
+±±³          ³do Razonete.                                                ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Sintaxe e ³R132Grv()                                                   ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³ Uso      ³ FINR132                                                    ³±±
+±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*/
+Static Function R132Fechas()
+Local nValor := 0.00
+Local nSldTit := 0.00
+
+dbSelectArea("TRB")
+dbGoTop()
+While !Eof()
+	nSldTit := TRB->SALDO
+   RecLock("TRB",.F.)
+   If TRB->TIPO <> "CH "
+      If TRB->VENCTO < dDataA180
+         Replace VALORANT    With VALORANT + nSldTit
+      ElseIf TRB->VENCTO >= dDataA180 .and. TRB->VENCTO < dDataA150
+         Replace VALOR180A   With VALOR180A + nSldTit
+      ElseIf TRB->VENCTO >= dDataA150 .and. TRB->VENCTO < dDataA120
+         Replace VALOR150A   With VALOR150A + nSldTit
+      ElseIf TRB->VENCTO >= dDataA120 .and. TRB->VENCTO < dDataA090
+         Replace VALOR120A   With VALOR120A + nSldTit
+      ElseIf TRB->VENCTO >= dDataA090 .and. TRB->VENCTO < dDataA060
+         Replace VALOR090A   With VALOR090A + nSldTit
+      ElseIf TRB->VENCTO >= dDataA060 .and. TRB->VENCTO < dDataA030
+         Replace VALOR060A   With VALOR060A + nSldTit
+      ElseIf TRB->VENCTO >= dDataA030 .and. TRB->VENCTO < dDataBase
+         Replace VALOR030A   With VALOR030A + nSldTit
+      EndIf
+
+      If TRB->VENCTO >= dDataBase .and. TRB->VENCTO <= dDataP030
+         Replace VALOR030P   With VALOR030P + nSldTit
+      ElseIf TRB->VENCTO > dDataP030 .and. TRB->VENCTO <= dDataP060
+         Replace VALOR060P   With VALOR060P + nSldTit
+      ElseIf TRB->VENCTO > dDataP060 .and. TRB->VENCTO <= dDataP090
+         Replace VALOR090P   With VALOR090P + nSldTit
+      ElseIf TRB->VENCTO > dDataP090 .and. TRB->VENCTO <= dDataP120
+         Replace VALOR120P   With VALOR120P + nSldTit
+      ElseIf TRB->VENCTO > dDataP120 .and. TRB->VENCTO <= dDataP150
+         Replace VALOR150P   With VALOR150P + nSldTit
+      ElseIf TRB->VENCTO > dDataP150 .and. TRB->VENCTO <= dDataP180
+         Replace VALOR180P   With VALOR180P + nSldTit
+      ElseIf TRB->VENCTO > dDataP180
+         Replace VALORAPOS   With VALORAPOS + nSldTit
+      EndIf
+      nValor := VALORANT+VALOR030A+VALOR060A+VALOR090A+VALOR120A+VALOR150A+VALOR180A
+      nValor += VALORAPOS+VALOR180P+VALOR150P+VALOR120P+VALOR090P+VALOR060P+VALOR030P
+      Replace SALDOFIM  With nValor
+   Else
+      Replace TOTCHEQ With nSldTit
+   Endif
+   MsUnLock()
+   dbSkip()
+End
+Return( NIL )
+
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
+±±³Fun‡…o    ³ R132CabVend  ³ Autor ³ Lucas             ³ Data ³ 12.11.99 ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Descri‡…o ³ Imprimir el cabeca de los Vendedores...                    ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Sintaxe   ³ R132TotVend()                                              ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Parametros³                                                            ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³ Uso      ³ FINR132                                                    ³±±
+±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+*/
+/*
+Static Function R132CabVend()
+
+SA3->( dbSetOrder(1) )
+SA3->( dbSeek(xFilial("SA3")+TRB->VENDEDOR) )
+If SA3->( Found() )
+   @li,  0 PSAY "VENDEDOR: "
+   @li, 11 PSAY SA3->A3_NOME+"     TEL: "+SA3->A3_TEL
+Else
+   @li,  0 PSAY "VENDEDOR: "
+   @li, 11 PSAY "Vendedor borrado del maestro de Vendedores-SA3..."
+EndIf
+li++
+li++
+Return
+*/
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
+±±³Fun‡…o    ³ R132TotVend  ³ Autor ³ Lucas             ³ Data ³ 12.11.99 ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Descri‡…o ³ Imprimir el totales de los Vendedores...                   ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Sintaxe   ³ R132TotVend()                                              ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Parametros³                                                            ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³ Uso      ³ FINR132                                                    ³±±
+±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+*/
+/*
+Static Function R132TotVend(cCodVend)
+
+@li,  0 PSAY "TOTAL VENDEDOR: "+cCodVend
+@li, 35 PSAY nTotVenAnt    Picture cPicture1
+@li, 47 PSAY nTotve180A    Picture cPicture1
+@li, 58 PSAY nTotve150A    Picture cPicture1
+@li, 69 PSAY nTotve120A    Picture cPicture1
+@li, 80 PSAY nTotve090A    Picture cPicture1
+@li, 91 PSAY nTotve060A    Picture cPicture1
+@li,102 PSAY nTotve030A    Picture cPicture1
+@li,113 PSAY nTotve030P    Picture cPicture1
+@li,124 PSAY nTotve060P    Picture cPicture1
+@li,135 PSAY nTotve090P    Picture cPicture1
+@li,146 PSAY nTotve120P    Picture cPicture1
+@li,157 PSAY nTotve150P    Picture cPicture1
+@li,168 PSAY nTotve180P    Picture cPicture1
+@li,179 PSAY nTotveApos    Picture cPicture1
+@li,208 PSAY ABS(nTotvenSld)    Picture cPicture1
+@li,219 PSAY If(nTotVenSld<0,"C","D")
+li++
+@li, 0 PSAY Repl("-",220)
+li++
+If mv_par26 == 1
+   li:=80
+EndIf
+Return
+*/
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
+±±³Fun‡…o    ³ R132CabClie  ³ Autor ³ Lucas             ³ Data ³ 12.11.99 ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Descri‡…o ³ Imprimir el cabeca de los Clientes...                      ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Sintaxe   ³ R132CabClie()                                              ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Parametros³                                                            ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
+±±³ Uso      ³ FINR132                                                    ³±±
+±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+*/
+Static Function R132CabClie()
+
+SA1->( dbSetOrder(1) )
+SA1->( dbSeek(xFilial("SA1")+TRB->CODIGO+TRB->LOJA) )
+@li,  0 PSAY OemtoAnsi(STR0045)+TRB->CODIGO+"-"+TRB->LOJA  //"Cliente : "
+@li, 21 PSAY SA1->A1_NREDUZ + OemToAnsi(STR0046) + Alltrim(SA1->A1_END) + " - "  +; //". Direccion : "
+                   Alltrim(SA1->A1_MUN) + "-"+ SA1->A1_EST +"  "+OemtoAnsi(STR0048) +SA1->A1_TEL //"  TEL: "
+//@li, 40 PSAY SA1->A1_END
+//@li, 85 PSAY SA1->A1_MUN
+//@li,110 PSAY SA1->A1_EST
+//@li,130 PSAY OemToAnsi(STR0048)+SA1->A1_TEL //"TEL: "
+
+SA3->( dbSetOrder(1) )
+SA3->( dbSeek(xFilial("SA3")+SA1->A1_VEND ))
+
+If SA3->( Found() )
+   @li, 140 PSAY OemToAnsi(STR0047) // "VENDEDOR: "
+   @li, 150 PSAY SA1->A1_VEND + "-" + Alltrim(SA3->A3_NOME)+"  "+OemToAnsi(STR0048)+SA3->A3_TEL //"TEL: "
+EndIf
+
+
+Return
+
+/*
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+±±ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄ¿±±
+±±³Fun‡…o    ³ GERATRA  ³ Autor ³ BRUNO SOBIESKI        ³ Data ³ 20.01.99 ³±±
+±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ´±±
+±±³Descri‡…o ³ Generacion del archivo temporal con la informacion de la   ³±±
+±±³          ³ deuda con un Cliente.                                      ³±±
+±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+*/
+Function GeraTra()
+Local nDebito := 0.00
+Local nCredito := 0.00
+Local nSigno
+Local nPosTip
+aTipDoc  := { { "FT ", "FT" }, { "NF ", "FT" }, { "NCC", "NC" }, ;
+              { "NDC", "ND" } }
+
+nCount := 1000
+
+ProcRegua( nCount )
+
+dbSelectArea("SE1")
+dbSetOrder(2)
+dbSeek(xFilial("SE1")+cClieIni+cLojaIni,.T. )
+
+	While !Eof() .and. SE1->E1_CLIENTE <= cClieFim ;
+					 .and. SE1->E1_LOJA <= cLojaFim
+
+    //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+	//³ Verifica se imprime  otras monedas y se³
+	//| convertir para la moneda del opcion    |
+	//ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+	If mv_par23 == 2 // convertir - no imprime
+	    if SE1->E1_MOEDA != mv_par22 //verifica se la moneda del campo el igual la moneda del parametro
+	    	dbSkip()
+	    	Loop
+	    endif
+	Endif
+
+      nSigno := IIf(E1_TIPO$ "RA "+MV_CRNEG ,-1,1)
+      nSaldo := 0
+      nSaldo := Round( SaldoTit( E1_PREFIXO, E1_NUM, E1_PARCELA, E1_TIPO, E1_NATUREZ, "R", E1_CLIENTE, mv_par22, E1_EMIS1, ;
+                                 dFechaBase, E1_LOJA ), 2 )
+
+      IF !Empty( nSaldo ) .AND. E1_TIPO<>"TF " .And. SubStr( E1_TIPO, 3, 1 ) != "-";
+         .And. E1_EMISSAO <= dFechaBase .And. E1_EMISSAO >= dFechaIni
+
+         DbSelectArea( "SA1" )
+         DbSeek( xFilial( "SA1" ) + SE1->E1_CLIENTE + SE1->E1_LOJA )
+      IncProc(OemtoAnsi(STR0049)+Subst(SA1->A1_NREDUZ,1,27)) //"Procesando cliente "
+
+         DbSelectArea( "SE1" )
+
+         cTipo := Space( 3 )
+         If (nPosTip := AScan( aTipDoc, { |a|  a[1] == E1_TIPO } )) > 0
+            cTipo := aTipDoc[nPosTip][2]
+         Endif
+
+         cHistor := ""
+         If SE1->E1_TIPO == "NCC"
+            cHistor := "NOTA DE CREDITO No. "
+         ElseIf SE1->E1_TIPO == "NDC"
+            cHistor := OemToAnsi("NOTA DE DEBITO No. ")
+         ElseIf SE1->E1_TIPO == "NF "
+            cHistor := OemToAnsi("FACTURA No. ")
+         ElseIf SE1->E1_TIPO == "FT "
+            cHistor := OemToAnsi("FACTURA No. ")
+         ElseIf SE1->E1_TIPO == "RA "
+            cHistor := OemToAnsi("ANTICIPO")
+         ElseIf SE1->E1_TIPO == "NCI"
+            cHistor := OemToAnsi("NOTA DE CRED. INTERNA")
+         ElseIf SE1->E1_TIPO == "NDI"
+            cHistor := OemToAnsi("NOTA DE DEB. INTERNA")
+         ElseIf SE1->E1_TIPO == "CH "
+            cHistor := OemToAnsi("CHEQUE")
+
+         Else
+            cHistor := OemToAnsi("NO CLASIFICADO...")
+         EndIf
+
+         RecLock("TRB",.T.)
+         TRB->CODIGO    :=  SE1->E1_CLIENTE
+         TRB->LOJA      :=  SE1->E1_LOJA
+         TRB->CLIENTE   :=  SA1->A1_NOME
+         TRB->VENDEDOR  :=  SA1->A1_VEND
+         TRB->TELEFONE  :=  SA1->A1_TEL
+         TRB->NUMERO    :=  SE1->E1_NUM
+         TRB->TIPO      :=  SE1->E1_TIPO
+         TRB->SIGLA     :=  SE1->E1_TIPO
+         TRB->PARCELA   :=  SE1->E1_PARCELA
+         TRB->PREFIXO   :=  SE1->E1_PREFIXO
+         TRB->EMISSAO   :=  SE1->E1_EMISSAO
+         TRB->VENCTO    :=  SE1->E1_VENCTO
+         TRB->VENCREA   :=  SE1->E1_VENCREA
+         TRB->VALOR     :=  xMoeda(SE1->E1_VALOR,SE1->E1_MOEDA,mv_par22,SE1->E1_EMISSAO,ndecs+1)  * nSigno
+         TRB->SALDO     :=  nSaldo         * nSigno
+         TRB->HISTOR    :=  cHistor
+         MsUnLock()
+      ENDIF
+      dbSelectArea("SE1")
+      dbSkip()
+   End
+
+Return

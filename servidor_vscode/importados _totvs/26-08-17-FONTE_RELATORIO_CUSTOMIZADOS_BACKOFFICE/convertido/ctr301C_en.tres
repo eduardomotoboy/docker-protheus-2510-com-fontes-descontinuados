@@ -1,0 +1,31 @@
+0001#STR0001#ALL#This report enables you to compare: Previous Balance, Debit, Credit and Current Balance in 
+0002#STR0002#ALL#any type of currency the user selects, according to the type of exchange rate of the day or
+0003#STR0003#ALL#transaction enabling the user to answer the question: Date type of exchange?.
+0004#STR0004#ALL#Detailed Balance Model 1 in two currencies
+0005#STR0005#ALL# TO 
+0006#STR0006#ALL# COMPARATIVE IN 
+0007#STR0007#ALL#Summarized Balance Model 1 in two currencies
+0008#STR0008#ALL#P E R I O D   T O T A L S: 
+0009#STR0009#ALL#Creating Temporary Files...
+0010#STR0010#ALL#Balance Model 1 in two currencies 
+0011#STR0011#ALL#G R O U P   T O T A L S (
+0012#STR0012#ALL#Fill out parameters Income/Expense Groups and Prev. Balance Date of Income/Expenses or
+0013#STR0013#ALL#leave parameter Ignore Prev. Bal. Inc/Exp = No
+0014#STR0014#ALL#Chart of Accounts
+0015#STR0015#ALL#Acc
+0016#STR0016#ALL#Descr
+0017#STR0017#ALL#Prior balance 
+0018#STR0018#ALL#If( cPaisLoc == MEX, Position , Debit )
+0019#STR0019#ALL#If( cPaisLoc == MEX, Bonus, Credit  )
+0020#STR0020#ALL#Balance at.
+0021#STR0021#ALL#Considers Previous Balance Income/Expense
+0022#STR0022#ALL#Currency 
+0023#STR0023#ALL#The field Compare with currency? is required
+0024#STR0024#ALL#It is compared with the same type of currency, select another.
+0025#STR0025#ALL#. Exchange type of the day 
+0026#STR0026#ALL# from 
+0027#STR0027#ALL#No exchange type found
+0028#STR0028#RUS#Debit
+0029#STR0029#RUS#Credit
+0030#STR0030#ALL#Debit
+0031#STR0031#ALL#Credit

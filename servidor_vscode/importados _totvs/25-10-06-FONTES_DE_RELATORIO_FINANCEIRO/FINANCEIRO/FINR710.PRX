@@ -1,0 +1,856 @@
+#INCLUDE "FINR710.CH"
+#Include "PROTHEUS.CH"
+
+//(1=Empresa, 2=Unidade de Neg๓cio e 3=Filial)
+STATIC gstEMP 		:= 1
+STATIC gstUNI 		:= 2
+STATIC gstFIL 		:= 3
+STATIC nLinPag   	:= 72 // Limite de linhas por pagina 
+STATIC nLinReport	:= 8
+
+Static lFWCodFil := .T.
+
+/*/
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑฺฤฤฤฤฤฤฤฤฤฤยฤฤฤฤฤฤฤฤฤฤยฤฤฤฤฤฤฤยฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤยฤฤฤฤฤฤยฤฤฤฤฤฤฤฤฤฤฟฑฑ
+ฑฑณFuno	 ณ FinR710	ณ Autor ณ Wagner Xavier 	    ณ Data ณ 05.10.92 ณฑฑ
+ฑฑรฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤดฑฑ
+ฑฑณDescrio ณ Bordero de Pagamento.									  ณฑฑ
+ฑฑรฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤดฑฑ
+ฑฑณSintaxe e ณ FinR710(void)						  					  ณฑฑ
+ฑฑรฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤดฑฑ
+ฑฑณParametrosณ 															  ณฑฑ
+ฑฑรฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤดฑฑ
+ฑฑณ Uso		 ณ Generico 												  ณฑฑ
+ฑฑภฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤูฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿
+/*/
+Function FinR710()
+
+Local oReport
+Local aAreaR4	:= GetArea()
+
+oReport := ReportDef()
+oReport:PrintDialog()
+
+RestArea(aAreaR4)
+
+Return
+
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑษออออออออออัอออออออออออหอออออออัออออออออออออออออออออหออออออัออออออออออออปฑฑ
+ฑฑบPrograma  ณ ReportDef บ Autor ณ Marcio Menon		   บ Data ณ  27/07/06 บฑฑ
+ฑฑฬออออออออออุอออออออออออสอออออออฯออออออออออออออออออออสออออออฯออออออออออออนฑฑ
+ฑฑบDescricao ณ Definicao do objeto do relatorio personalizavel e das      บฑฑ
+ฑฑบ          ณ secoes que serao utilizadas.                               บฑฑ
+ฑฑฬออออออออออุออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบParametrosณ EXPC1 - Grupo de perguntas do relatorio                    บฑฑ
+ฑฑฬออออออออออุออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบUso       ณ 												              บฑฑ
+ฑฑศออออออออออฯออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿
+*/
+Static Function ReportDef()
+
+Local oReport
+Local oSection1
+Local oSection2
+Local cReport 	:= "FINR710" 				// Nome do relatorio
+Local cDescri 	:= STR0001 + STR0002   		//"Este programa tem a funo de emitir os borderos de pagamen-" ### "tos."
+Local cTitulo 	:= STR0003 					//"Emisso de Borderos de Pagamentos"
+Local cPerg		:= "FIN710"					// Nome do grupo de perguntas
+Local cAliasSea	:= GetNextAlias()
+
+//ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+//ณ Verifica as perguntas selecionadas 		   				     ณ
+//ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู
+pergunte("FIN710",.F.)
+
+//ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+//ณ Vari veis utilizadas para parametros						ณ
+//ณ mv_par01				// Do Bordero						ณ
+//ณ mv_par02				// At o Bordero					ณ
+//ณ mv_par03				// Data para dbito					ณ
+//ณ mv_par04				// Qual Moeda						ณ
+//ณ mv_par05				// Outras Moedas					ณ
+//ณ mv_par06				// Converte por						ณ
+//ณ mv_par07				// Compoen saldo por				ณ
+//ณ mv_par08				// Considera Filial					ณ
+//ณ mv_par09				// Da Filial						ณ
+//ณ mv_par10				// Ate Filia						ณ
+//ณ mv_par11				// Banco Fornecedor por             ณ
+//ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู
+
+//ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+//ณCriacao do componente de impressao                                      ณ
+//ณ                                                                        ณ
+//ณTReport():New                                                           ณ
+//ณExpC1 : Nome do relatorio                                               ณ
+//ณExpC2 : Titulo                                                          ณ
+//ณExpC3 : Pergunte                                                        ณ
+//ณExpB4 : Bloco de codigo que sera executado na confirmacao da impressao  ณ
+//ณExpC5 : Descricao                                                       ณ
+//ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู
+oReport := TReport():New(cReport, cTitulo, cPerg, {|oReport| ReportPrint(oReport,cAliasSea)}, cDescri)
+
+oReport:HideHeader()	//Oculta o cabecalho do relatorio
+oReport:SetPortrait()	//Imprime o relatorio no formato retrato
+oReport:HideFooter()	//Oculta o rodape do relatorio
+
+//ณ                      Definicao das Secoes                              ณ
+//ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู
+//ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+//ณ Secao 01                                                               ณ
+//ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู
+oSection1 := TRSection():New(oReport, STR0054 , {"SEA"})	//"CABECALHO"
+
+TRCell():New(oSection1, "CABEC", "", STR0054 , "", 80,/*lPixel*/,/*CodeBlock*/)		//"CABECALHO"
+oSection1:SetHeaderSection(.F.)	//Nao imprime o cabecalho da secao
+oSection1:SetPageBreak(.T.)		//Salta a pagina na quebra da secao
+
+//ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+//ณ Secao 02                                                               ณ
+//ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู
+oSection2 := TRSection():New(oSection1, STR0041 , {"SEA","SA6","SEF","SA2","SE2"})		//"BORDERO"
+TRCell():New(oSection2, "EA_PREFIXO", "SEA", STR0042 , PesqPict("SEA","EA_PREFIXO"), TamSX3("EA_PREFIXO")[1],/*lPixel*/,/*CodeBlock*/)	//"PRF"
+TRCell():New(oSection2, "EA_NUM"    , "SEA", STR0043 , PesqPict("SEA","EA_NUM")    , TamSX3("EA_NUM")[1]    ,/*lPixel*/,/*CodeBlock*/)	//"NUMERO"
+TRCell():New(oSection2, "EA_PARCELA", "SEA", STR0044 , PesqPict("SEA","EA_PARCELA"), TamSX3("EA_PARCELA")[1],/*lPixel*/,/*CodeBlock*/)	//"PC"
+TRCell():New(oSection2, "EF_BENEF"  , ""   , STR0045 , PesqPict("SA2","A2_NOME")   , 33						,/*lPixel*/,/*CodeBlock*/)	//"B E N E F I C I A R I O"
+TRCell():New(oSection2, "A6_NREDUZ" , "SA6", STR0046 , PesqPict("SA6","A6_NREDUZ") , 15						,/*lPixel*/,/*CodeBlock*/)	//"BANCO"
+TRCell():New(oSection2, "EF_NUM"    , "SEF", STR0047 , PesqPict("SEF","EF_NUM")    , TamSX3("EF_NUM")[1]    ,/*lPixel*/,/*CodeBlock*/)	//"HISTORICO"
+TRCell():New(oSection2, "A2_BANCO"  , "SA2", STR0048 , PesqPict("SA2","A2_BANCO")  , TamSX3("A2_BANCO")[1]  ,/*lPixel*/,/*CodeBlock*/)	//"BCO"
+TRCell():New(oSection2, "A2_AGENCIA", "SA2", STR0049 , PesqPict("SA2","A2_AGENCIA"), TamSX3("A2_AGENCIA")[1],/*lPixel*/,/*CodeBlock*/)	//"AGENC"
+TRCell():New(oSection2, "A2_DVAGE"  , "SA2", "DV"    , PesqPict("SA2","A2_DVAGE")  , TamSX3("A2_DVAGE")[1]	,/*lPixel*/,/*CodeBlock*/)  //"DV AGENCIA"
+TRCell():New(oSection2, "A2_NUMCON" , "SA2", STR0050 , PesqPict("SA2","A2_NUMCON") , TamSX3("A2_NUMCON")[1] ,/*lPixel*/,/*CodeBlock*/)	//"NUMERO CONTA"
+TRCell():New(oSection2, "A2_DVCTA"  , "SA2", "DV"    , PesqPict("SA2","A2_DVCTA")  , TamSX3("A2_DVCTA")[1] 	,/*lPixel*/,/*CodeBlock*/)  //"DV CONTA"
+TRCell():New(oSection2, "A2_CGC"  	, "SA2", STR0051 , "@R XXXXXXXXXXXXXXXX"       , 20						,/*lPixel*/,/*CodeBlock*/) 	//"CNPJ/CPF"
+TRCell():New(oSection2, "E2_VENCREA", "SE2", STR0052 , PesqPict("SE2","E2_VENCREA"), 11						,/*lPixel*/,/*CodeBlock*/)  //"DT.VENC"
+TRCell():New(oSection2, "VALORPAGAR", ""   , STR0053 , TM(0,17)					   , 18						,/*lPixel*/,/*CodeBlock*/)  //"VALOR A PAGAR"
+
+oSection2:Cell("A2_DVAGE"):SetCanPrint( { || !Empty( F710BcoFor("A2_AGENCIA", cAliasSea) ) } )
+oSection2:Cell("A2_DVCTA"):SetCanPrint( { || !Empty( F710BcoFor("A2_NUMCON" , cAliasSea) ) } )
+
+oSection2:Cell("VALORPAGAR"):cTitle := PadL(oSection2:Cell("VALORPAGAR"):cTitle,oSection2:Cell("VALORPAGAR"):nSize)
+
+oSection2:SetTotalInLine (.F.) 	//O totalizador da secao sera impresso em coluna
+oSection2:SetHeaderBreak(.T.)   //Imprime o cabecalho das celulas apos a quebra
+
+Return oReport
+
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑษออออออออออัออออออออออออหอออออัออออออออออออออออออออหออออออัอออออออออออออปฑฑ
+ฑฑบPrograma  ณReportPrint บAutorณ Marcio Menon       บ Data ณ  27/07/06   บฑฑ
+ฑฑฬออออออออออุออออออออออออสอออออฯออออออออออออออออออออสออออออฯอออออออออออออนฑฑ
+ฑฑบDescricao ณ Imprime o objeto oReport definido na funcao ReportDef.     บฑฑ
+ฑฑฬออออออออออุออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบParametrosณ EXPO1 - Objeto TReport do relatorio                        บฑฑ
+ฑฑบ          ณ                                                            บฑฑ
+ฑฑฬออออออออออุออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบUso       ณ                                                            บฑฑ
+ฑฑศออออออออออฯออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿
+*/
+Static Function ReportPrint(oReport, cAliasSea)
+
+Local oSection1 	:= oReport:Section(1)
+Local oSection2 	:= oReport:Section(1):Section(1)
+Local oBreak1
+Local oFunction1
+Local cChave      	:= ""
+Local lCheque     	:= .F.
+Local lAbatimento 	:= .F.
+Local cModelo   	:= CriaVar("EA_MODELO")
+Local cNumConta		:= CriaVar("EA_NUMCON")
+Local lSeaEof     	:= .F.
+Local cDvCta		:= ""
+Local cFilialSEA
+Local nLen := 0
+Local cFilSA6 := ""
+Local aModoSEA	:= NIL
+
+Private nJuros := 0
+Private dBaixa := CriaVar("E2_BAIXA")
+
+Default cAliasSea := GetNextAlias()
+
+If oReport:lXlsTable
+	ApMsgAlert(STR0055) //"Formato de impressใo Tabela nใo suportado neste relat๓rio"
+	oReport:CancelPrint()
+	Return
+Endif
+
+//Valida data de dbito (mv_par03)
+If Empty(mv_par03)
+	HELP (" ",1,'DTDEBITO',,STR0057,1,0,,,,,,{STR0058} ) 	//"Data de dbito n?o informada na parametriza?o do relatขrio."###"Por favor, informe a data de dbito nos parmetros do relatขrio (pergunte)."
+	oReport:CancelPrint()
+	Return
+Endif
+
+SEA->(DbGoTop())
+SE2->(DbGoTop())
+
+cChave := SEA->(IndexKey())
+
+cChave 	:= "%"+SqlOrder(cChave)+"%"
+
+oSection1:BeginQuery()
+
+If MV_PAR08 == 1 //Considera Filial?
+	aModoSEA := MsModoFil("SEA")
+	If lFWCodFil .And. (aModoSEA[gstEMP]=="E" .Or. aModoSEA[gstUNI]=="E" .Or. aModoSEA[gstFIL]=="E")
+		If aModoSEA[gstEMP] == "E"
+			nLen := Len(FwCompany(MV_PAR09))
+		EndIf
+		If aModoSEA[gstUNI] == "E"
+			nLen += Len(FwUnitBusiness(MV_PAR10))
+		EndIf
+		If aModoSEA[gstFIL] == "E"
+			nLen += Len(FwFilial(MV_PAR10))
+		EndIf
+		cFilialSEA := "EA_FILIAL BETWEEN '" + SubStr(MV_PAR09,1,nLen) + "' AND '" + SubStr(MV_PAR10,1,nLen) + "' "
+	Else
+		cFilialSEA := "EA_FILIAL = '" + xFilial("SEA") + "' "
+	EndIf
+Else
+	cFilialSEA := "EA_FILIAL = '" + xFilial("SEA") + "' "
+EndIf
+
+cFilialSEA := "%"+cFilialSEA+"%"
+
+BeginSql Alias cAliasSea
+	SELECT 	SEA.EA_FILIAL, SEA.EA_FILORIG, SEA.EA_NUMBOR, SEA.EA_CART, SEA.EA_PREFIXO, SEA.EA_NUM,
+				SEA.EA_PARCELA, SEA.EA_TIPO, SEA.EA_FORNECE, SEA.EA_LOJA, SEA.EA_MODELO ,
+				SEA.EA_PORTADO, SEA.EA_AGEDEP,SEA.EA_NUMCON, SEA.EA_DATABOR,
+				SA2.A2_BANCO, SA2.A2_AGENCIA, SA2.A2_DVAGE, SA2.A2_NUMCON, SA2.A2_DVCTA, SA2.A2_CGC,
+				FIL_BANCO, FIL_AGENCI, FIL_DVAGE, FIL_CONTA, FIL_DVCTA
+	FROM
+		%table:SEA% SEA
+	INNER JOIN 
+		%table:SA2% SA2 ON
+		SA2.A2_FILIAL=%xFilial:SA2% AND 
+		SA2.A2_COD=SEA.EA_FORNECE AND 
+		SA2.A2_LOJA=SEA.EA_LOJA AND 
+		SA2.%NotDel%
+	LEFT JOIN 
+		%table:FIL% FIL ON
+		FIL.FIL_FILIAL=%xFilial:FIL% AND 
+		FIL.FIL_FORNEC=SA2.A2_COD AND 
+		FIL.FIL_LOJA=SA2.A2_LOJA AND 
+		FIL_TIPO = '1' AND 
+		FIL.%NotDel%
+	WHERE
+		%Exp:cFilialSEA% AND
+		SEA.EA_NUMBOR >= %Exp:mv_par01% AND
+		SEA.EA_NUMBOR <= %Exp:mv_par02% AND
+		SEA.EA_CART = 'P' AND
+		SEA.%notDel%
+
+	ORDER BY %Exp:cChave%
+EndSql
+
+oSection1:EndQuery()
+oSection2:SetParentQuery()
+oSection1:SetLineCondition( { ||	 FR710Chk(1,cAliasSea) } )
+oSection2:SetLineCondition( { ||	 FR710Chk(2,cAliasSea) } )
+cFilSA6 := xFilial("SA6", (cAliasSea)->EA_FILIAL)
+
+TRPosition():New(oSection2,"SE2",1,{|| If( Empty((cAliasSea)->EA_FILORIG) .AND. !Empty(xFilial("SE2")),;
+															xFilial("SE2")+(cAliasSea)->EA_PREFIXO+(cAliasSea)->EA_NUM+(cAliasSea)->EA_PARCELA+(cAliasSea)->EA_TIPO+(cAliasSea)->EA_FORNECE+AllTrim((cAliasSea)->EA_LOJA),;
+															(cAliasSea)->EA_FILORIG+(cAliasSea)->EA_PREFIXO+(cAliasSea)->EA_NUM+(cAliasSea)->EA_PARCELA+(cAliasSea)->EA_TIPO+(cAliasSea)->EA_FORNECE+AllTrim((cAliasSea)->EA_LOJA)) } )
+oSection2:OnPrintLine( { || lCheque :=  F710VldChq(cAliasSea ),;
+										Fr710Config(cAliasSea, oSection2, lCheque),;
+							   			F710LinPag(nLinPag,@nLinReport,oReport), .T. } )
+
+oReport:OnPageBreak( { || ReportCabec(oReport, cModelo := (cAliasSea)->EA_MODELO, cAliasSea, lSeaEof) } )
+
+oSection2:Cell("EF_BENEF"):SetBlock( { || cDvCta := Posicione( "SA6", 1, cFilSA6 + (cAliasSEA)->(EA_PORTADO+EA_AGEDEP+EA_NUMCON), "A6_DVCTA" ), ;
+										cNumConta := RTrim( (cAliasSea)->EA_NUMCON ) + Iif( !Empty(cDvCta),"-","" ) + cDvCta, ;
+										Fr710Benef(cAliasSea, lCheque, lAbatimento) } )
+
+oSection2:Cell("A2_CGC"    ):SetBlock( { || Transform(SA2->A2_CGC, IIF(Len(Alltrim(SA2->A2_CGC))>11,"@R 99999999/9999-99","@R 999999999-99")) } )
+oSection2:Cell("E2_VENCREA"):SetBlock( { || SE2->E2_VENCREA } )
+
+oSection2:Cell("A2_BANCO"):SetBlock( { || F710BcoFor("A2_BANCO", cAliasSea) } )
+oSection2:Cell("A2_AGENCIA"):SetBlock( { || F710BcoFor("A2_AGENCIA", cAliasSea) } )
+oSection2:Cell("A2_DVAGE"):SetBlock( { || F710BcoFor("A2_DVAGE", cAliasSea) } )
+oSection2:Cell("A2_NUMCON"):SetBlock( { || F710BcoFor("A2_NUMCON", cAliasSea) } )
+oSection2:Cell("A2_DVCTA"):SetBlock( { || F710BcoFor("A2_DVCTA", cAliasSea) } )
+oSection2:Cell("A6_NREDUZ"  ):SetBlock( { || F710BcoFor("A6_NREDUZ", cAliasSea) } )
+oSection2:Cell("VALORPAGAR"):SetBlock( { || Fr710VPagar(cAliasSea, lAbatimento) } )
+
+oBreak1 := TRBreak():New(oSection1, { || (cAliasSea)->EA_NUMBOR }, STR0007)
+
+oFunction1 := TRFunction():New(oSection2:Cell("VALORPAGAR"),,"SUM", oBreak1,,,,.F.,.F.)
+
+oBreak1:OnPrintTotal( { || ReportTxtAut(oReport, cModelo, cNumConta, oFunction1:GetLastValue()), "" } )
+
+oSection2:SetParentFilter({|cParam| (cAliasSea)->EA_NUMBOR == cParam },{|| (cAliasSea)->EA_NUMBOR } )
+
+//ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+//ณ Inicia a impressao.						 								  ณ
+//ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู
+oSection1:Print()
+
+Return
+
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑษออออออออออัออออออออออหอออออออัออออออออออออออออออออหออออออัอออออออออออออปฑฑ
+ฑฑบPrograma  ณFr710BenefบAutor  ณ  Marcio Menon      บ Data ณ  28/07/06   บฑฑ
+ฑฑฬออออออออออุออออออออออสอออออออฯออออออออออออออออออออสออออออฯอออออออออออออนฑฑ
+ฑฑบDesc.     ณ Retorna o campo Beneficiario conforme o modelo do          บฑฑ
+ฑฑบ          ณ bordero.                                                   บฑฑ
+ฑฑฬออออออออออุออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบUso       ณ AP                                                         บฑฑ
+ฑฑศออออออออออฯออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿
+*/
+Static Function Fr710Benef(cAliasSea, lCheque, lAbatimento)
+
+Local cBenef 	:= ""
+
+SE2->(dbSetOrder(1))
+
+If SE2->(DbSeek(xFilial("SE2", (cAliasSea)->EA_FILORIG)+(cAliasSea)->(EA_PREFIXO+EA_NUM+EA_PARCELA+EA_TIPO+EA_FORNECE+EA_LOJA)))
+	SA2->(dbSetOrder(1))
+	SA2->(MsSeek(xFilial("SA2",SE2->E2_FILORIG)+SE2->E2_FORNECE+SE2->E2_LOJA))
+
+	If (cAliasSea)->EA_MODELO $ "CH/02"
+		If !lAbatimento
+			If lCheque
+				cBenef := SEF->EF_BENEF
+			Else
+				cBenef := SA2->A2_NOME
+			Endif
+		EndIf
+	Else
+		cBenef := SA2->A2_NOME
+	Endif
+EndIf
+
+Return cBenef
+
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑษออออออออออัออออออออออออหอออออออัออออออออออออออออออออหออออออัอออออออออออออปฑฑ
+ฑฑบPrograma  ณFr710VPagar บAutor  ณ Marcio Menon       บ Data ณ  28/07/06   บฑฑ
+ฑฑฬออออออออออุออออออออออออสอออออออฯออออออออออออออออออออสออออออฯอออออออออออออนฑฑ
+ฑฑบDesc.     ณ Faz os calculos dos valores a pagar dos titulos.		        บฑฑ
+ฑฑบ          ณ 						                                        บฑฑ
+ฑฑฬออออออออออุออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบUso       ณ 	                                                            บฑฑ
+ฑฑศออออออออออฯออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿
+*/
+Static Function Fr710VPagar(cAliasSea, lAbatimento)
+Local nAbat  	:= 0
+Local nVlrPagar	:= 0
+Local aArea := GetArea()
+Local aAreaSA2 := SA2->(GetArea())
+Local nVA 	:= 0
+Local lFValAcess := ExistFunc('FValAcess')
+
+SE2->(dbSetOrder(1))
+If SE2->(DbSeek(FwxFilial("SE2",(cAliasSea)->EA_FILORIG)+(cAliasSea)->(EA_PREFIXO+EA_NUM+EA_PARCELA+EA_TIPO+EA_FORNECE+EA_LOJA)))
+	If lAbatimento
+		nAbat 	:= SE2->E2_SALDO
+	Else
+		nAbat := SomaAbat(SE2->E2_PREFIXO,SE2->E2_NUM,SE2->E2_PARCELA,"P",SE2->E2_MOEDA,dDataBase,SE2->E2_FORNECE,SE2->E2_LOJA, SE2->E2_FILIAL)
+	EndIf
+
+	//Efetua calculo dos juros do titulo posicionado
+	fa080Juros(1)
+
+	// Valoes Acess๓rios
+	If lFValAcess
+		nVA	:= FValAcess( SE2->E2_PREFIXO, SE2->E2_NUM, SE2->E2_PARCELA, SE2->E2_TIPO, SE2->E2_FORNECE, SE2->E2_LOJA, SE2->E2_NATUREZ, Iif(Empty(dBaixa),.F.,.T.), "" , "P", , , SE2->E2_MOEDA, SE2->E2_MOEDA , SE2->E2_TXMOEDA )
+	Endif
+	
+	If ! lAbatimento
+		If mv_par07 == 1
+			nVlrPagar := Round(NoRound(xMoeda(SE2->E2_SALDO-SE2->E2_SDDECRE+SE2->E2_SDACRES-nAbat+nJuros+nVA,SE2->E2_MOEDA,MV_PAR04,Iif(MV_PAR06==1,(cAliasSea)->EA_DATABOR,dDataBase),MsDecimais(1)+1,SE2->E2_TXMOEDA ,SM2->M2_MOEDA2),MsDecimais(1)+1),MsDecimais(1))
+	    Else
+			nVlrPagar := Round(NoRound(xMoeda(SE2->E2_VALOR-SE2->E2_DECRESC+SE2->E2_ACRESC-nAbat+nJuros+nVA,SE2->E2_MOEDA,MV_PAR04,Iif(MV_PAR06==1,(cAliasSea)->EA_DATABOR,dDataBase),MsDecimais(1)+1,SE2->E2_TXMOEDA ,SM2->M2_MOEDA2),MsDecimais(1)+1),MsDecimais(1))
+		EndIf
+	Endif
+
+	RestArea(aAreaSA2)
+	RestArea(aArea)
+EndIf
+
+Return nVlrPagar
+
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑษออออออออออัออออออออออออหอออออออัออออออออออออออออออออหออออออัอออออออออออออปฑฑ
+ฑฑบPrograma  ณReportCabec บAutor  ณ Marcio Menon       บ Data ณ  28/07/06   บฑฑ
+ฑฑฬออออออออออุออออออออออออสอออออออฯออออออออออออออออออออสออออออฯอออออออออออออนฑฑ
+ฑฑบDesc.     ณ Monta o cabecalho do relatorio.				 		        บฑฑ
+ฑฑบ          ณ 						                                        บฑฑ
+ฑฑฬออออออออออุออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบUso       ณ 	                                                            บฑฑ
+ฑฑศออออออออออฯออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿
+*/
+Static Function ReportCabec(oReport, cModelo, cAliasSea, lSeaEof)
+
+Local cStartPath	:= GetSrvProfString("Startpath","")
+Local cLogo			:= ""
+Local cTexto 		:= ""
+Local lHlpNoTab 	:= .F.
+
+//Se a quebra de secao for na impressao do texto da autorizacao
+//Volta o registro para imprimir o cabecalho
+If (cAliasSea)->(EOF())
+    lSeaEof := .T.
+	(cAliasSea)->(dbSkip(-1))
+	cModelo := (cAliasSea)->EA_MODELO
+EndIf
+
+SA6->(MsSeek(xFilial("SA6", (cAliasSea)->EA_FILIAL)+(cAliasSea)->(EA_PORTADO+EA_AGEDEP+EA_NUMCON)))
+
+//ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+//ณ Verifica o modelo do documento.				  ณ
+//ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู
+lHlpNoTab := IIf(Empty(cModelo),.F.,.T.)
+If cModelo $ "CH/02"
+	cTexto := Tabela("58",@cModelo,lHlpNoTab)
+Elseif cModelo $ "CT/30"
+	cTexto := Tabela("58",@cModelo,lHlpNoTab)
+Elseif cModelo $ "CP/31"
+	cTexto := Tabela("58",@cModelo,lHlpNoTab)
+ElseIf cModelo $ "CC/01/03/04/05/10/41/43"
+	cTexto := Tabela("58",@cModelo,lHlpNoTab)
+Else
+	cTexto := Tabela("58",@cModelo,lHlpNoTab)
+Endif
+
+//ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+//ณ Define o cabecalho.							  ณ
+//ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู
+oReport:ThinLine()
+
+cLogo := cStartPath + "LGRL" + SM0->M0_CODIGO + IIf( lFWCodFil, FWGETCODFILIAL, SM0->M0_CODFIL ) + ".BMP" 	// Empresa+Filial
+
+If !File( cLogo )
+	cLogo := cStartPath + "LGRL" + SM0->M0_CODIGO + ".BMP" 						// Empresa
+endif
+
+oReport:SkipLine()
+oReport:SayBitmap (oReport:Row(),005,cLogo,291,057)
+oReport:SkipLine()
+oReport:SkipLine()
+oReport:SkipLine()
+oReport:ThinLine()
+oReport:SkipLine()
+oReport:SkipLine()
+//Texto do tipo de bordero
+oReport:PrintText(SM0->M0_NOME + PadC(OemToAnsi(STR0034),100) + OemToAnsi(STR0035)+DtoC(dDataBase))
+oReport:PrintText(Space(Len(SM0->M0_NOME)) + PadC(cTexto,100) + OemToAnsi(STR0036) + (cAliasSea)->EA_NUMBOR)
+oReport:SkipLine()
+oReport:SkipLine()
+//Dados do Banco
+oReport:PrintText(Pad(OemToAnsi(STR0037) + SA6->A6_NOME,100))
+oReport:PrintText(Pad(	OemToAnsi(STR0038) + RTrim(SA6->A6_AGENCIA) + Iif( !Empty(SA6->A6_DVAGE),"-","") + RTrim(SA6->A6_DVAGE) + ;
+						OemToAnsi(STR0040) + RTrim(SA6->A6_NUMCON)  + Iif( !Empty(SA6->A6_DVCTA),"-","") + RTrim(SA6->A6_DVCTA),100))
+oReport:PrintText(Pad(SA6->A6_END + " "  + SA6->A6_MUN + " " + SA6->A6_EST,100))
+oReport:SkipLine()
+oReport:SkipLine()
+oReport:ThinLine()
+
+If lSeaEof
+	(cAliasSea)->(dbSkip())
+EndIf
+
+Return ""
+
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑษออออออออออัออออออออออออหอออออออัออออออออออออออออออออหออออออัอออออออออออออปฑฑ
+ฑฑบPrograma  ณFr710Config บAutor  ณ Marcio Menon       บ Data ณ  01/08/06   บฑฑ
+ฑฑฬออออออออออุออออออออออออสอออออออฯออออออออออออออออออออสออออออฯอออออออออออออนฑฑ
+ฑฑบDesc.     ณ Exibe ou oculta as colunas do relatorio, conforme o modelo   บฑฑ
+ฑฑบ          ณ do bordero.			                                        บฑฑ
+ฑฑฬออออออออออุออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบUso       ณ 	                                                            บฑฑ
+ฑฑศออออออออออฯออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿
+*/
+Static Function Fr710Config(cAliasSea, oSection2, lCheque)
+Default lCheque := .F.
+Do Case
+
+Case	(cAliasSea)->EA_MODELO $ "CH/02"
+	oSection2:Cell("EF_NUM"    ):Enable()
+	oSection2:Cell("EF_NUM"    ):SetBlock({ || Iif(lCheque,"CH. " + SEF->EF_NUM,"")})
+	oSection2:Cell("A2_BANCO"  ):Disable()
+	oSection2:Cell("A2_AGENCIA"):Disable()
+	oSection2:Cell("A2_DVAGE"  ):Disable()
+	oSection2:Cell("A2_NUMCON" ):Disable()
+	oSection2:Cell("A2_DVCTA"  ):Disable()
+	oSection2:Cell("A2_CGC"    ):Disable()
+
+Case	(cAliasSea)->EA_MODELO $ "CT/30"
+	oSection2:Cell("A6_NREDUZ" ):Disable()
+	oSection2:Cell("A2_BANCO"  ):Disable()
+	oSection2:Cell("A2_AGENCIA"):Disable()
+	oSection2:Cell("A2_DVAGE"  ):Disable()
+	oSection2:Cell("A2_NUMCON" ):Disable()
+	oSection2:Cell("A2_DVCTA"  ):Disable()
+	oSection2:Cell("A2_CGC"    ):Disable()
+   //Verifica se existe numero de cheque
+	If (SEF->(MsSeek(xFilial("SEF") + SE5->E5_BANCO + SE5->E5_AGENCIA + SE5->E5_CONTA + SE5->E5_NUMCHEQ)))
+		oSection2:Cell("EF_NUM"    ):SetTitle("NUM. CHEQUE")
+		oSection2:Cell("EF_NUM"    ):SetBlock({ || SEF->EF_NUM})
+		oSection2:Cell("EF_NUM"    ):Enable()
+	Else
+		oSection2:Cell("EF_NUM"    ):SetTitle("")
+	EndIf
+
+Case	(cAliasSea)->EA_MODELO $ "CT/31"
+	oSection2:Cell("A6_NREDUZ" ):Enable()
+	oSection2:Cell("A2_BANCO"  ):Disable()
+	oSection2:Cell("A2_AGENCIA"):Disable()
+	oSection2:Cell("A2_DVAGE"  ):Disable()
+	oSection2:Cell("A2_NUMCON" ):Disable()
+	oSection2:Cell("A2_DVCTA"  ):Disable()
+	oSection2:Cell("A2_CGC"    ):Disable()
+   //Verifica se existe numero de cheque
+	If (SEF->(MsSeek(xFilial("SEF") + SE5->E5_BANCO + SE5->E5_AGENCIA + SE5->E5_CONTA + SE5->E5_NUMCHEQ)))
+		oSection2:Cell("EF_NUM"    ):SetTitle("NUM. CHEQUE")
+		oSection2:Cell("EF_NUM"    ):SetBlock({ || SEF->EF_NUM})
+		oSection2:Cell("EF_NUM"    ):Enable()
+	Else
+		oSection2:Cell("EF_NUM"    ):SetTitle("NUM. CHEQUE")
+	EndIf
+
+Case	(cAliasSea)->EA_MODELO $ "CC/01/03/04/05/10/41/43"
+	oSection2:Cell("A6_NREDUZ" ):Enable()
+	oSection2:Cell("A2_BANCO"  ):Enable()
+	oSection2:Cell("A2_AGENCIA"):Enable()
+	oSection2:Cell("A2_DVAGE"  ):Enable()
+	oSection2:Cell("A2_NUMCON" ):Enable()
+	oSection2:Cell("A2_DVCTA"  ):Enable()
+	oSection2:Cell("A2_CGC"    ):Enable()
+	oSection2:Cell("EF_NUM"    ):Disable()
+EndCase
+
+
+Return
+
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑษออออออออออัออออออออออออหอออออออัออออออออออออออออออออหออออออัอออออออออออออปฑฑ
+ฑฑบPrograma  ณReportTxtAutบAutor  ณ Marcio Menon       บ Data ณ  01/08/06   บฑฑ
+ฑฑฬออออออออออุออออออออออออสอออออออฯออออออออออออออออออออสออออออฯอออออออออออออนฑฑ
+ฑฑบDesc.     ณ Imprime o Total Geral por extenso e as mensagens de	        บฑฑ
+ฑฑบ          ณ autorizacao, conforme o modelo do bordero.                   บฑฑ
+ฑฑฬออออออออออุออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบUso       ณ 	                                                            บฑฑ
+ฑฑศออออออออออฯออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿
+*/
+Static Function ReportTxtAut(oReport, cModelo, cNumConta, nVlrSecao)
+Local nCount
+
+oReport:SkipLine()
+oReport:PrintText(Extenso(nVlrSecao,.F.,MV_PAR04))
+oReport:SkipLine()
+
+If cModelo $ "CH/02"
+	//"AUTORIZAMOS V.SAS. A EMITIR OS CHEQUES NOMINATIVOS AOS BENEFICIARIOS EM REFERENCIA,"
+	oReport:PrintText(STR0008)
+	//"DEBITANDO EM NOSSA CONTA CORRENTE NO DIA "
+	oReport:PrintText(STR0009 + DtoC( mv_par03 ))
+	//"PELO VALOR ACIMA TOTALIZADO."
+	oReport:PrintText(STR0010)
+
+Elseif cModelo $ "CT/30"
+	//"AUTORIZAMOS V.SAS. A PAGAR OS TITULOS ACIMA RELACIONADOS EM NOSSA"
+	oReport:PrintText(STR0011)
+	//"CONTA MOVIMENTO NO DIA "###", PELO VALOR ACIMA TOTALIZADO."
+	oReport:PrintText(STR0012 + DtoC( mv_par03 ) + OemToAnsi(STR0013))
+
+Elseif cModelo $ "CP/31"
+	//"AUTORIZAMOS V.SAS. A PAGAR OS TITULOS EM REFERENCIA, LEVANDO A DEBITO DE NOSSA"
+	oReport:PrintText(STR0014)
+	//"CONTA CORRENTE NUM. "###" NO DIA "###" PELO VALOR ACIMA TOTALIZADO."
+	oReport:PrintText(STR0015 + cNumConta + OemToAnsi(STR0016) + DtoC( mv_par03 ) + OemToAnsi(STR0017))
+
+Elseif cModelo $ "CC/01/03/04/05/10/41/43"
+	//"AUTORIZAMOS V.SAS. A EMITIREM ORDEM DE PAGAMENTO, OU DOC PARA OS BANCOS/CONTAS ACIMA."
+	oReport:PrintText(STR0018)
+	//"DOS TITULOS RESPECTIVOS DEBITANDO EM NOSSA C/CORRENTE NUM "
+	oReport:PrintText(STR0019 + cNumConta)
+	//"NO DIA "### " PELO VALOR ACIMA TOTALIZADO."
+	oReport:PrintText(STR0020 + dToC( mv_par03 ) + OemToAnsi(STR0021))
+
+Else
+	//"AUTORIZAMOS V.SAS. A PAGAR OS TITULOS EM REFERENCIA, LEVANDO A DEBITO DE NOSSA"
+	oReport:PrintText(STR0022)
+	//"CONTA CORRENTE NUM. "###" NO DIA "###" PELO VALOR ACIMA TOTALIZADO."
+	oReport:PrintText(STR0023 + cNumConta + OemToAnsi(STR0016) + DtoC( mv_par03 ) + OemToAnsi(STR0017))
+EndIf
+
+For nCount := 1 to 5
+	oReport:SkipLine()
+Next
+
+oReport:PrintText("-----------------------------------",/*nRow*/,900)
+oReport:PrintText(SM0->M0_NOMECOM,/*nRow*/,900)
+
+oReport:EndPage()
+nLinReport := 8
+
+Return ""
+
+/*/
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑฺฤฤฤฤฤฤฤฤฤฤยฤฤฤฤฤฤฤฤฤฤยฤฤฤฤฤฤฤยฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤยฤฤฤฤฤฤยฤฤฤฤฤฤฤฤฤฤฟฑฑ
+ฑฑณFuno	 ณfa710DtDebณ Autor ณ Mauricio Pequim Jr.	ณ Data ณ 12.01.98 ณฑฑ
+ฑฑรฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤดฑฑ
+ฑฑณDescrio ณ Validacao da data de dbito para o bordero	  			  ณฑฑ
+ฑฑรฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤดฑฑ
+ฑฑณSintaxe e ณfa710DtDeb() 												  ณฑฑ
+ฑฑรฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤดฑฑ
+ฑฑณ Uso		 ณ Generico 												  ณฑฑ
+ฑฑภฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤูฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿
+/*/
+Function fa710DtDeb()
+
+Local lRet := .T.
+lRet := IIf (mv_par03 < dDataBase, .F. , .T. )
+Return lRet
+
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑษออออออออออัออออออออออหอออออออัออออออออออออออออออออหออออออัอออออออออออออปฑฑ
+ฑฑบPrograma  ณFR170Chk  บAutor  ณPedro Pereira Lima  บ Data ณ  14/06/10   บฑฑ
+ฑฑฬออออออออออุออออออออออสอออออออฯออออออออออออออออออออสออออออฯอออออออออออออนฑฑ
+ฑฑบDesc.     ณVerifica quais titulos tem amarracao com o bordero e faz as บฑฑ
+ฑฑบ          ณdevidas validacoes.                                         บฑฑ
+ฑฑฬออออออออออุออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบUso       ณFINR710                                                     บฑฑ
+ฑฑศออออออออออฯออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿
+*/
+Function FR710Chk(nValid,cAliasQuery)
+Local aArea    := GetArea()
+Local aAreaQry := (cAliasQuery)->(GetArea())
+Local lRetorno := .T.
+
+If !Empty((cAliasQuery)->EA_FILORIG)//Se possui EA_FILORIG, utilizo esse campo na chave de busca
+
+	dbSelectArea("SE2")
+	SE2->(dbSetOrder(1))
+	SE2->(dbSeek((cAliasQuery)->(EA_FILORIG+EA_PREFIXO+EA_NUM+EA_PARCELA+EA_TIPO+EA_FORNECE+EA_LOJA)))
+
+	While !SE2->(Eof()) .And. (cAliasQuery)->(EA_FILORIG+EA_PREFIXO+EA_NUM+EA_PARCELA+EA_TIPO+EA_FORNECE+EA_LOJA) ==;
+	 								  SE2->(E2_FILIAL+E2_PREFIXO+E2_NUM+E2_PARCELA+E2_TIPO+E2_FORNECE+E2_LOJA)
+		If nValid == 1 //oSection1
+			lRetorno :=	(MV_PAR05 == 1 .Or. SE2->E2_NUMBOR == (cAliasQuery)->EA_NUMBOR)
+		Else //oSection2
+			lRetorno :=	(MV_PAR05 == 1 .Or. SE2->E2_MOEDA == MV_PAR04)
+		EndIf
+	 SE2->(dbSkip())
+	EndDo
+Else//Valida็ใo anterior, caso o EA_FILORIG esteja em branco
+	dbSelectArea("SE2")
+	SE2->(dbSetOrder(1))
+	SE2->(dbSeek(xFilial("SE2")+(cAliasQuery)->(EA_PREFIXO+EA_NUM+EA_PARCELA+EA_TIPO+EA_FORNECE+EA_LOJA)))
+
+	While !SE2->(Eof()) .And. xFilial("SE2")+(cAliasQuery)->(EA_PREFIXO+EA_NUM+EA_PARCELA+EA_TIPO+EA_FORNECE+EA_LOJA) ==;
+	 								  SE2->(E2_FILIAL+E2_PREFIXO+E2_NUM+E2_PARCELA+E2_TIPO+E2_FORNECE+E2_LOJA)
+		If nValid == 1 //oSection1
+			lRetorno :=	(MV_PAR05 == 1 .Or. SE2->E2_NUMBOR == (cAliasQuery)->EA_NUMBOR)
+		Else //oSection2
+			lRetorno :=	(MV_PAR05 == 1 .Or. SE2->E2_MOEDA == MV_PAR04)
+		EndIf
+
+	SE2->(dbSkip())
+
+	EndDo
+EndIf
+
+RestArea(aAreaQry)
+RestArea(aArea)
+
+Return lRetorno
+
+/*
+ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+ฑฑษออออออออออัออออออออออหอออออออัออออออออออออออออออออหออออออัอออออออออออออปฑฑ
+ฑฑบPrograma  ณ MsModoFil บ Autor  ณ Jose Lucas       บ Data ณ17.06.2011   บฑฑ
+ฑฑฬออออออออออุออออออออออสอออออออฯออออออออออออออออออออสออออออฯอออออออออออออนฑฑ
+ฑฑบDesc.     ณ Retornar o modo de compartilhamento de cada tabela.        บฑฑ
+ฑฑฬออออออออออุออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบSintaxe   ณ ExpA1 := MsModoFil(ExpC1)                                  บฑฑ
+ฑฑฬออออออออออุออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบParametrosณ ExpC1 := Alias da tabela a pesquisar.                      บฑฑ
+ฑฑฬออออออออออุออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออนฑฑ
+ฑฑบUso       ณ FINR170                                                    บฑฑ
+ฑฑศออออออออออฯออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผฑฑ
+ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿฿
+*/
+Static Function MsModoFil(cAlias)
+Local aModo := {"","",""}
+
+aModo[gstEMP] := FWModeAccess(cAlias,gstEMP)
+aModo[gstUNI] := FWModeAccess(cAlias,gstUNI)
+aModo[gstFIL] := FWModeAccess(cAlias,gstFIL)
+
+Return ACLONE(aModo)
+
+//----------------------------------------------------------
+/*/{Protheus.doc}F710LinPag
+Faz a quebra de pagina de acordo com os parametros passados
+
+EXPL1 - Numero maximo de linhas definido no relatorio  
+EXPL2 - Contador de linhas impressas no relatorio   
+
+@author Vitor Duca
+@since 22/02/19
+@version 12
+/*/
+//-----------------------------------------------------------
+
+Static Function F710LinPag(nLinPag,nLinReport,oReport, lLimpa)
+Default lLimpa := .F.
+
+If lLimpa
+	nLinReport := 8
+Else	
+	nLinReport++
+	If nLinReport >= (nLinPag + 8)
+		nLinReport := 8
+		oReport:EndPage()
+	EndIf
+EndIf
+
+Return Nil
+
+//----------------------------------------------------------
+/*/{Protheus.doc}F710VldChq
+Valida se existe cheque
+
+@param cAliasSea, char, alias da Tabela Temporaria SEA
+@return lCheque, logical, Verifica se encontrou cheque para o titulo do bordero 
+
+@author rafael.bispo
+@since 15/10/19
+@version 12
+@Type Function
+/*/
+//-----------------------------------------------------------
+				
+Static Function F710VldChq(cAliasSea As Char) As Logical
+	Local lCheque As Logical
+	lCheque := .F.
+
+	SE5->(dbSetOrder(7)) //E5_FILIAL, E5_PREFIXO, E5_NUMERO, E5_PARCELA, E5_TIPO, E5_CLIFOR, E5_LOJA, E5_SEQ
+
+	If SE5->(MsSeek(xFilial("SE5", (cAliasSea)->EA_FILORIG)+(cAliasSea)->(EA_PREFIXO+EA_NUM+EA_PARCELA+EA_TIPO+EA_FORNECE+EA_LOJA)))
+		If(!Empty(SE5->E5_NUMCHEQ) .And. SEF->(MsSeek(xFilial("SEF")+SE5->E5_BANCO+SE5->E5_AGENCIA+SE5->E5_CONTA+SE5->E5_NUMCHEQ)))
+			lCheque := .T.			
+		EndIf
+	EndIf
+
+Return lCheque
+
+//----------------------------------------------------------
+/*/{Protheus.doc}F710BcoFor
+Localiza dados bancarios do fornecedor
+
+@param cAliasSea, char, alias da Tabela Temporaria SEA
+@return lCheque, logical, Verifica se encontrou cheque para o titulo do bordero 
+
+@author fabio.casagrande
+@since 19/02/2020
+@version 12
+@Type Function
+/*/
+//-----------------------------------------------------------
+				
+Static Function F710BcoFor(cCampo As Char, cAliasSea As Char) As Char
+
+	Local cRet As Char
+	Local cBanco As Char
+	Local cAgenc As Char
+	Local cConta As Char
+	Local lMvPar11 As Logical
+	Local lBcoTit As Logical
+
+	Default cAliasSea := ""
+	Default cCampo := ""
+
+	cRet := ""
+	lMvPar11 := F710Mv11() //Protecao p/ pergunte criado para a 12.1.30
+
+	//Verifica se deve priorizar os dados bancarios vinculados ao titulo a pagar
+	If lMvPar11 .And. mv_par11 == 2 .and. !Empty(SE2->E2_FORBCO)
+		lBcoTit := .T.
+	Else
+		lBcoTit := .F.
+	Endif
+
+	If cCampo$"A2_BANCO"
+		cRet := If(lBcoTit,SE2->E2_FORBCO,If(!Empty((cAliasSea)->A2_BANCO),(cAliasSea)->A2_BANCO,(cAliasSea)->FIL_BANCO))
+	Elseif cCampo$"A2_AGENCIA"
+		cRet := If(lBcoTit,SE2->E2_FORAGE,If(!Empty((cAliasSea)->A2_AGENCIA),(cAliasSea)->A2_AGENCIA,(cAliasSea)->FIL_AGENCI) )
+	Elseif cCampo$"A2_DVAGE"
+		cRet := If(lBcoTit,SE2->E2_FAGEDV,If(!Empty((cAliasSea)->A2_DVAGE),(cAliasSea)->A2_DVAGE,(cAliasSea)->FIL_DVAGE) )
+	Elseif cCampo$"A2_NUMCON"
+		cRet := If(lBcoTit,SE2->E2_FORCTA,If(!Empty((cAliasSea)->A2_NUMCON),(cAliasSea)->A2_NUMCON,(cAliasSea)->FIL_CONTA) )
+	Elseif cCampo$"A2_DVCTA"
+		cRet := If(lBcoTit,SE2->E2_FCTADV,If(!Empty((cAliasSea)->A2_DVCTA),(cAliasSea)->A2_DVCTA,(cAliasSea)->FIL_DVCTA) )
+	Elseif cCampo$"A6_NREDUZ"
+		cBanco := If(lBcoTit,SE2->E2_FORBCO,If(!Empty((cAliasSea)->A2_BANCO),(cAliasSea)->A2_BANCO,(cAliasSea)->FIL_BANCO))
+		cAgenc := If(lBcoTit,SE2->E2_FORAGE,If(!Empty((cAliasSea)->A2_AGENCIA),(cAliasSea)->A2_AGENCIA,(cAliasSea)->FIL_AGENCI) )
+		cConta := If(lBcoTit,SE2->E2_FORCTA,If(!Empty((cAliasSea)->A2_NUMCON),(cAliasSea)->A2_NUMCON,(cAliasSea)->FIL_CONTA) )
+		cRet := Posicione( "SA6", 1, xFilial("SA6", (cAliasSea)->EA_FILIAL) + cBanco + cAgenc + cConta, "A6_NREDUZ" )	
+	Endif
+
+Return cRet
+
+//-------------------------------------------------------------------
+/*/{Protheus.doc} F710Mv11()
+Fun็ใo para uso temporแrio, validando se a pergunta 11 existe no dicionแrio.
+Sera disponibilizada na release 12.1.30
+
+@Author Fabio Casagrande Lima
+@Since 19/02/2020
+
+/*/
+//-------------------------------------------------------------------
+Static Function F710Mv11()
+Local lRet := .F.
+
+SX1->(DbSetOrder(1))
+lRet := SX1->(DbSeek('FIN710    ' + '11'))
+
+Return lRet

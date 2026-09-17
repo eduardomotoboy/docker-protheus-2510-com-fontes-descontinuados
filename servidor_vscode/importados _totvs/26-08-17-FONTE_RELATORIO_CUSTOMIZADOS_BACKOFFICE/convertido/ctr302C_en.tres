@@ -1,0 +1,34 @@
+0001#STR0001#ALL#This report compares the Previous Balance, Credit, Debit and Current Balance in currency 1 and any other currency 
+0002#STR0002#ALL#the user selects, according to the exchange type of the day enabling  
+0003#STR0003#ALL#BALANCE OF COST CENTER IN 2 CURRENCIES 
+0004#STR0005#ALL#OF DETAILED PARTIAL BAL. 
+0005#STR0006#ALL#OF SUMMARIZED PARTIAL BAL. 
+0006#STR0007#ALL#OF PARTIAL BAL. 
+0007#STR0008#ALL# FROM 
+0008#STR0009#ALL# TO 
+0009#STR0010#ALL# COMPARATIVE IN 
+0010#STR0011#ALL#Creating temporary file...
+0011#STR0012#ALL#P E R I O D   T O T A L S:
+0012#STR0013#ALL#DIV.
+0013#STR0014#ALL#If the composed balances are not updated in
+0014#STR0015#ALL#the issue of reports (MV_SLDCOMP - 'N'),
+0015#STR0016#ALL#run the balances update routine
+0016#STR0017#ALL# ATTENTION 
+0017#STR0018#ALL#Code
+0018#STR0019#ALL#Descr
+0019#STR0020#ALL#Prior balance  
+0020#STR0021#ALL#If( cPaisLoc == MEX, Position , Debit    )
+0021#STR0022#ALL#If( cPaisLoc == MEX, Bonus  , Credit   )
+0022#STR0023#ALL#Trans. of period 
+0023#STR0024#ALL#Balance at.  
+0024#STR0025#ALL#Total
+0025#STR0026#ALL#Currency 
+0026#STR0027#ALL#The field Compare with currency? is required
+0027#STR0028#ALL#It is compared with the same type of currency. Select another.
+0028#STR0029#ALL#. Exchange type of the day 
+0029#STR0030#ALL# from 
+0030#STR0031#ALL#Exchange type not found
+0031#STR0032#ALL#Credit 
+0031#STR0032#MEX#Credit 
+0032#STR0033#ALL#Debit 
+0032#STR0033#MEX#Debit 

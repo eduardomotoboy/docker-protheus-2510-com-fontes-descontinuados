@@ -1,0 +1,31 @@
+0001#STR0001#ALL#Este informe es permitir comparar: El Saldo Anterior, Débito, Crédito y Saldo Actual en 
+0002#STR0002#ALL#cualquier tipo moneda que el usuario seleccione, de acuerdo al tipo de cambio del día o 
+0003#STR0003#ALL#del movimiento, esto lo define el usuario al responder la pregunta '¿ Fecha tipo de cambio?'.
+0004#STR0004#ALL#Balance analítico Modelo 1 en dos monedas 
+0005#STR0005#ALL# A  
+0006#STR0006#ALL# COMPARATIVO EN 
+0007#STR0007#ALL#Balance Sintético Modelo 1 en dos monedas 
+0008#STR0008#ALL#T O T A L  D E L  P E R I O D O: 
+0009#STR0009#ALL#Creando archivo temporal...
+0010#STR0010#ALL#Balance Modelo 1 en dos monedas 
+0011#STR0011#ALL#T O T A L  D E L  G R U P O (
+0012#STR0012#ALL#Por favor rellenar los parametros Grupos Ingresos/Gastos y Fecha Sld Ant. Ingresos/Gastos o
+0013#STR0013#ALL#dejar el parametro Ignora Sl Ant.Ing/Gas = No 
+0014#STR0014#ALL#Plan de cuentas
+0015#STR0015#ALL#Cta.
+0016#STR0016#ALL#Descripc.
+0017#STR0017#ALL#Saldo anterior 
+0018#STR0018#ALL#If( cPaisLoc == MEX, Cargo , Debito  )
+0019#STR0019#ALL#If( cPaisLoc == MEX, Abono , Credito  )
+0020#STR0020#ALL#Saldo act. 
+0021#STR0021#ALL#Considera Saldo Ant.Ingres./Gasto
+0022#STR0022#ALL#Moneda 
+0023#STR0023#ALL#El campo '¿Comparar con Moneda?' es requerido
+0024#STR0024#ALL#Se va a comparar con el mismo tipo de moneda, seleccionar otra.
+0025#STR0025#ALL#. Tipo de cambio al día 
+0026#STR0026#ALL# de 
+0027#STR0027#ALL#No se encontro tipo de cambio
+0028#STR0028#RUS#Débito
+0029#STR0029#RUS#Crédito
+0030#STR0030#ALL#Débito
+0031#STR0031#ALL#Crédito

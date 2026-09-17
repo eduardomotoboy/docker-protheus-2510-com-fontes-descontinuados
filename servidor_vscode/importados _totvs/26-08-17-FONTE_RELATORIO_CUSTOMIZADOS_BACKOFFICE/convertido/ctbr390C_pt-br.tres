@@ -1,0 +1,20 @@
+0001#STR0001#ALL#Este programa ira emitir o cadastro de Orcamentos.
+0002#STR0002#ALL#.
+0003#STR0003#ALL#Listagem do Cadastro de Orcamentos
+0004#STR0004#ALL#|Orcamento|Descricao                                         |Calendario|Moeda|Revisao|Linha|   Conta Inicial    |     Conta Final    |                    |                    |Per|Data Inicio|Data Final|   Valor Orcado|
+0005#STR0005#ALL#CANCELADO PELO OPERADOR
+0006#STR0006#ALL#Zebrado
+0007#STR0007#ALL#Administracao
+0008#STR0008#ALL# Inicial
+0009#STR0009#ALL# Final
+0010#STR0010#ALL#Conta Contabil
+0011#STR0011#ALL#Orcado 
+0012#STR0012#ALL#Total Orcamento - 
+0013#STR0013#ALL# - Revisao - 
+0014#STR0014#ALL# a 
+0015#STR0015#ALL#Orcamento
+0016#STR0016#ALL#Detalhes
+0017#STR0017#ALL#Total do orcamento
+0018#STR0018#ALL#Valor Orcado
+0019#STR0019#ALL#Orcado
+0020#STR0020#ALL#Linha

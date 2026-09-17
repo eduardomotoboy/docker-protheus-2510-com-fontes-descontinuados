@@ -1,0 +1,20 @@
+0001#STR0001#ALL#Generating report. Wait...
+0002#STR0002#ALL#Income Statement
+0003#STR0003#ALL#one hundred
+0004#STR0004#ALL#thousand
+0005#STR0005#ALL#million
+0006#STR0006#ALL#Creating Temporary File...
+0007#STR0007#ALL#Month 
+0008#STR0008#ALL#% Tot
+0009#STR0009#ALL#Accumulated
+0010#STR0010#ALL#INCOME STATEMENT
+0011#STR0011#ALL# from 
+0012#STR0012#ALL# to 
+0013#STR0013#ALL#Period 
+0014#STR0014#ALL#%
+0015#STR0015#ALL#Responsibles...
+0016#STR0016#ALL#This program will print Revenue Statement 
+0017#STR0017#ALL#according to the informed parameters by the user. 
+0018#STR0018#ALL#Detail
+0019#STR0019#ALL#Acct
+0020#STR0020#ALL#Accounting statements must have a managerial plan associated to the book. Please, chedk the book configuration selected! 

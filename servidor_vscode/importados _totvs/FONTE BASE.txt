@@ -1,0 +1,2 @@
+cRecurso:= "FRAMEWORK.SV.COM.COMPRASOTR.DEFAULT.REP"
+	oSmartView := totvs.framework.smartview.callSmartView():new(cRecurso,"report")

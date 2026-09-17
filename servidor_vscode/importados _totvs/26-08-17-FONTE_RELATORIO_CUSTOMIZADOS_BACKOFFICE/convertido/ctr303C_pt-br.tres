@@ -1,0 +1,34 @@
+0001#STR0001#ALL#Este programa imprimirá o balanço de conta / 
+0002#STR0002#ALL#de acordo com os parâmetros solicitados pelo usuário. 
+0003#STR0003#ALL#Balanço de verificação conta / 
+0004#STR0004#ALL#DE BALANCETE ANALÍT. 
+0005#STR0005#ALL#DE BALANCETE SINT.      
+0006#STR0006#ALL#DE BALANCETE  
+0007#STR0007#ALL# DE 
+0008#STR0008#ALL# ATÉ
+0009#STR0009#ALL# COMPARATIVO EM 
+0010#STR0010#ALL#Criando arquivo temporário...
+0011#STR0011#ALL#DIV.
+0012#STR0012#ALL#Se os saldos compostos não forem atualizados em
+0013#STR0013#ALL#a emissão dos relatórios (MV_SLDCOMP = 'N'),
+0014#STR0014#ALL#execute a rotina de atualização de saldos  
+0015#STR0015#ALL# ATENÇÃO 
+0016#STR0016#ALL#Código
+0017#STR0017#ALL#Cód. reduzido
+0018#STR0018#ALL#Descriç.
+0019#STR0019#ALL#Saldo anterior 
+0020#STR0020#ALL#If( cPaisLoc == MEX, Cargo , Débito  )
+0021#STR0021#ALL#If( cPaisLoc == MEX, Abono , Crédito  )
+0022#STR0022#ALL#Saldo at. 
+0023#STR0023#ALL#Tipo
+0024#STR0024#ALL#Nível 1
+0025#STR0025#ALL#. Tipo de câmbio do dia 
+0026#STR0026#ALL# de 
+0027#STR0027#ALL#O campo Comparar com moeda? é necessário 
+0028#STR0028#ALL#Moeda
+0029#STR0029#ALL#Será comparado com o mesmo tipo de moeda
+0030#STR0030#ALL#Tipo de câmbio não encontrado
+0031#STR0031#ALL#Debito 
+0031#STR0031#MEX#Debito 
+0032#STR0032#ALL#Credito 
+0032#STR0032#MEX#Credito 

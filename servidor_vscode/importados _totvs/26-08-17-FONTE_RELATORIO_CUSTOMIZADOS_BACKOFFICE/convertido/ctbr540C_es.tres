@@ -1,0 +1,20 @@
+0001#STR0001#ALL#Generando informe, espere...
+0002#STR0002#ALL#Estado de Resultado
+0003#STR0003#ALL#cien
+0004#STR0004#ALL#mil
+0005#STR0005#ALL#millon
+0006#STR0006#ALL#Creando archivo temporal...
+0007#STR0007#ALL#Mes 
+0008#STR0008#ALL#% Tot
+0009#STR0009#ALL#Acumulado
+0010#STR0010#ALL#Estado de Resultado
+0011#STR0011#ALL# al 
+0012#STR0012#ALL# del 
+0013#STR0013#ALL#Periodo
+0014#STR0014#ALL# % 
+0015#STR0015#ALL#Responsables...
+0016#STR0016#ALL#Este programa imprimira la Demostracion de Ganancias 
+0017#STR0017#ALL#segun los parametros informados por el usuario.      
+0018#STR0018#ALL#Detalle
+0019#STR0019#ALL#Cuenta
+0020#STR0020#ALL#Los estados contables deben tener obligatoriamente un plan de gestión asociado al libro. ¡Verifique la configuración de libros seleccionada !

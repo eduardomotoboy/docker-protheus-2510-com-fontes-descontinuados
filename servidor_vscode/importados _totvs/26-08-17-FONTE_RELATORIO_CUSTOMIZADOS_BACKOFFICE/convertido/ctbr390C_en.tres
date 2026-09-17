@@ -1,0 +1,20 @@
+0001#STR0001#ALL#This program will issue the Budgets File.
+0002#STR0002#ALL#.
+0003#STR0003#ALL#Budgets File List
+0004#STR0004#ALL#|Budget   |Descript.                                         |Calendar  |Curr.|Revisi.|Linea|   Initial Account  |     Final Account  |                    |                    |Per|Initial Dt.|Fina Date | Budgeted Value|
+0005#STR0005#ALL#CANCELLED BY THE OPERATOR  
+0006#STR0006#ALL#Z. Form
+0007#STR0007#ALL#Management
+0008#STR0008#ALL# Initial
+0009#STR0009#ALL#End
+0010#STR0010#ALL#Ledger Account
+0011#STR0011#ALL#Budgeted 
+0012#STR0012#ALL#Budget Total    - 
+0013#STR0013#ALL# - Revision- 
+0014#STR0014#ALL# to 
+0015#STR0015#ALL#Budget   
+0016#STR0016#ALL#Details 
+0017#STR0017#ALL#Total budget      
+0018#STR0018#ALL#Amnt. budget
+0019#STR0019#ALL#Budget
+0020#STR0020#ALL#Row
