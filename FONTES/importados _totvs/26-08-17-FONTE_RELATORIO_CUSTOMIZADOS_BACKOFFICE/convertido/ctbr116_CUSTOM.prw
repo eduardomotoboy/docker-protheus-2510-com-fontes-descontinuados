@@ -31,7 +31,7 @@ STATIC _oCTBR116
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTBR116C()
+User Function CTBR116C()
 
 	Local WnRel
 	Local aCtbMoeda:={}
@@ -566,7 +566,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_Ctb116CC(oMeter,oText,oDlg,lEnd,cArqTmp,cMoeda,dDataIni,dDataFim,aSetOfBook,cSaldo,cCodPlGer)
+User Function Ctb116CC(oMeter,oText,oDlg,lEnd,cArqTmp,cMoeda,dDataIni,dDataFim,aSetOfBook,cSaldo,cCodPlGer)
 
 Local aSaveArea	:= GetArea()
 Local aCampos	:= {}
@@ -629,7 +629,7 @@ Return(cArqTmp)
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */    
-Function U_Ctbr115C(oMeter,oText,oDlg,lEnd,cMoeda,dDataIni,dDataFim,aSetOfBook,cSaldo,cCodPlGer)        
+User Function Ctbr115C(oMeter,oText,oDlg,lEnd,cMoeda,dDataIni,dDataFim,aSetOfBook,cSaldo,cCodPlGer)        
 
 
 Local aSaveArea	:= GetArea()
@@ -764,7 +764,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_Ctb116GC(cContaG,cTipo,cMoeda)
+User Function Ctb116GC(cContaG,cTipo,cMoeda)
 
 Local aSaveArea	:= GetArea()
 Local lCriaReg	:= .F.	//Variavel que define se devera ser criado novo registro no arquivo temporario.

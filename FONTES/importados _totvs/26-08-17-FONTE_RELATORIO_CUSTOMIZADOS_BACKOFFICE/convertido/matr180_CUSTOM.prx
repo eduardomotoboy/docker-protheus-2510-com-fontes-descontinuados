@@ -25,7 +25,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_MATR180C()
+User Function MATR180C()
 
 Local oReport
 
@@ -80,7 +80,7 @@ Local cAliasNFS := GetNextAlias()
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR180",STR0003,"MTR180", {|oReport| ReportPrint(oReport,cAliasNFS)},STR0001+" "+STR0002) ////"Relacao das Devolucoes de Compras"##"Este relat¢rio ir  imprimir a rela‡„o de itens"##//"referentes as devolu‡¢es de compras."
+oReport:= TReport():New("MATR180C",STR0003,"MTR180", {|oReport| ReportPrint(oReport,cAliasNFS)},STR0001+" "+STR0002) ////"Relacao das Devolucoes de Compras"##"Este relat¢rio ir  imprimir a rela‡„o de itens"##//"referentes as devolu‡¢es de compras."
 oReport:SetLandscape()    
 
 Pergunte("MTR180",.F.)

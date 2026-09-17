@@ -55,7 +55,7 @@ Relação de Baixas.
 @since      02/09/2006
 @return     Nil
 /*/
-Function U_FinR190C()
+User Function FinR190C()
 
     Local oReport           As Object
 
@@ -97,7 +97,7 @@ Static Function ReportDef() As Object
     EndIf
 
     //Criacao do componente de impressao
-    oReport := TReport():New("FINR190", STR0009, "FIN190", {|oReport| ReportPrint(oReport)}, STR0006 + " " + STR0007 + " " + STR0008) //"Relacao de Amarracao Grupo x Fornecedor"##"Este programa tem como objetivo , relacionar os Grupos e seus"##"respectivos Fornecedores."
+    oReport := TReport():New("FINR190C", STR0009, "FIN190", {|oReport| ReportPrint(oReport)}, STR0006 + " " + STR0007 + " " + STR0008) //"Relacao de Amarracao Grupo x Fornecedor"##"Este programa tem como objetivo , relacionar os Grupos e seus"##"respectivos Fornecedores."
 
     Pergunte("FIN190", .F.)
 
@@ -565,7 +565,7 @@ Testa as condicoes do registro do SE5 para permitir a impressão.
 @param      cFilSE5, character, Filtro em CodBase
 @return     logical, .T. se permite imprimir linha .F. caso não
 /*/
-Function U_Fr190TsC(cFilSE5 As Character) As Logical
+User Function Fr190TsC(cFilSE5 As Character) As Logical
 
     Local lManual   As Logical
     Local lRet      As Logical
@@ -2384,7 +2384,7 @@ Verifica se o registro selecionado pertente a um titulo cuja baixa foi cancelada
 @param      _SE5, character, alias a ser utilizado na verificação
 @return     logical, .T. caso tenha gerado
 /*/
-Function U_FR190MoC(nIndexSE5 As Numeric, _SE5 As Character) As Logical
+User Function FR190MoC(nIndexSE5 As Numeric, _SE5 As Character) As Logical
 
     Local aAreaSE5  As Array
     Local lRet      As Logical
@@ -2413,7 +2413,7 @@ Efetua busca do motivo de baixa para verificar se o mesmo movimenta banco. Utili
 @param      cMotBx, character, motivo de baixa a ser buscado
 @return     logical, .T. caso tenha encontrado e movimente banco, .F. caso não encontre ou caso não movimente banco
 /*/
-Function U_F190MovC(cMotBx As Character) As Logical
+User Function F190MovC(cMotBx As Character) As Logical
 
     Local lRet  As Logical
 
@@ -2484,7 +2484,7 @@ Retorna os campos que estarão presentes na tabela temporária.
 @since      15/09/2020
 @return     array, array dos campos que estarão presentes na tabela temporária.
 /*/
-Function U_F190FieC() As Array
+User Function F190FieC() As Array
 
     Local aFields   As Array
     Local aStruct   As Array

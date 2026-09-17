@@ -30,7 +30,7 @@ Static lIsRedStor := FindFunction("IsRedStor") .and. IsRedStor() //Used to check
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Ctbr075C()
+User Function Ctbr075C()
 	PRIVATE titulo		:= ""
 	Private nomeprog	:= "CTBR075"                            
 	Private aFiltrosR4:=	{Nil,Nil,Nil,Nil} //CT1,CTT,CTD,CTH
@@ -55,7 +55,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTBR071C()         
+User Function CTBR071C()         
 Local cArqTmp	:= "CT7"
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³Interface de impressao                                                  ³
@@ -392,7 +392,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Ctbr072C(oMeter,oText,oDlg,lEnd,cMoeda,dDataIni,dDataFim,cSaldo,;
+User Function Ctbr072C(oMeter,oText,oDlg,lEnd,cMoeda,dDataIni,dDataFim,cSaldo,;
 			lAnalitico,cLoteIni,cLoteFim,cSbLoteIni,cSbLoteFim,cDocIni,cDocFim,cFiltroCT1)
 
 oMeter:nTotal := CT2->(RecCount())

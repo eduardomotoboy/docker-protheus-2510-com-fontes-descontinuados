@@ -29,7 +29,7 @@
 //� mv_par06            // ate a loja                            �
 //읕컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴켸
 
-Function U_FINR270C()
+User Function FINR270C()
 
 Local oReport
 
@@ -64,7 +64,7 @@ Local oSection1
 Local cPerg      := "FIN270"  // Nome do grupo de perguntas
 Local cAliasQry1 := GetNextAlias()
 
-oReport := TReport():New("FINR270",STR0006,"FIN270",;
+oReport := TReport():New("FINR270C",STR0006,"FIN270",;
 {|oReport| ReportPrint(oReport,@cAliasQry1)},STR0001+STR0002+STR0003)
 
 Pergunte ( cPerg, .F. )

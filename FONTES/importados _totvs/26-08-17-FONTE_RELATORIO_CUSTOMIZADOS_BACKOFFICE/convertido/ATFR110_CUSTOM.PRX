@@ -462,7 +462,7 @@ Return Nil
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_AFR110FC()
+User Function AFR110FC()
 Local cFiltro
 Local lAtfCusPrv := AFXAtCsPrv()
 
@@ -539,7 +539,7 @@ Return nVOrig
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
 
-Function U_Atf110TC( cAliasTMP, cChave, cFiltro, cUserFilter, cTmpFil )
+User Function Atf110TC( cAliasTMP, cChave, cFiltro, cUserFilter, cTmpFil )
 Local aArea		:= GetArea()
 Local cCampos	:= ""
 Local cQuery	:= ""

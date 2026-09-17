@@ -25,7 +25,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_PCOR055C( lCallPrg, aPerg )
+User Function PCOR055C( lCallPrg, aPerg )
 
 Local aArea		  := GetArea()
 Local aAreaAKO    := {}
@@ -213,7 +213,7 @@ Return oReport
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_PCOR051C( oReport, lCallPrg )
+User Function PCOR051C( oReport, lCallPrg )
          
 Local aPeriodo 	:= {}
 Local aNovPer	:= {}

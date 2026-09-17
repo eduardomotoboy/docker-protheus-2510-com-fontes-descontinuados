@@ -15,7 +15,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_MATR290C()
+User Function MATR290C()
 
 Local oReport
 
@@ -77,7 +77,7 @@ If !lVeic
 	Aadd(aOrdem,STR0020)  //" Por Consumo      "
 EndIf
 
-oReport := TReport():New("MATR290",STR0001,cPerg, {|oReport| ReportPrint(oReport,lVeic,@cAliasTOP,@cAliasSB3,@nSaldoPro)},STR0002+" "+STR0003+" "+STR0004) //"Relacao para Analise dos Estoques"##"Este relatorio demonstra a situacao de cada item em relacao ao"###"seu saldo , seu empenho , suas entradas previstas e sua classe"###"ABC."
+oReport := TReport():New("MATR290C",STR0001,cPerg, {|oReport| ReportPrint(oReport,lVeic,@cAliasTOP,@cAliasSB3,@nSaldoPro)},STR0002+" "+STR0003+" "+STR0004) //"Relacao para Analise dos Estoques"##"Este relatorio demonstra a situacao de cada item em relacao ao"###"seu saldo , seu empenho , suas entradas previstas e sua classe"###"ABC."
 oReport:SetLandScape()
 oReport:SetTotalInLine(.F.)
 oReport:SetTotalText(STR0016) //"T o t a l   G e r a l :"

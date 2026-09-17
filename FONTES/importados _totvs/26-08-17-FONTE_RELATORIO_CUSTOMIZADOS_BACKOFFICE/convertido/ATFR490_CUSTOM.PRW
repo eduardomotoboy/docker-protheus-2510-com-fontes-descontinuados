@@ -19,7 +19,7 @@ Static aStatus	 		:= {}	//Descricao de Status possiveis para um controle de prov
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_ATFR490C()
+User Function ATFR490C()
 
 Local oReport
 Local lTReport	:= TRepInUse()
@@ -295,7 +295,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Afr490PC(cPeriod)
+User Function Afr490PC(cPeriod)
 
 Local cMesAno := ""
 
@@ -318,7 +318,7 @@ Return cMesAno
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Afr490DC( cOcor )
+User Function Afr490DC( cOcor )
 
 Local cDescOcor := ""
 
@@ -351,7 +351,7 @@ Return cDescOcor
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_AFR490SC(cCodStatus)
+User Function AFR490SC(cCodStatus)
 
 Local cStatus := ""
 

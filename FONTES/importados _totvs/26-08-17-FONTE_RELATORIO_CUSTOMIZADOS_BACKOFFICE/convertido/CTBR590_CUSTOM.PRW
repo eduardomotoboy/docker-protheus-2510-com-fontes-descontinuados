@@ -16,7 +16,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_CTBR590C()
+User Function CTBR590C()
 
 Local nGetQtVis		:= 0
 Local cGetMoeda		:= CriaVar("CTO_MOEDA",.F.)
@@ -1115,7 +1115,7 @@ Return aPeriodos
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_CTR590DC()
+User Function CTR590DC()
 Local lRet		:= .T.
 
 GDFIELDPUT("CDSCLIV",Alltrim(GETADVFVAL("CTN", "CTN_DESC", XFILIAL("CTN")+GDFIELDGET("CLIVRO",,.T.), 1, "" )))

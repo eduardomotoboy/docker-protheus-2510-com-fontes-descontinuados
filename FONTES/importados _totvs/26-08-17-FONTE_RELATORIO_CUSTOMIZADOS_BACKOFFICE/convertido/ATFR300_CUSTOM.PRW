@@ -17,7 +17,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_ATFR300C (cApolIni,cApolFim,cCodSegIni,cCodSegFim)
+User Function ATFR300C(cApolIni,cApolFim,cCodSegIni,cCodSegFim)
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores

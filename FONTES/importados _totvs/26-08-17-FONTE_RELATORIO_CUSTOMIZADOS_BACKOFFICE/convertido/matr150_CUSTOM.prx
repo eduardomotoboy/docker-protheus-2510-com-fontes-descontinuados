@@ -19,7 +19,7 @@ Static lLGPD	 	:= FindFunction("SuprLGPD") .And. SuprLGPD()
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Matr150C(cNumCota)
+User Function Matr150C(cNumCota)
 
 Local oReport
 

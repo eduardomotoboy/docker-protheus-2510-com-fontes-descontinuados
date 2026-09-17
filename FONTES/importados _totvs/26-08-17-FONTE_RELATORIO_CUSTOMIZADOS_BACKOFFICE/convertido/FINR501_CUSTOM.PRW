@@ -15,7 +15,7 @@ Relatório de Liquidações Financeiras (Contas a Receber)
 @since 04/02/2010
 /*/
 //-------------------------------------------------------------------
-Function U_FinR501C()
+User Function FinR501C()
 Local oReport
 Private cPerg := "FIN501"
 
@@ -46,7 +46,7 @@ Local nTamCHQ		:= 0
 Local oSecFil		:= Nil
 Local nTamE1NUM		:= 0
 
-oReport := TReport():New("FINR501",STR0001,"FIN501",;//"Liquidacoes Financeiras"
+oReport := TReport():New("FINR501C",STR0001,"FIN501",;//"Liquidacoes Financeiras"
 {|oReport| ReportPrint(oReport)},STR0002+STR0003)//"Este relatorio irá imprimir o extrato de Liquidacoes "##"Financeiras."
 
 Pergunte("FIN501", .F.)

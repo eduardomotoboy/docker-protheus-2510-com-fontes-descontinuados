@@ -22,7 +22,7 @@ Static lAvpAtf := If(FindFunction("AFAvpAtf"),AFAvpAtf(),.f.)
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_ATFR450C()
+User Function ATFR450C()
 Local oReport
 Local lTReport		:= FindFunction("TRepInUse") .And. TRepInUse()
 Local lDefTop		:= IIF( FindFunction("IfDefTopCTB"), IfDefTopCTB(), .F.) // verificar se pode executar query (TOPCONN)
@@ -98,7 +98,7 @@ Local aOrd		:= {}		//em branco porque não se faz necessário ordenar nesse relató
 
 Pergunte(cPerg,.F.)
 
-oReport := TReport():New("ATFR450",cTitulo,cPerg,{|oReport| ATFR450Imp( oReport,aOrd,cTitulo)},STR0004) //"Este relatório irá imprimir informações do cálculo do AVP conforme parâmetros informados"
+oReport := TReport():New("ATFR450C",cTitulo,cPerg,{|oReport| ATFR450Imp( oReport,aOrd,cTitulo)},STR0004) //"Este relatório irá imprimir informações do cálculo do AVP conforme parâmetros informados"
 
 oSecSN1 := TRSection():New( oReport,STR0012,{"SN1"},,,,"")//"Ficha do Ativo"
 TRCell():New( oSecSN1,"N1_FILIAL" ,"SN1",/*X3Titulo*/,/*Picture*/,/*Tamanho*/,/*lPixel*/)

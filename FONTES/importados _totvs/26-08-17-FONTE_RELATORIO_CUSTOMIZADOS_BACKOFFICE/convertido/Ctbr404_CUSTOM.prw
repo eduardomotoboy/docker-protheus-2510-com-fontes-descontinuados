@@ -17,7 +17,7 @@ Razão do Plano Referencial
 @obs	 
 */
 //--------------------------------a-----------------------------------
-Function U_CTBR404C()
+User Function CTBR404C()
 
 Local oReport 
 Local lTReport	:= TRepInUse()

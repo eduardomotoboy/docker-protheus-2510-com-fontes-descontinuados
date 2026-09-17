@@ -50,7 +50,7 @@ Static __cSGBD		As Character
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_Finr140C()
+User Function Finr140C()
 
 Local oReport
 
@@ -105,7 +105,7 @@ Local oSecFil, oSection2
 Local cPictVal
 Local nTamTit, nTamVal
 
-oReport := TReport():New("FINR140",STR0004,cPerg,{|oReport| ReportPrint(oReport)},STR0001+STR0002+STR0003)
+oReport := TReport():New("FINR140C",STR0004,cPerg,{|oReport| ReportPrint(oReport)},STR0001+STR0002+STR0003)
 oReport:SetLandScape(.T.)
 oReport:DisableOrientation()
 /*

@@ -23,7 +23,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Ctbr600C()
+User Function Ctbr600C()
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
 U_CTBR601C()
@@ -49,7 +49,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTBR601C()
+User Function CTBR601C()
 
 Local aArea	:= GetArea()
 Private NomeProg := "CTBR600"		// Utilizada na funcao CtCGCCabTR().
@@ -107,7 +107,7 @@ Local oReport
 //"dos lancamentos gerados pela ROTINA DE APURACAO DE LUCROS/PERDAS "
 //"COM CONTA PONTE."
 //"Lancamentos Gerados pela Apuracao de Lucros/Perdas com Conta Ponte"
-oReport := TReport():New( "CTBR600", STR0004, "CTR600", { |oReport| ReportPrint(oReport) }, STR0001+STR0002+STR0003 )
+oReport := TReport():New( "CTBR600C", STR0004, "CTR600", { |oReport| ReportPrint(oReport) }, STR0001+STR0002+STR0003 )
 
 oLote := TRSection():New( oReport, STR0017,{"CTZ"},, .F., .F. ) //"Lote"
 

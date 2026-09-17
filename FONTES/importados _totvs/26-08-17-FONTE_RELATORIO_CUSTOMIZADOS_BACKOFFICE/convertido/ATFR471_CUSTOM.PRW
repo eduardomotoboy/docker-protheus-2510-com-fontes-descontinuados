@@ -13,7 +13,7 @@ Implementação feita de acordo com a norma contábil CPC 20.
 /*/
 //-------------------------------------------------------------------
 
-Function U_ATFR471C()
+User Function ATFR471C()
 
 Local oReport		:= Nil
 Local lTReport	:= TRepInUse()

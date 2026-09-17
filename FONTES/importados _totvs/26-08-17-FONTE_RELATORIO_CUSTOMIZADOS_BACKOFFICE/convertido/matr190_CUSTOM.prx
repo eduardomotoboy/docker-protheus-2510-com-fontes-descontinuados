@@ -15,7 +15,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Matr190C()
+User Function Matr190C()
 
 Local oReport
 
@@ -60,7 +60,7 @@ Local oCell
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MATR190",STR0003,"MTR190", {|oReport| ReportPrint(oReport)},STR0001+" "+STR0002) //"Relacao de Amarracao Produtos x Fornecedor"##"Este programa tem como objetivo , relacionar os produtos e seus"##"respectivos Fornecedores."
+oReport := TReport():New("MATR190C",STR0003,"MTR190", {|oReport| ReportPrint(oReport)},STR0001+" "+STR0002) //"Relacao de Amarracao Produtos x Fornecedor"##"Este programa tem como objetivo , relacionar os produtos e seus"##"respectivos Fornecedores."
 Pergunte("MTR190",.F.)
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³Criacao da secao utilizada pelo relatorio                               ³

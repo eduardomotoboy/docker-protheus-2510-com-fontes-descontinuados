@@ -19,7 +19,7 @@ Relacao da Movimentacao Bancaria
 /*/
 //-------------------------------------------------------------------
 
-Function U_FinR620C()
+User Function FinR620C()
 
 	Local oReport
 	Local aAreaR4	:= GetArea()

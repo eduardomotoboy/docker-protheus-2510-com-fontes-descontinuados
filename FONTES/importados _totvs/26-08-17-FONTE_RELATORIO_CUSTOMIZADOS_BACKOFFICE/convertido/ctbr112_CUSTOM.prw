@@ -25,7 +25,7 @@ Static lIsRedStor := FindFunction("IsRedStor") .and. IsRedStor() //Used to check
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTBR112C()
+User Function CTBR112C()
 
 	Private NVALTD		:= 0
 	Private NVALTC		:= 0
@@ -57,7 +57,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTBR113C()                                                       
+User Function CTBR113C()                                                       
 PRIVATE oReport
 
 lImpSX1 := ( GetMv("MV_IMPSX1") == "S" )
@@ -679,7 +679,7 @@ Return cRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Ctbr114C(oMeter,oText,oDlg,lEnd,cMoeda,dDataIni,dDataFim,cSaldo)
+User Function Ctbr114C(oMeter,oText,oDlg,lEnd,cMoeda,dDataIni,dDataFim,cSaldo)
 
 oMeter:nTotal := CT2->(RecCount())
 

@@ -76,7 +76,7 @@ Local cPicQuant:= PesqPictQt("D2_QUANT",16)
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR310",STR0001,"MTR310", {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003+" "+STR0004) //"Relacao dos Produtos Vendidos"##"Este relatorio apresenta o valor total das vendas de cada produto,"##"calculando sua participacao dentro do total das vendas.Mostra tam-"##"bem o custo de cada venda e o custo de reposicao do produto."
+oReport:= TReport():New("MATR310C",STR0001,"MTR310", {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003+" "+STR0004) //"Relacao dos Produtos Vendidos"##"Este relatorio apresenta o valor total das vendas de cada produto,"##"calculando sua participacao dentro do total das vendas.Mostra tam-"##"bem o custo de cada venda e o custo de reposicao do produto."
 oReport:SetLandscape()
 oReport:SetTotalInLine(.F.)
 

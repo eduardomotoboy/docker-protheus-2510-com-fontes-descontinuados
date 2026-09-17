@@ -9,7 +9,7 @@ Recibo de adiantamentos do Caixinha.
 @since 25/04/2003
 /*/
 //-------------------------------------------------------------------
-Function U_FINR565C()
+User Function FINR565C()
 	Local oReport As Object
 	Private lMenu := .T.
 
@@ -229,7 +229,7 @@ Valor extenso para o recibo de caixinha.
 @since 24/04/2003
 /*/
 //-------------------------------------------------------------------
-Function U_Fr565ExC(cExtenso As Character, cExt1 As Character, cExt2 As Character)
+User Function Fr565ExC(cExtenso As Character, cExt1 As Character, cExt2 As Character)
 	Local nLoop As Numeric
 	
 	cExt1 := SubStr(cExtenso,1,35) // 1.a linha do extenso

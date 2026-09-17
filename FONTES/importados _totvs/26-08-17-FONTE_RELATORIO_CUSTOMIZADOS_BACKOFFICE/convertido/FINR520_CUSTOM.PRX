@@ -19,7 +19,7 @@ Static __oRecEST  := NIL
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FinR520C()
+User Function FinR520C()
 
 Local oReport
 Private cTitulo := STR0003
@@ -63,7 +63,7 @@ Local oSecFil //Gestão Corporativa
 
 pergunte("AFI520",.F.)
 
-oReport := TReport():New("FINR520",cTitulo,"AFI520",;
+oReport := TReport():New("FINR520C",cTitulo,"AFI520",;
 {|oReport| ReportPrint(oReport)},STR0001+STR0002)
 
 oReport:SetLandScape(.T.)

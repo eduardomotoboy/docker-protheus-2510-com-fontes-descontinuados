@@ -22,7 +22,7 @@ Static lIsRedStor := FindFunction("IsRedStor") .and. IsRedStor() //Used to check
 ±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß*/
-Function U_CTBR390C()
+User Function CTBR390C()
 
 Local aArea := GetArea()
 Local oReport
@@ -85,7 +85,7 @@ Local lImpDesc      := IIF(mv_par17 == 1 .Or. mv_par18 == 1 .Or. mv_par19 == 1 .
 Local cAliasCV1 := GetNextAlias()
 Local lCharSinal	:= .F.
 
-oReport:= TReport():New("CTBR390",STR0003,cPerg, {|oReport| ReportPrint(oReport,cAliasCV1)},STR0001+" "+STR0002)//"Listagem do Cadastro de Orcamentos"##"Este programa ira emitir o cadastro de Orcamentos."##""
+oReport:= TReport():New("CTBR390C",STR0003,cPerg, {|oReport| ReportPrint(oReport,cAliasCV1)},STR0001+" "+STR0002)//"Listagem do Cadastro de Orcamentos"##"Este programa ira emitir o cadastro de Orcamentos."##""
 oReport:SetLandScape(.F.)    
 oReport:SetTotalInLine(.F.)
 oReport:EndPage(.T.)

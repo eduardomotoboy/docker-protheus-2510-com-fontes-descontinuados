@@ -20,7 +20,7 @@ Static lIsRedStor := FindFunction("IsRedStor") .and. IsRedStor() //Used to check
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CtbR610C()          
+User Function CtbR610C()          
 
 Private dFinalA
 Private dFinal
@@ -75,7 +75,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTBR611C()                           
+User Function CTBR611C()                           
 
 Private lImpSeg2	:= .F.
 Private lImpSeg3	:= .F.

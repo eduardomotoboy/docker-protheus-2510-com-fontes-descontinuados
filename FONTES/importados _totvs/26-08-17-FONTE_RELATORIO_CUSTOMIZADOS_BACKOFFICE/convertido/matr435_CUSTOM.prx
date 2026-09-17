@@ -15,7 +15,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_MATR435C()
+User Function MATR435C()
 
 Local oReport
 
@@ -86,7 +86,7 @@ Pergunte("MR435A",.F.)
 //³ STR0002	//"do estoque por Lote/Sub-Lote, diariamente. Observa‡„o: o 1o"³                                                                        
 //³ STR0003	//"movimento de cada Lote/Sub-Lote se refere a cria‡„o do mesmo³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR435",cTitle,"MR435A", {|oReport| ReportPrint(oReport,cAliasSB8)},STR0001+" "+STR0002+" "+STR0003)
+oReport:= TReport():New("MATR435C",cTitle,"MR435A", {|oReport| ReportPrint(oReport,cAliasSB8)},STR0001+" "+STR0002+" "+STR0003)
 oReport:SetTotalInLine(.F.)
 oReport:SetPortrait() 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿

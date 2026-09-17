@@ -13,7 +13,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MATR275C()
+User Function MATR275C()
 
 Local oReport
 
@@ -65,7 +65,7 @@ Local lQuery := .T.
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MATR275",STR0003,cPerg, {|oReport| ReportPrint(oReport,cPerg)},STR0001+" "+STR0002) //"Kardex por Localizacao (por produto)"##//"Este programa emitir  um Kardex com todas as movimenta‡”es"##//"do estoque por Localizacao e Numero de Serie, diariamente."
+oReport := TReport():New("MATR275C",STR0003,cPerg, {|oReport| ReportPrint(oReport,cPerg)},STR0001+" "+STR0002) //"Kardex por Localizacao (por produto)"##//"Este programa emitir  um Kardex com todas as movimenta‡”es"##//"do estoque por Localizacao e Numero de Serie, diariamente."
 oReport:SetLandscape()    
 
 Pergunte(cPerg,.F.)

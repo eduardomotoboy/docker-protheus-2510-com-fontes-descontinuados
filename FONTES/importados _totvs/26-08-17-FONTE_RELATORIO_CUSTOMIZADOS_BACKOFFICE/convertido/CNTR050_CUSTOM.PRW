@@ -12,7 +12,7 @@
 ±±ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
 ±±³ Uso      ³ Generico                                                   ³±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß*/
-Function U_CNTR050C()
+User Function CNTR050C()
 	Local aArea 	:= GetArea()
 	Local oReport
 
@@ -68,7 +68,7 @@ Pergunte("CNT050",.F.)
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("CNTR050",STR0001,"CNT050", {|oReport| ReportPrint(oReport)},STR0002) //"Este relatorio emite uma relacao de medicoes por notas fiscais geradas"
+oReport:= TReport():New("CNTR050C",STR0001,"CNT050", {|oReport| ReportPrint(oReport)},STR0002) //"Este relatorio emite uma relacao de medicoes por notas fiscais geradas"
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Sessao 1 - Medicao x Notas Fiscais - Compra                  ³

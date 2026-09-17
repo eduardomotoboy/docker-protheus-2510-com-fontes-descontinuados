@@ -21,7 +21,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_MATR220C()
+User Function MATR220C()
 Local cReport	:= "MATR220"
 Local cAlias	:= "SB9"
 Local cTitle	:= OemToAnsi(STR0001)	//Titulo do Relatorio

@@ -23,7 +23,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_MATR105C(lMTR105,aPerg)
+User Function MATR105C(lMTR105,aPerg)
 
 Local oReport
 
@@ -81,9 +81,9 @@ EndIf
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
 If !lMTR105 .And. ValType(aPerg) ==  "A"
-	oReport := TReport():New("MATR105",STR0001,"", {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003)  //"  Este relatorio lista a posicao das SA's de acordo com os para-"##"metros selecionados." 
+	oReport := TReport():New("MATR105C",STR0001,"", {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003)  //"  Este relatorio lista a posicao das SA's de acordo com os para-"##"metros selecionados." 
 Else
-	oReport := TReport():New("MATR105",STR0001,cPerg, {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003)  //"  Este relatorio lista a posicao das SA's de acordo com os para-"##"metros selecionados." 
+	oReport := TReport():New("MATR105C",STR0001,cPerg, {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003)  //"  Este relatorio lista a posicao das SA's de acordo com os para-"##"metros selecionados." 
 EndIf
 If TamSX3("CP_PRODUTO")[1] > 15
 	oReport:SetLandScape()

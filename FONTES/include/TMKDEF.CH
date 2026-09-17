@@ -1,0 +1,10 @@
+#ifndef _TMKDEF_CH
+#define _TMKDEF_CH
+
+// Standard Telemarketing definitions
+#DEFINE TMK_OPER_CONTATO   "1"
+#DEFINE TMK_OPER_COBRANCA  "2"
+#DEFINE TMK_OPER_TELEVENDAS "3"
+#DEFINE TMK_OPER_SUPORTE   "4"
+
+#endif

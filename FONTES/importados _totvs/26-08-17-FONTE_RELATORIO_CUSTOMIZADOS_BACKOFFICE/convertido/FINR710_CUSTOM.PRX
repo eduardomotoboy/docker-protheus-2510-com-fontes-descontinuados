@@ -27,7 +27,7 @@ Static lFWCodFil := .T.
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_FinR710C()
+User Function FinR710C()
 
 Local oReport
 Local aAreaR4	:= GetArea()
@@ -638,7 +638,7 @@ Return ""
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_fa710DtC()
+User Function fa710DtC()
 
 Local lRet := .T.
 lRet := IIf (mv_par03 < dDataBase, .F. , .T. )
@@ -658,7 +658,7 @@ Return lRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FR710ChC(nValid,cAliasQuery)
+User Function FR710ChC(nValid,cAliasQuery)
 Local aArea    := GetArea()
 Local aAreaQry := (cAliasQuery)->(GetArea())
 Local lRetorno := .T.

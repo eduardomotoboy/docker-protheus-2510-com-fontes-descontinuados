@@ -14,7 +14,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_Matr430C()
+User Function Matr430C()
 
 Local oReport
 
@@ -65,7 +65,7 @@ Local cPicTot   := PesqPict("SB1","B1_CUSTD",19)
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MATR430",STR0004,cPerg, {|oReport| ReportPrint(oReport)},STR0001+" "+STR0002+" "+STR0003)  	//"Emite um relatorio com os calculos da planilha selecionada pa-"##"ra cada produto. Os valores calculados sao os mesmos  referen-"###"tes as formulas da planilha."
+oReport := TReport():New("MATR430C",STR0004,cPerg, {|oReport| ReportPrint(oReport)},STR0001+" "+STR0002+" "+STR0003)  	//"Emite um relatorio com os calculos da planilha selecionada pa-"##"ra cada produto. Os valores calculados sao os mesmos  referen-"###"tes as formulas da planilha."
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Verifica as perguntas selecionadas                           ³
@@ -317,7 +317,7 @@ Return NIL
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MR430ImC(cCusto,aArray,nPosForm,oReport,aPar,aParC010,nX,lFirstCb)
+User Function MR430ImC(cCusto,aArray,nPosForm,oReport,aPar,aParC010,nX,lFirstCb)
 
 Local oSection  := oReport:Section(1)
 LOCAL cMoeda1,cMoeda2
@@ -481,7 +481,7 @@ Return NIL
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MR430PlC(lGravado,aPar)
+User Function MR430PlC(lGravado,aPar)
 Local cArq 		:= ""
 Local lRet 		:= .T.
 Local aArea		:= GetArea()

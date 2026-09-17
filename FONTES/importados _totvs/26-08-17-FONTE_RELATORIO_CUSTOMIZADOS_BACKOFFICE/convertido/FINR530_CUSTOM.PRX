@@ -7,7 +7,7 @@ Resumo Bancario - Movimento Financeiro Diario
 @author Pedro Pereira Lima
 @since 03/05/2013
 /*/
-Function U_FINR530C()
+User Function FINR530C()
 	Local oReport As Object
 
 	Private cPerg As Character
@@ -47,7 +47,7 @@ Static Function ReportDef() As Object
 	//	MV_PAR05 - Seleciona Filiais           //
 	////////////////////////////////////////////
 
-	oReport := TReport():New("FINR530", STR0003, cPerg, { |oReport| ReportPrint(oReport) }, STR0001 + STR0002)
+	oReport := TReport():New("FINR530C", STR0003, cPerg, { |oReport| ReportPrint(oReport) }, STR0001 + STR0002)
 
 	oReport:SetLandScape(.T.)
 	oReport:SetTotalInLine(.F.) // Imprime o total em linhas
@@ -576,7 +576,7 @@ Função para adicionar filtro com a data de disponibilidade
 @since 21/12/2016
 @return character, returna filtro com a data de disponibilidade
 /*/
-Function U_fr530ChC() As Character
+User Function fr530ChC() As Character
 	Local cFiltro As Character
 
 	cFiltro := 'DTOS(E5_DTDISPO) == "'+DTOS(mv_par01)+'"'

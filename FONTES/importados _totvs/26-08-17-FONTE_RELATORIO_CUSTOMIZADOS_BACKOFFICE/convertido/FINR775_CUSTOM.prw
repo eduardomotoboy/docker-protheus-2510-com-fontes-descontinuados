@@ -11,7 +11,7 @@ Histórico de Movimentos
 @version 11.80
 /*/
 //-------------------------------------------------------------------
-Function U_FINR775C()
+User Function FINR775C()
 Local oReport		:= Nil
 Local lTReport		:= TRepInUse()
 Local lDefTop		:= IfDefTopCTB() // verificar se pode executar query (TOPCONN)
@@ -156,7 +156,7 @@ Recupera o texto do SX5 do erro de retorno do SERASA
 @version 12.1.6
 /*/
 //-------------------------------------------------------------------
-Function U_F775GetC(cErro)
+User Function F775GetC(cErro)
 
 Local cDesc := ""
 

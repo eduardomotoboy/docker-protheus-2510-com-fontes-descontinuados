@@ -34,7 +34,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_FinR540C()
+User Function FinR540C()
 	Local oReport
 
 	//Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -68,7 +68,7 @@ Static Function ReportDef()
 	Local oSection11
 	Local aTam1, aTam2, aTam3, aTam4, nTam
 
-	oReport := TReport():New("FINR540",STR0005,"FIN540",;
+	oReport := TReport():New("FINR540C",STR0005,"FIN540",;
 	{|oReport| ReportPrint(oReport)},STR0001)
 
 	Pergunte("FIN540", .F.)
@@ -273,7 +273,7 @@ Return
 ±±ÀÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß*/
-Function U_FinR541C()
+User Function FinR541C()
 
 	//ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 	//³ Define Variaveis                                             ³

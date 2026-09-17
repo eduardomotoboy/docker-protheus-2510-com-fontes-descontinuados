@@ -26,7 +26,7 @@ Static lIsRedStor := FindFunction("IsRedStor") .and. IsRedStor() //Used to check
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CtbR360C()
+User Function CtbR360C()
 
 Local oReport
 Private cPerg		:= "CTR360"

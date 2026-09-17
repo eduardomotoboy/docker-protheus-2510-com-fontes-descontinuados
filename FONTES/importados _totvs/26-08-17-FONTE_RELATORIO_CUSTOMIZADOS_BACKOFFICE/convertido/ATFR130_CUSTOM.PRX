@@ -20,7 +20,7 @@ Static __lMetric	:= FwLibVersion() >= "20210517" .And. GetSrvVersion() >= "19.3.
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_ATFR130C()
+User Function ATFR130C()
 
 Local oReport := Nil
 
@@ -959,7 +959,7 @@ Return Nil
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_AtfSAldC(cConta, cFil)
+User Function AtfSAldC(cConta, cFil)
 Local cAliasSn5 := "SN5"
 Local cAliasCt		:= "CT1"
 Local aRet := { 0,0,0,0,0 }
@@ -1106,7 +1106,7 @@ Return aRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_ChkFatoC( lInverte, cCONTA, cAcrDecr, cTipo )
+User Function ChkFatoC( lInverte, cCONTA, cAcrDecr, cTipo )
 Local lNatCont		:= GetNewPar("MV_ATFNAT", "P") == "C"
 Local nChkFator		:= 1
 
@@ -1142,7 +1142,7 @@ Return nChkFator
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_AtfDescC( cCodigo )
+User Function AtfDescC( cCodigo )
 	Local cReturn := ""
 
 	If CtbInUse()

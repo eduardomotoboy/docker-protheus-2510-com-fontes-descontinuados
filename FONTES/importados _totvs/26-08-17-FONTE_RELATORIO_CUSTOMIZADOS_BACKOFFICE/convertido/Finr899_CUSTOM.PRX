@@ -14,7 +14,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_Finr899C()        // incluido pelo assistente de conversao do AP5 IDE em 09/09/99
+User Function Finr899C()        // incluido pelo assistente de conversao do AP5 IDE em 09/09/99
 	Local oReport
 
 	//Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores

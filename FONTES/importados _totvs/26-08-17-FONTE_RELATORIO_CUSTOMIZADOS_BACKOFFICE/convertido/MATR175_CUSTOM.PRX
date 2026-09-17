@@ -15,7 +15,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_MATR175C()
+User Function MATR175C()
 
 Local oReport
 
@@ -71,7 +71,7 @@ Pergunte("MTR175",.F.)
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
 
-oReport:= TReport():New("MTR175",cTitle,"MTR175", {|oReport| ReportPrint(oReport,aOrdem,cAliasSD7)},STR0001+" "+STR0002) //"Emite um relacao dos produto Liberados/Rejeitados pelo Controle de qualidade juntamente com a respectiva avaliacao."
+oReport:= TReport():New("MTR175C",cTitle,"MTR175", {|oReport| ReportPrint(oReport,aOrdem,cAliasSD7)},STR0001+" "+STR0002) //"Emite um relacao dos produto Liberados/Rejeitados pelo Controle de qualidade juntamente com a respectiva avaliacao."
 oReport:SetLandscape() 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³Criacao da secao utilizada pelo relatorio                               ³
@@ -414,7 +414,7 @@ Return Nil
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_ValidaSC(cAliasSD7,cProduto,cKeyForTot)
+User Function ValidaSC(cAliasSD7,cProduto,cKeyForTot)
 
 Local aArea	  := GetArea()
 Local lValido :=.F.

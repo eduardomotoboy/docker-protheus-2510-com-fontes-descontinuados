@@ -23,7 +23,7 @@ Static lFWCodFil := FindFunction("FWCodFil")
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FINR139C()
+User Function FINR139C()
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
 /*Local oReport
@@ -53,7 +53,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_FINR131C()
+User Function FINR131C()
 Local cDesc1 :=OemToAnsi(STR0001)  //"Imprime os titulos a receber com o número "
 Local cDesc2 :=OemToAnsi(STR0002)  //"da NF-e"
 Local cDesc3 :=""
@@ -498,7 +498,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_fr139InC()
+User Function fr139InC()
 Local cString
 
 cString := 'E1_FILIAL=="'+xFilial("SE1")+'".And.'

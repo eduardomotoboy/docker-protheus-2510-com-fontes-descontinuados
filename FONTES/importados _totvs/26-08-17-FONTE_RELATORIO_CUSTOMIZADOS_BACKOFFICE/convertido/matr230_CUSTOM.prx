@@ -13,7 +13,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MATR230C()
+User Function MATR230C()
 Local oReport
 
 // Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -64,7 +64,7 @@ Private cPerg		:= "MTR230"
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR230",STR0001,cPerg, {|oReport| ReportPrint(oReport,cAliasSD3)},STR0002+" "+STR0003+" "+STR0004) //"Requisicoes para Consumo"##"Emite a relacao das requisicoes feitas para consumo , dividindo por"##"Centro de Custo requisitante ou Conta Contabil.Este relatorio e' um"##"pouco demorado porque ele cria o arquivo de indice na hora."
+oReport:= TReport():New("MATR230C",STR0001,cPerg, {|oReport| ReportPrint(oReport,cAliasSD3)},STR0002+" "+STR0003+" "+STR0004) //"Requisicoes para Consumo"##"Emite a relacao das requisicoes feitas para consumo , dividindo por"##"Centro de Custo requisitante ou Conta Contabil.Este relatorio e' um"##"pouco demorado porque ele cria o arquivo de indice na hora."
 oReport:SetTotalInLine(.F.)
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿

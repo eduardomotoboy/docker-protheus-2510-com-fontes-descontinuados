@@ -21,7 +21,7 @@
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
     
-Function U_MATR181C()
+User Function MATR181C()
     Local cReport	:= "MATR181"	//Nome do Programa
     Local cAlias	:= "SB5"		//Alias da tabela
     Local cTitle	:= STR0001		//Titulo do relatório apresentado no cabeçalho

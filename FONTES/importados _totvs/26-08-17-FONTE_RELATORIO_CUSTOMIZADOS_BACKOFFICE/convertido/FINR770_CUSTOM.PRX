@@ -45,7 +45,7 @@ Static __cInsNat1	As Character
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_FinR770C()
+User Function FinR770C()
 	
 	Local oReport
 	Local aAreaR4	:= GetArea()
@@ -1135,7 +1135,7 @@ Calcula saldo com base na formula digitada
 
 @return Nil
 /*/
-Function U_CNICalcC ()
+User Function CNICalcC()
 	Local cSuperior
 	Local cIdent
 	Local nCont

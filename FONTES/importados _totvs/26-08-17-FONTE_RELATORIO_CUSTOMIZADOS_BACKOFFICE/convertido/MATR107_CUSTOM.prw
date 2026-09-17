@@ -11,7 +11,7 @@ Termo de retirada de material
 @version P12.00
 */
 //-------------------------------------------------------------------
-Function U_MATR107C()
+User Function MATR107C()
 Local oReport
 Local oBreakSol
 Local oBreakNum
@@ -146,7 +146,7 @@ Retorna o Status da SA
 @param aLiasSCP - Query SCP
 /*/
 
-Function U_ScPStatC(aLiasSCP)
+User Function ScPStatC(aLiasSCP)
 
 Local cRetorno := ""
 Local aRetCod  := {}

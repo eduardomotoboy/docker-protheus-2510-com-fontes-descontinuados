@@ -19,7 +19,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MATR287C()
+User Function MATR287C()
 
 Local oReport
 Local lContagem:= SuperGetMv('MV_CONTINV',.F.,.F.)
@@ -71,7 +71,7 @@ Local nTamB1Desc:= TamSX3("B1_DESC")[1]
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR287",STR0001,"MTR287", {|oReport| ReportPrint(oReport,aOrdem,cAliasSB7)},STR0002+STR0003+STR0004)
+oReport:= TReport():New("MATR287C",STR0001,"MTR287", {|oReport| ReportPrint(oReport,aOrdem,cAliasSB7)},STR0002+STR0003+STR0004)
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Verifica as perguntas selecionadas                           ³
@@ -355,7 +355,7 @@ oSection1:Finish()
 
 Return
 
-Function U_r287PriC(cFieldProd, aSec, oSection1, oReport)
+User Function r287PriC(cFieldProd, aSec, oSection1, oReport)
 
     Local lContDiv := .F.
     Local nY := 0

@@ -15,7 +15,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_GCPR002C()
+User Function GCPR002C()
 
 Local   oReport		:= nil
 Private cTitulo		:= STR0001 //"Quadro de Licitações"
@@ -136,7 +136,7 @@ Return oReport
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_GCPR02EC()
+User Function GCPR02EC()
 Local aArea := GetArea()
 Local cRet	:= ""
 
@@ -163,7 +163,7 @@ Return cRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_GCPR02MC()
+User Function GCPR02MC()
 Local aArea := GetArea()
 Local cRet	:= ""
 
@@ -190,7 +190,7 @@ Return cRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_GCPR02FC()
+User Function GCPR02FC()
 Local aArea := GetArea()
 Local cRet	:= ""
 Local cModCli := SuperGetMV("MV_GCPMCLI",,"LL\") 
@@ -240,7 +240,7 @@ Return cRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_GCPR02TC()
+User Function GCPR02TC()
 Local aArea := GetArea()
 Local cRet	:= ""
 Local cModCli := SuperGetMV("MV_GCPMCLI",,"LL\") 
@@ -272,7 +272,7 @@ Retorna totais conforme avaliacao do edital
 @version P11.80
 */
 //-------------------------------------------------------------------
-Function U_GCPR021C(cAcao)
+User Function GCPR021C(cAcao)
 Local nRet		:= 0
 Local nQuant	:= (cAliasQry)->CO2_QUANT
 Local aSldItem	:= {(cAliasQry)->CO1_CODEDT,(cAliasQry)->CO1_NUMPRO,(cAliasQry)->CO2_CODPRO}
@@ -554,7 +554,7 @@ Retorna o status do licitante
 @version P12
 */
 //-------------------------------------------------------------------
-Function U_GCPR02LC()
+User Function GCPR02LC()
 Local aArea := GetArea()
 Local cRet	:= ""
 //Local lLote	:= ((cAliasQry)->CO1_AVAL == "2")

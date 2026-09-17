@@ -15,7 +15,7 @@ Relatório de impressão do DARF gráfico a partir dos títulos de contas a pagar.
 @author Eduardo Riera
 @since  26/06/2003
 /*/
-Function U_FINRSRFC(cAlias, nReg, nOpc)
+User Function FINRSRFC(cAlias, nReg, nOpc)
 
 Local aParamBox  := {}
 Local cTitulo    := STR0042
@@ -424,7 +424,7 @@ Return(.T.)
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_PrtDarfC(aInfo,aPergRet)
+User Function PrtDarfC(aInfo,aPergRet)
 
 Local cBmp 		 := ""
 Local cStartPath := GetSrvProfString("StartPath","")
@@ -900,7 +900,7 @@ Return lAchou
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_GInfDARC(aRecno, nValorImp, cCodRet, nOpc, aVlr, cCNPJEst, dVenc)
+User Function GInfDARC(aRecno, nValorImp, cCodRet, nOpc, aVlr, cCNPJEst, dVenc)
 
 Local aFornec :=  {}
 Local cIdDarf := ""
@@ -991,7 +991,7 @@ Return Nil
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_ExstDarC(cFilialSE2 As Character, cTitPaiSE2 As Character, lHelp As Logical) As Logical
+User Function ExstDarC(cFilialSE2 As Character, cTitPaiSE2 As Character, lHelp As Logical) As Logical
 	Local lExiste 	As Logical
 	Local oQry		As Object		
 	Local cQry 		As Character

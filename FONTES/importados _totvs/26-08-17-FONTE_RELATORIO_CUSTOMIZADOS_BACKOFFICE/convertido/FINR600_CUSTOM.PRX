@@ -16,7 +16,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FINR600C()
+User Function FINR600C()
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Define Vari veis                                             ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
@@ -301,7 +301,7 @@ MS_FLUSH()
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_PrintBoC(aBol,nNumVias,li,nNumpas,cBoleto,cMensagem1,cMensagem2,cMensagem3,cSimb,lFirst1,cCarteira,cDataProc)
+User Function PrintBoC(aBol,nNumVias,li,nNumpas,cBoleto,cMensagem1,cMensagem2,cMensagem3,cSimb,lFirst1,cCarteira,cDataProc)
 
 Local nL1  := Val(IIf(SubStr(cBoleto,01,3) # "   ",SubStr(cBoleto,01,3),"-9"))
 Local nC1  := Val(IIf(SubStr(cBoleto,04,3) # "   ",SubStr(cBoleto,04,3),"-9"))
@@ -486,7 +486,7 @@ Return .t.
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_Fin600vC()
+User Function Fin600vC()
 LOCAL lRet
 lRet	:=IIF(mv_sn$"sSnN",.T.,.F.)
 Return lRet
@@ -505,7 +505,7 @@ Return lRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FA600TEC()
+User Function FA600TEC()
 
 Local nOpca:=0
 Local aSays:={}, aButtons:={},cCadastro := ""
@@ -554,7 +554,7 @@ Return .T.
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MontaEnC(cCampo)
+User Function MontaEnC(cCampo)
 LOCAL aRet	:= Array ( 2 )
 LOCAL nPos	:= 0
 nPos 			:= AT("#",cCampo)
@@ -580,7 +580,7 @@ Return aRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FR600MeC(cMensagem1,cMensagem2,cMensagem3)
+User Function FR600MeC(cMensagem1,cMensagem2,cMensagem3)
 LOCAL nOpca		:=0
 
 LOCAL oDlg
@@ -620,7 +620,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FA600OkC()
+User Function FA600OkC()
 Local lRet := .F.
 If SA6->A6_MENSAGE != cMensagem1+cMensagem2+cMensagem3
 	lRet := MsgYesNo(STR0026,STR0025) // "Existem outras mensagens configuradas para o boleto, confirma substituição ?"###"Bordero Gen‚rico ?"
@@ -710,7 +710,7 @@ Return cRetorna
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_PrintFiC( nLi,nlinha,nColuna,uTexto,cPicture )
+User Function PrintFiC( nLi,nlinha,nColuna,uTexto,cPicture )
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Caso a linha ou a coluna n„o tenha sido definido, n„o se imprime   ³

@@ -32,7 +32,7 @@ Static cFilUnEmp := ""
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_FinrGpsC()
+User Function FinrGpsC()
 
 Local cDesc1 	:= "Guia de I.N.S.S. (G.P.S.)"
 Local cDesc2 	:= "Ser  impresso de acordo com os parametros solicitados pelo usuario."
@@ -471,7 +471,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_PrtGpsC(aGps,oPrint,aInfo,aEmpCont)
+User Function PrtGpsC(aGps,oPrint,aInfo,aEmpCont)
 
 Local cBmp 		 := ""
 Local cStartPath := GetSrvProfString("StartPath","")

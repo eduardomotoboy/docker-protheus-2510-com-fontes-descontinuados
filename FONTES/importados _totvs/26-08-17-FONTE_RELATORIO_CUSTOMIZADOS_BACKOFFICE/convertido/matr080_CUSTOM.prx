@@ -11,7 +11,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_Matr080C()
+User Function Matr080C()
 
 Local oReport
 
@@ -48,7 +48,7 @@ Local cTamVlr := TamSX3('D1_TOTAL')[1]
 Local cTamImp := TamSX3('F1_VALIMP1')[1]
 Local cAliasSD1 := GetNextAlias()
 
-oReport:= TReport():New("MATR080",STR0001,"MTR080", {|oReport| ReportPrint(oReport,cAliasSD1)},STR0002+" "+STR0003+" "+STR0004) //"Rela‡„o de Notas Fiscais"##"Emiss„o da Rela‡„o de Notas de Compras"##"A op‡„o de filtragem deste relat¢rio s¢ ‚ v lida na op‡„o que lista os"##"itens. Os parƒmetros funcionam normalmente em qualquer op‡„o."
+oReport:= TReport():New("MATR080C",STR0001,"MTR080", {|oReport| ReportPrint(oReport,cAliasSD1)},STR0002+" "+STR0003+" "+STR0004) //"Rela‡„o de Notas Fiscais"##"Emiss„o da Rela‡„o de Notas de Compras"##"A op‡„o de filtragem deste relat¢rio s¢ ‚ v lida na op‡„o que lista os"##"itens. Os parƒmetros funcionam normalmente em qualquer op‡„o."
 oReport:SetTotalInLine(.F.)
 If TamSX3("D1_COD")[1] > 15 
 	oReport:SetLandScape()

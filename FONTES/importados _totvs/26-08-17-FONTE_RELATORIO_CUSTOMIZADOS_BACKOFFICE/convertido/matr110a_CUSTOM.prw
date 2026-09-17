@@ -13,7 +13,7 @@ alternativo com o objeto TmsPrinter
 
 ---------------------------------------------------------------------------------------------*/
 
-Function U_Matr112C(cNumPed)
+User Function Matr112C(cNumPed)
 
 DEFAULT cNumPed		:= ""
 Private _cAlias		:= GetNextAlias()

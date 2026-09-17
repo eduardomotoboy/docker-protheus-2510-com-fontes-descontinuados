@@ -14,7 +14,7 @@ Razonete de Fornecedores
 @version 12.1.7
 /*/
 //-------------------------------------------------------------------
-Function U_FINR134C()
+User Function FINR134C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores

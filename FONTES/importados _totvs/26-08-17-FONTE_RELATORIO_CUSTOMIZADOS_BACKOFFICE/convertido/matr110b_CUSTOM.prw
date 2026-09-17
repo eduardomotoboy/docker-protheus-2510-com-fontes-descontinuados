@@ -13,7 +13,7 @@ alternativo incrementando o MATR110A com o objeto TmsPrinter
 
 ---------------------------------------------------------------------------------------------*/
 
-Function U_Matr113C(cNumPed)
+User Function Matr113C(cNumPed)
 
 DEFAULT cNumPed		:= ""
 Private _cAlias		:= GetNextAlias()

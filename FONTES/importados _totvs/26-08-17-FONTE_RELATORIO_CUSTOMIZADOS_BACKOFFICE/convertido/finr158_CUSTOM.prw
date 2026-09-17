@@ -15,7 +15,7 @@ STATIC cRngFilSA2 := NIL
 // 07/01/13 | Marcos Berto	    | Títulos a Pagar por Natureza
 // #########################################################################################
 
-Function U_Finr158C()
+User Function Finr158C()
 
 Local oReport
 
@@ -53,7 +53,7 @@ Local oSecTit
 Local oSecTot
 Local oReport
 
-oReport:= TReport():New("FINR158",STR0002,"FIN158",{|oReport| ReportPrint(oReport)},STR0002) //"Titulos a Pagar por Natureza"
+oReport:= TReport():New("FINR158C",STR0002,"FIN158",{|oReport| ReportPrint(oReport)},STR0002) //"Titulos a Pagar por Natureza"
 oReport:SetLandscape(.T.)
 
 
@@ -332,7 +332,7 @@ Gera o arquivo temporário
 
 /*/
 //------------------------------------------------------------------------------------------
-Function U_F158GerC()
+User Function F158GerC()
 
 Local aStruct		:= {}
 Local aSaldo		:= {}
@@ -694,7 +694,7 @@ Totaliza as naturezas analíticas nas sintéticas
 
 /*/
 //------------------------------------------------------------------------------------------
-Function U_F158TotC()
+User Function F158TotC()
 
 Local aStruct		:= {}
 Local cNatureza	:= ""

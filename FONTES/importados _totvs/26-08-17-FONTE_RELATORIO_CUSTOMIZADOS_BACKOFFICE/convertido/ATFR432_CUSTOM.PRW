@@ -32,7 +32,7 @@ STATIC lIsRussia	:= If(cPaisLoc$"RUS",.T.,.F.) // CAZARINI - Flag to indicate if
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_ATFR432C()
+User Function ATFR432C()
 
 Local oReport
 
@@ -328,7 +328,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_AFR432SC(cXFil ,cCodPrj, cRevis, cEtapa ,cItemPrj,cTipoAtf,cTipoSld, dDataRef , nTipoVal , dDataRev  )
+User Function AFR432SC(cXFil ,cCodPrj, cRevis, cEtapa ,cItemPrj,cTipoAtf,cTipoSld, dDataRef , nTipoVal , dDataRev  )
 Local nRetValor   := 0
 Local aArea       := GetArea()
 Local aAreaSN1    := SN1->(GetArea())

@@ -19,7 +19,7 @@ CNTA121 e durante a impressão será feita a quebra por planilha.
 @since 26/08/2013
 /*/
 //-------------------------------------------------------------------
-Function U_CNTR031C(cNumMed)
+User Function CNTR031C(cNumMed)
 Local oReport 	:= NIL
 Default cNumMed := ""
 
@@ -96,7 +96,7 @@ Define estrutura do relatório de medições
 //-------------------------------------------------------------------
 Static Function ReportDef()
 
-	Local oReport	:= TReport():New("CNTR031",STR0001,"CNR030",{|oReport| ReportPrin(oReport)},STR0002+STR0003+STR0004)
+	Local oReport	:= TReport():New("CNTR031C",STR0001,"CNR030",{|oReport| ReportPrin(oReport)},STR0002+STR0003+STR0004)
 	Local oSecMed	:= TRSection():New(oReport,STR0017,{"CND"},,,,,,,,.T.) 													//-- Medição
 	Local oSecPla	:= TRSection():New(oSecMed,STR0026,{"CXN"}) 															//-- Planilha Med. de Contratos	
 	Local oSecIMe	:= TRSection():New(oSecPla,STR0018,{"CNE"}) 															//-- Itens da Medição

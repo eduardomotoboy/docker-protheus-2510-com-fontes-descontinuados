@@ -15,7 +15,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Matr015C()
+User Function Matr015C()
 
 Local oReport
 
@@ -66,7 +66,7 @@ Local cAliasSF8 := GetNextAlias()
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MATR015",STR0001,"MTR015", {|oReport| ReportPrint(oReport,cAliasSF8)},STR0002+" "+STR0003+" "+STR0004) //"Este relatorio ira imprimir a relacao entre as notas fiscais de Frete/Importacao e as notas fiscais que originaram as mesmas.
+oReport := TReport():New("MATR015C",STR0001,"MTR015", {|oReport| ReportPrint(oReport,cAliasSF8)},STR0002+" "+STR0003+" "+STR0004) //"Este relatorio ira imprimir a relacao entre as notas fiscais de Frete/Importacao e as notas fiscais que originaram as mesmas.
 Pergunte("MTR015",.F.)
 Aadd( aOrdem, STR0005 ) //"Por NF Frete/Importacao" # "F8_FILIAL+F8_NFDIFRE+F8_SEDIFRE+F8_FORNECE+F8_LOJA"
 Aadd( aOrdem, STR0006 ) //"Por NF Original"         # "F8_FILIAL+F8_NFORIG+F8_SERORIG+F8_FORNECE+F8_LOJA"

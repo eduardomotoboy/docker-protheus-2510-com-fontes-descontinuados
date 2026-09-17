@@ -22,7 +22,7 @@ Static __lIsRmt64 := FindFunction("IsRmt64")
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FinR460C()
+User Function FinR460C()
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Define vari veis 	³
@@ -933,7 +933,7 @@ Return(.T.)
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_AutoCheC(aCheque,lEnd,nHdll)
+User Function AutoCheC(aCheque,lEnd,nHdll)
 
 LOCAL cBanco
 LOCAL dEmissao
@@ -1043,7 +1043,7 @@ Return nRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_AutoCh1C(aCheque,lEnd,nHdll)
+User Function AutoCh1C(aCheque,lEnd,nHdll)
 
 LOCAL nPorta
 LOCAL cBanco
@@ -1190,7 +1190,7 @@ Return nRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_AutoCh2C(aCheque,lEnd,nHdll)
+User Function AutoCh2C(aCheque,lEnd,nHdll)
 LOCAL cBanco
 LOCAL dEmissao
 LOCAL A1
@@ -1299,7 +1299,7 @@ Return nRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_AutoCh3C(aCheque,lEnd,nHdll)
+User Function AutoCh3C(aCheque,lEnd,nHdll)
 LOCAL nValor
 LOCAL cBanco
 LOCAL dEmissao
@@ -1493,7 +1493,7 @@ Return nRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_AutoCh4C(aCheque,lEnd,nHdll)
+User Function AutoCh4C(aCheque,lEnd,nHdll)
 
 LOCAL cBanco
 LOCAL dEmissao
@@ -1595,7 +1595,7 @@ Return nRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_AutoCh5C(aCheque,lEnd,nHdll)
+User Function AutoCh5C(aCheque,lEnd,nHdll)
 
 LOCAL cBanco
 LOCAL dEmissao
@@ -1723,7 +1723,7 @@ Return nRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_AutoCh6C(aCheque,lEnd,nHdll)
+User Function AutoCh6C(aCheque,lEnd,nHdll)
 LOCAL cBanco
 LOCAL dEmissao
 LOCAL nRet
@@ -1809,7 +1809,7 @@ Imprime um cheque na impressora padrão PERTOCHEK
 /*/
 //-------------------------------------------------------------------
 
-Function U_AutoCh7C(aCheque, lEnd, nHdll, cNome, cPorta )
+User Function AutoCh7C(aCheque, lEnd, nHdll, cNome, cPorta )
 
 	Local cBanco	:= ""
 	Local cRet		:= ""
@@ -1900,7 +1900,7 @@ Return Alltrim(cRet)
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_Fr460CCC(nOpcao)
+User Function Fr460CCC(nOpcao)
 
 Local lRet := .T.
 Local aArea := GetArea()
@@ -2069,7 +2069,7 @@ dos processos estabelecidos dentro da rotina
 /*/
 //------------------------------------------------------------------------
 
-Function U_FR460BaC()
+User Function FR460BaC()
 	Local	nLin	as	numeric
 	Local	ncol	as	numeric
 	Local	oDlg	as	object

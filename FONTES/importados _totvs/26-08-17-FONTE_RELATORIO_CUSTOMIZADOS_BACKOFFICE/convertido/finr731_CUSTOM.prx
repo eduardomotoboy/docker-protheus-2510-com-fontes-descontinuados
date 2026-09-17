@@ -39,7 +39,7 @@ Static __MESES := {'Janeiro','Fevereiro','Marco','Abril','Maio','Junho','Julho',
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FINR731C()
+User Function FINR731C()
 
 Local oReport
 
@@ -70,7 +70,7 @@ Local oSection1
 Local oFilial //Gestão Corporativa
 Local oSecFil //Gestão Corporativa
 
-oReport := TReport():New("FINR731",STR0005,"FIN731", {|oReport| ReportPrint(oReport)},STR0001+STR0002)
+oReport := TReport():New("FINR731C",STR0005,"FIN731", {|oReport| ReportPrint(oReport)},STR0001+STR0002)
 pergunte("FIN731",.F.)
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Variaveis utilizadas para parƒmetros                        ³
@@ -816,7 +816,7 @@ o realizado
 @since 04/09/94
 /*/
 //--------------------------------------------
-Function U_FR731SEC(nRecCount As Char, cFilialSE5 As Char) As Char
+User Function FR731SEC(nRecCount As Char, cFilialSE5 As Char) As Char
 	Local cTmpSE5 As Char
 	Local cQuery  As Char
 	
@@ -1036,7 +1036,7 @@ Return Nil
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_Fin731CC(cArqTmp, cIndex1, cIndex2, cIndex3, lRelato, aNiveis, aQuebR,aQuebO, aQuebA, lR4)
+User Function Fin731CC(cArqTmp, cIndex1, cIndex2, cIndex3, lRelato, aNiveis, aQuebR,aQuebO, aQuebA, lR4)
 	Local nMoedaBco	:= 1
 	Local nSaldoTit := 0
 	Local aOrcado	:= {}

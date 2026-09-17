@@ -19,7 +19,7 @@ Static _oFINR010
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_FINR010C()
+User Function FINR010C()
 Local oReport
 
 Private nTamCod
@@ -55,7 +55,7 @@ PRIVATE cNomFil := ""
 
 
 
-oReport := TReport():New("FINR010",STR0014,,{|oReport| U_ReportPC(oReport)},STR0001+STR0002) //"RELACAO DAS NATUREZAS"
+oReport := TReport():New("FINR010C",STR0014,,{|oReport| U_ReportPC(oReport)},STR0001+STR0002) //"RELACAO DAS NATUREZAS"
 
 nTamCod := 0
 
@@ -104,7 +104,7 @@ Return oReport
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_ReportPC(oReport)
+User Function ReportPC(oReport)
 Local oSection := oReport:Section(1)
 Local aCampos := {}
 Local aTam1

@@ -14,7 +14,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_finr898C()        // incluido por el asistente de conversión del AP5 IDE en 01/06/00
+User Function finr898C()        // incluido por el asistente de conversión del AP5 IDE en 01/06/00
 
 Local oReport
 

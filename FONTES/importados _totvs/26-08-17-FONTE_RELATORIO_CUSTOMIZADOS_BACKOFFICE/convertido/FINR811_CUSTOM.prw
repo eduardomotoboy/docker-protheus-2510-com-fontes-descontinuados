@@ -13,7 +13,7 @@ Relatório carta de cobrança sintético
 /*/ 
 /*--------------------------------------------------------------------------------------------------------------------*/
 
-Function U_FINR811C(lProcesso As Logical,cComboVenc As Character) As Logical
+User Function FINR811C(lProcesso As Logical,cComboVenc As Character) As Logical
 
 	Local oReport	As Object
 	Local aArea		As Array
@@ -425,7 +425,7 @@ FINR811.CH. Havendo a inclusão de mais status de envio, esses novos status devem
 @since 02/08/2016
 /*/
 /*--------------------------------------------------------------------------------------------------------------------*/
-Function U_FR811DeC() As Character
+User Function FR811DeC() As Character
 
 	Local cRet As Character
 

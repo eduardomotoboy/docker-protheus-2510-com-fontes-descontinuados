@@ -17,7 +17,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MATR255C()
+User Function MATR255C()
 Local oReport
 
 Static __l255VLib
@@ -66,7 +66,7 @@ Local cAliasSBF := GetNextAlias()
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR255",cTitle,"MTR255", {|oReport| ReportPrint(oReport,cAliasSBF)},OemToAnsi(STR0002)+" "+OemToAnsi(STR0003)+" "+OemToAnsi(STR0004)) //##"Neste relat¢rio ‚ possivel obter uma posi‡„o de quantidade por"##"produto/lote/endereco/status, o que permite o mapeamento perfeito"##"de cada Endereco."
+oReport:= TReport():New("MATR255C",cTitle,"MTR255", {|oReport| ReportPrint(oReport,cAliasSBF)},OemToAnsi(STR0002)+" "+OemToAnsi(STR0003)+" "+OemToAnsi(STR0004)) //##"Neste relat¢rio ‚ possivel obter uma posi‡„o de quantidade por"##"produto/lote/endereco/status, o que permite o mapeamento perfeito"##"de cada Endereco."
 oReport:SetEdit(.F.)
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Verifica as perguntas selecionadas (MTR255)                  ³

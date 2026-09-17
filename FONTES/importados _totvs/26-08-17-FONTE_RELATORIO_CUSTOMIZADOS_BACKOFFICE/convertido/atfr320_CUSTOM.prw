@@ -17,7 +17,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_ATFR320C(cRespINI,cRespFIM,cCBASEINI,cItemINI,cCBaseFIM,cItemFIM)
+User Function ATFR320C(cRespINI,cRespFIM,cCBASEINI,cItemINI,cCBaseFIM,cItemFIM)
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores

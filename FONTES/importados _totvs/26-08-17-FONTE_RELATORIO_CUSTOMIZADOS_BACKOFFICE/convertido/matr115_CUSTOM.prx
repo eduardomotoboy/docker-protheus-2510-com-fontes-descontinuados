@@ -17,7 +17,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_MATR115C()
+User Function MATR115C()
 
 Local oReport
 
@@ -70,7 +70,7 @@ Local cPerg	:= "MTR115"
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MATR115",STR0001,cPerg, {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003)  //"Controle de entrega das Solicitacoes ao Almox."##"  Este relatorio lista a posicao das Pre-Requisicoes geradas pelas"##"solicitacoes ao almoxarifado de acordo com parametros selecionados."
+oReport := TReport():New("MATR115C",STR0001,cPerg, {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003)  //"Controle de entrega das Solicitacoes ao Almox."##"  Este relatorio lista a posicao das Pre-Requisicoes geradas pelas"##"solicitacoes ao almoxarifado de acordo com parametros selecionados."
 If !(TamSX3("B1_COD")[1] > 15)
 	oReport:SetPortrait()  // sugere formato retrato
 Else

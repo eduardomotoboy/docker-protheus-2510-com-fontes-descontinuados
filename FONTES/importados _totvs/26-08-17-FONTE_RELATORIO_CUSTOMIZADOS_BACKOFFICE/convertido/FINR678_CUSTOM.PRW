@@ -11,7 +11,7 @@ Relatorio de Status da Prestação de Contas.
 
 @return Nil
 /*/
-Function U_FINR678C()
+User Function FINR678C()
 Local oReport	:= Nil
 Local lTReport	:= TRepInUse()
 Local lDefTop	:= IfDefTopCTB() // verificar se pode executar query (TOPCONN)
@@ -186,7 +186,7 @@ Função para identificar a descrição do status da prestação de contas
 
 @return caratere, Descrição do status da prestação de contas
 /*/
-Function U_FINR671C(cStatus)
+User Function FINR671C(cStatus)
 Local cDescStat := ""
 
 Default cStatus := ""

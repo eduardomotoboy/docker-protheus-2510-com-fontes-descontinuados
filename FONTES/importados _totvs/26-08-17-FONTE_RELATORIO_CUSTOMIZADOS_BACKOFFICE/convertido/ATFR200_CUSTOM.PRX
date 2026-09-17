@@ -16,7 +16,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_ATFR200C()
+User Function ATFR200C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -274,7 +274,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_AFR200FC(aSelFil,oReport)
+User Function AFR200FC(aSelFil,oReport)
 Local oSecFil	:= Nil
 Local aSM0		:= {}
 Local nRegSM0	:= 0

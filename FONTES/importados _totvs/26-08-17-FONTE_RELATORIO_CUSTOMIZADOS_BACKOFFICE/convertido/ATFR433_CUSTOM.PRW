@@ -21,7 +21,7 @@ STATIC cItemOld		:= ""
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_ATFR433C()
+User Function ATFR433C()
 
 Local oReport
 Local lTReport		:= FindFunction("TRepInUse") .And. TRepInUse()
@@ -330,7 +330,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Afr433PC(dDataRef,nCurtoPrz,cAliasPrj)
+User Function Afr433PC(dDataRef,nCurtoPrz,cAliasPrj)
 Local aArea		:= GetArea()
 Local cCbase	:= (cAliasPrj)->N1_CBASE
 Local cItem		:= (cAliasPrj)->N1_ITEM
@@ -563,7 +563,7 @@ Return aValAvp
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_AFCalcCC(dDtAvp,dDataCP,nVlBase,nVlConst,cIndAvp,cPerind,nTaxa,nAvpCP,nAvpLP)
+User Function AFCalcCC(dDtAvp,dDataCP,nVlBase,nVlConst,cIndAvp,cPerind,nTaxa,nAvpCP,nAvpLP)
 
 Local nValVp		:= 0
 Local nValAvp		:= 0
@@ -607,7 +607,7 @@ Esta função retorna o valor acumulado de executado no projeto imobilizado.
 @version MP912
 /*/
 //-------------------------------------------------------------------
-Function U_AFVlrExC(cFilProj,cPrjImo,cRevProj,cEtapa,cEtpItem,cTpSld)
+User Function AFVlrExC(cFilProj,cPrjImo,cRevProj,cEtapa,cEtpItem,cTpSld)
 Local nVlrExec	:= 0
 Local aArea		:= GetArea()
 Local aAreaFNJ	:= {}

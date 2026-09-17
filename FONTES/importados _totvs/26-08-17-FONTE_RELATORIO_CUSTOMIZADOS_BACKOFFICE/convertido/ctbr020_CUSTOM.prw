@@ -24,7 +24,7 @@
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
 
-Function U_CTBR020C()
+User Function CTBR020C()
 
 	Local oReport
 
@@ -176,7 +176,7 @@ Return oReport
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTBR021C( oReport,oSecaoCTT )
+User Function CTBR021C( oReport,oSecaoCTT )
 
 Local lMoedaOk		:= .T.
 

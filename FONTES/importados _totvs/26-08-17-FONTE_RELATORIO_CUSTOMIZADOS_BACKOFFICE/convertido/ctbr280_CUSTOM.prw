@@ -19,7 +19,7 @@ Rela‡ao de Movimentos Acumulados p/ CC Extra
 @obs
 */
 //-------------------------------------------------------------------
-Function U_CTBR280C()
+User Function CTBR280C()
 
 Private cAliasCT1, cAliasCTT
 Private Li := 0
@@ -49,7 +49,7 @@ Relatorio de alocacao de recursos
 @obs
 */
 //-------------------------------------------------------------------
-Function U_CTBR281C()
+User Function CTBR281C()
 
 Local aArea		:= GetArea()
 Local cPerg  := "CTR280"
@@ -170,7 +170,7 @@ nTamConta	:= aTamConta[1] + Len(cMascara)
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
 
-oReport := TReport():New("CTBR280",OemToAnsi(STR0006), cPerg, ;
+oReport := TReport():New("CTBR280C",OemToAnsi(STR0006), cPerg, ;
 			{|oReport| If(!ct040Valid(mv_par10), oReport:CancelPrint(), ReportPrint(aPeriodos, aMeses, nMeses))},;
 			STR0001+CRLF+RetTitle("CT3_CUSTO",15)+OemToAnsi(STR0010)+CRLF+OemToAnsi(STR0003) )
 
@@ -634,7 +634,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_CTR280QC(aPeriodos,cMoeda,cTpSaldo,cContaIni,cContaFim,cCustoIni,cCustoFim,aSetOfBook,lVlrZerado,cString,cFILUSU,lImpAntLP,dDataLP)
+User Function CTR280QC(aPeriodos,cMoeda,cTpSaldo,cContaIni,cContaFim,cCustoIni,cCustoFim,aSetOfBook,lVlrZerado,cString,cFILUSU,lImpAntLP,dDataLP)
 Local aSaveArea	:= GetArea()
 Local cQuery	:= ""
 Local nColunas	:= 0

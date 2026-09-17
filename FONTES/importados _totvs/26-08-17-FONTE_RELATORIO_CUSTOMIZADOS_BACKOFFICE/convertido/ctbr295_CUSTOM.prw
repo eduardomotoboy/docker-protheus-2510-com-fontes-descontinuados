@@ -57,7 +57,7 @@ Static lIsRedStor := FindFunction("IsRedStor") .and. IsRedStor() //Used to check
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Ctbr295C()
+User Function Ctbr295C()
 
 Local aSetOfBook
 Local aCtbMoeda	:= {}
@@ -1322,7 +1322,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CtCmpSlC( oMeter,oText,oDlg,lEnd,cArqtmp,;
+User Function CtCmpSlC( oMeter,oText,oDlg,lEnd,cArqtmp,;
 					dDataIni,dDataFim,cAlias,cEntid,;
 					cContaIni,cContaFim,cCCIni,cCCFim,cItemIni,cItemFim,cClvlIni,cClVlFim,;
 					cMoeda,cSaldoA,cSaldoB,aSetOfBook,lAcum,lImpAntLP,dDataLP,;

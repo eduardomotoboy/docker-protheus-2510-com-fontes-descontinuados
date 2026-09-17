@@ -25,7 +25,7 @@ Static _oATFR1702
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_ATFR170C()
+User Function ATFR170C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -63,7 +63,7 @@ Local cPictSal		:= ""
 Local cDescMoedA	:= ""
 Local cDescMoed1	:= ""
 
-oReport := TReport():New("ATFR170",STR0003,"AFR170",{|oReport| ReportPrint(oReport)},STR0001+STR0002)
+oReport := TReport():New("ATFR170C",STR0003,"AFR170",{|oReport| ReportPrint(oReport)},STR0001+STR0002)
 
 oReport:SetUseGC(.F.)
 

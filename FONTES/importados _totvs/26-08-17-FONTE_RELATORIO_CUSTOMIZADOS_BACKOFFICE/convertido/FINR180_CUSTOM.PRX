@@ -19,7 +19,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_FinR180C()
+User Function FinR180C()
 
 Local oReport
 
@@ -72,7 +72,7 @@ Local oSecFil	:= Nil
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("FINR180",OemToAnsi(STR0011),"FIN180", {|oReport| ReportPrint(oReport)},STR0001+" "+STR0002) //"Relacao de Baixas por Lote"##"Este programa ira emitir a relacao dos titulos baixados"##"por Lote."
+oReport := TReport():New("FINR180C",OemToAnsi(STR0011),"FIN180", {|oReport| ReportPrint(oReport)},STR0001+" "+STR0002) //"Relacao de Baixas por Lote"##"Este programa ira emitir a relacao dos titulos baixados"##"por Lote."
 Pergunte("FIN180",.F.)
 
 oBaixas := TRSection():New(oReport,"Baixas",{"SE5"},{},,,STR0031)		//"Total"

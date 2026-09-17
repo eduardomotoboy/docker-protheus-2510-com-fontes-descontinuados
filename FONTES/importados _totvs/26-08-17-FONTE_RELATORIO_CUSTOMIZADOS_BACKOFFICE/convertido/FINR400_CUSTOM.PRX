@@ -12,7 +12,7 @@ Relacao dos Cheque Emitidos
 @since  12/07/06
 /*/
 //-------------------------------------------------------------------
-Function U_FinR400C()
+User Function FinR400C()
 	
 	Local oReport
 
@@ -40,7 +40,7 @@ Static Function ReportDef()
 	Local aTam3 As Array
 	Local aTam4 As Array
 
-	oReport := TReport():New("FINR400",STR0003,"FIN400",;
+	oReport := TReport():New("FINR400C",STR0003,"FIN400",;
 	{|oReport| ReportPrint(oReport)},STR0001+STR0002)
 
 	Pergunte("FIN400", .F.)

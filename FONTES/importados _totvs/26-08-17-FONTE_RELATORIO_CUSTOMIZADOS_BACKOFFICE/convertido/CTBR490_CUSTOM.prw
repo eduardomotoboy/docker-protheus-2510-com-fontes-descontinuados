@@ -25,7 +25,7 @@ Static lIsRedStor := FindFunction("IsRedStor") .and. IsRedStor() //Used to check
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTBR490C(cCLVLIni, cCLVLFim,dDataIni, dDataFim, cMoeda, cSaldo,;
+User Function CTBR490C(cCLVLIni, cCLVLFim,dDataIni, dDataFim, cMoeda, cSaldo,;
 			cBook, cContaIni, cContaFim, lCusto, cCustoIni, cCustoFim, lItem,;
 	  		cItemIni, cItemFim,lSalLin,aSelFil)
 	  		
@@ -176,7 +176,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_CTBR491C(cCLVLIni, cCLVLFim,dDataIni, dDataFim, cMoeda, cSaldo,;
+User Function CTBR491C(cCLVLIni, cCLVLFim,dDataIni, dDataFim, cMoeda, cSaldo,;
 			cBook, cContaIni, cContaFim, lCusto, cCustoIni, cCustoFim, lItem,;
 	  		cItemIni, cItemFim,lSalLin,aSelFil)
 
@@ -239,7 +239,7 @@ Local oRazao, oClValor, oConta, oTotais, oComplemento
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("CTBR490",cTitulo, cPerg, ;
+oReport := TReport():New("CTBR490C",cTitulo, cPerg, ;
 			{|oReport| If(!Ct040Valid(mv_par07), ;
 									oReport:CancelPrint(), ;
 									ReportPrint(oReport, cSayCusto, cSayItem, cSayClVl, cString, cTitulo, ;

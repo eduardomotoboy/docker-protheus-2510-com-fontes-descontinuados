@@ -17,7 +17,7 @@ Relatorio de Liquidacoes Financeiras
 /*/
 //-------------------------------------------------------------------
 
-Function U_FinR500C()
+User Function FinR500C()
 
 Local oReport
 
@@ -49,7 +49,7 @@ Local aTamCHQ := {}
 Local nTamCHQ := 0
 Local oSecFil	:= Nil
 
-oReport := TReport():New("FINR500",STR0003,"FIN500",{|oReport| ReportPrint(oReport)},STR0001+STR0002)
+oReport := TReport():New("FINR500C",STR0003,"FIN500",{|oReport| ReportPrint(oReport)},STR0001+STR0002)
 oReport:SetUseGC(.F.)
 
 Pergunte("FIN500", .F.)

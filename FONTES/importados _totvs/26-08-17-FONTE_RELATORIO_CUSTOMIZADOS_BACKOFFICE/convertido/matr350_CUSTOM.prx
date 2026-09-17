@@ -25,7 +25,7 @@ Static __cItGrdOP
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MATR350C()
+User Function MATR350C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 ou superiores
@@ -70,7 +70,7 @@ Local oFaltas
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR350",STR0001,"MTR350", {|oReport| ReportPrint(oReport,aOrdem,cAliasTRB)},STR0002+" "+STR0003+" "+STR0004)
+oReport:= TReport():New("MATR350C",STR0001,"MTR350", {|oReport| ReportPrint(oReport,aOrdem,cAliasTRB)},STR0002+" "+STR0003+" "+STR0004)
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Verifica as perguntas selecionadas                           ³

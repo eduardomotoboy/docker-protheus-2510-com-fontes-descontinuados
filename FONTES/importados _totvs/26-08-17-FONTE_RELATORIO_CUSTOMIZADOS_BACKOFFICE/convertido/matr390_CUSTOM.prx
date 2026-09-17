@@ -16,7 +16,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Matr390C()
+User Function Matr390C()
 
 Local oReport
 
@@ -65,7 +65,7 @@ Local oSection
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MATR390",STR0001,"MTR390", {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003+" "+STR0004) //"Diferencas de Estoque"##"Este relatorio tem o objetivo de alertar o usuario para o problema"##"da inconsistencia dos saldos. Deve ser emitido sempre que surgirem"##"duvidas quanto `a integridade dos saldos em estoque.              "
+oReport := TReport():New("MATR390C",STR0001,"MTR390", {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003+" "+STR0004) //"Diferencas de Estoque"##"Este relatorio tem o objetivo de alertar o usuario para o problema"##"da inconsistencia dos saldos. Deve ser emitido sempre que surgirem"##"duvidas quanto `a integridade dos saldos em estoque.              "
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Verifica as perguntas selecionadas                           ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ

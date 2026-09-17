@@ -18,7 +18,7 @@ Static AFCachePict := NIL
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_ATFR070C()
+User Function ATFR070C()
 Local oReport
 Private aSelFil	:= {}
 Private aSelClass := {}   

@@ -50,7 +50,7 @@ STATIC 	__oCTBR3951
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_Ctbr395C()
+User Function Ctbr395C()
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Define Variaveis                                             ³
@@ -519,7 +519,7 @@ Return .T.
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTB395CC(oMeter,oText,oDlg,lEnd,cArqTmp,cOrctoIni,cOrctoFim,;
+User Function CTB395CC(oMeter,oText,oDlg,lEnd,cArqTmp,cOrctoIni,cOrctoFim,;
 					cRevisa1,cRevisa2,cCalend,cMoeda)
 
 Local aTamConta	:= TAMSX3("CT1_CONTA")
@@ -637,7 +637,7 @@ Return cArqTmp
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTB395GC(oMeter,oText,oDlg,lEnd,cArqTmp,cOrctoIni,cOrctoFim,;
+User Function CTB395GC(oMeter,oText,oDlg,lEnd,cArqTmp,cOrctoIni,cOrctoFim,;
 					cRevisa1,cRevisa2,cCalend,cMoeda)
 					
 Local aSavearea	:= GetArea() 

@@ -15,7 +15,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Matr160C()
+User Function Matr160C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -65,7 +65,7 @@ Local oCell
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MATR160",STR0003,"MTR160", {|oReport| ReportPrint(oReport)},STR0001+" "+STR0002) //"Cotacoes em Aberto"##"Emite o relatorio de cotacoes em aberto por ordem"##"de Numero, Produto e Valor do menor para o maior."
+oReport := TReport():New("MATR160C",STR0003,"MTR160", {|oReport| ReportPrint(oReport)},STR0001+" "+STR0002) //"Cotacoes em Aberto"##"Emite o relatorio de cotacoes em aberto por ordem"##"de Numero, Produto e Valor do menor para o maior."
 Pergunte("MTR160",.F.)
 
 oSection1 := TRSection():New(oReport,STR0014,{"SC8"}) //"Cotacoes em Aberto"

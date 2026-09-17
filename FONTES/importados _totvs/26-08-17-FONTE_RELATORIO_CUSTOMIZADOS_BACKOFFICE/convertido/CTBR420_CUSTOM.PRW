@@ -27,7 +27,7 @@ Static lIsRedStor := FindFunction("IsRedStor") .and. IsRedStor() //Used to check
 ±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß*/
-Function U_CTBR420C( cContaIni, cContaFim, dDataIni, dDataFim, cMoeda, cSaldo, cBook,;
+User Function CTBR420C( cContaIni, cContaFim, dDataIni, dDataFim, cMoeda, cSaldo, cBook,;
 				   nDocBranco,lSaltLin,aSelFil)
 
 Local aArea := GetArea()
@@ -775,7 +775,7 @@ Consulta do plano de contas em formato de TREE e os saldos
 */
 //-------------------------------------------------------------------
 
-Function U_Ctbr421C(oMeter,oText,oDlg,lEnd,cArqTmp,cContaIni,cContaFim,cMoeda,;
+User Function Ctbr421C(oMeter,oText,oDlg,lEnd,cArqTmp,cContaIni,cContaFim,cMoeda,;
 					dDataIni,dDataFim,aSetOfBook,lNoMov,cSaldo,cTpRel,lAnalitico,;
 					cLoteIni,cLoteFim,cSbLoteIni,cSbLoteFim,cDocIni,cDocFim,cFiltCT1,aSelFil)
 
@@ -948,7 +948,7 @@ Return cArqTmp
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Ctbr422C(oMeter,oText,oDlg,lEnd,cContaIni,cContaFim,cMoeda,dDataIni,dDataFim,;
+User Function Ctbr422C(oMeter,oText,oDlg,lEnd,cContaIni,cContaFim,cMoeda,dDataIni,dDataFim,;
 					  aSetOfBook,lNoMov,cSaldo,cTpRel,lAnalitico,cLoteIni,cLoteFim,;
 					  cSbLoteIni,cSbLoteFim,cDocIni,cDocFim,cFiltCT1,aSelFil)
 
@@ -1110,7 +1110,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Ctbr423C(cMoeda,cSaldo,cTipo,cTpRel,lAnalitico)
+User Function Ctbr423C(cMoeda,cSaldo,cTipo,cTpRel,lAnalitico)
 
 Local cConta := ""
 Local cChave := ""

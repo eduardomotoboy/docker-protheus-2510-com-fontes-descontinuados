@@ -12,7 +12,7 @@ Cópia de cheque
 @version P12
 /*/
 //-------------------------------------------------------
-Function U_FINR490C()
+User Function FINR490C()
 
 LOCAL wnrel
 LOCAL cDesc1 	:= STR0001  //"Este programa ir  imprimir as copias dos cheques emitidos."

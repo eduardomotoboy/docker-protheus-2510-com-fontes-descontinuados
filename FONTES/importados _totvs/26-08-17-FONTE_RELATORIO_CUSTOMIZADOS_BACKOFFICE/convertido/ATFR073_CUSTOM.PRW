@@ -17,7 +17,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_ATFR073C()
+User Function ATFR073C()
 Local oReport
 Local lTReport	:= TRepInUse()
 Local lDefTop 	:= IfDefTopCTB() // verificar se pode executar query (TOPCONN)

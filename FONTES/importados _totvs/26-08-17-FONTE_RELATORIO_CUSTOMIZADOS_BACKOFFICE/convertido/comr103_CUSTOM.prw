@@ -8,7 +8,7 @@ Relatório de controle de compras com entrega futura.
 @version P12.1.17
 @since   13/06/2018
 /*/
-Function U_COMR103C()
+User Function COMR103C()
 
 Local oReport
 Local cPerg      := "COMR103"
@@ -35,7 +35,7 @@ Local cTitle     := STR0001  // "Compra com entrega futura"
 Local aOrdem     := {}
 Local cAliasTOP  := GetNextAlias()
 
-oReport := TReport():New("COMR103", cTitle, cPerg, {|oReport| ReportPrint(oReport, cPerg, cAliasTOP)}, STR0002)  // "Relação de saldo de compra com entrega futura."
+oReport := TReport():New("COMR103C", cTitle, cPerg, {|oReport| ReportPrint(oReport, cPerg, cAliasTOP)}, STR0002)  // "Relação de saldo de compra com entrega futura."
 oReport:SetLandscape()
 oReport:SetTotalInLine(.T.)
 oReport:SetPageFooter(3,{|| ImpRoda(oReport)})  // define rodape

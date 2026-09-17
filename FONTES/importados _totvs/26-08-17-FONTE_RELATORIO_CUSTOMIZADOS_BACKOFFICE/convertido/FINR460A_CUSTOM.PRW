@@ -12,7 +12,7 @@ Relatório de Acordos de Liquidação
 @version P12
 /*/
 //-------------------------------------------------------------------
-Function U_FINR461C()
+User Function FINR461C()
 Local oReport		:= Nil
 Local aSM0Fils		:= AdmAbreSM0()
 Private cPerg		:= "FINR460A"
@@ -59,7 +59,7 @@ Local cAlsFO2		:= GetNextAlias()
 /*
  * Definição padrão do relatório TReport
  */
-	oReport	:= TReport():New('FINR460A',STR0001 , 'FINR460A',{|oReport|PrintReport(oReport,cPerg,cAlsFO0,cAlsFO1,cAlsFO2)},) //"Relatório de acordos de liquidação"
+	oReport	:= TReport():New('FINR460AC',STR0001 , 'FINR460A',{|oReport|PrintReport(oReport,cPerg,cAlsFO0,cAlsFO1,cAlsFO2)},) //"Relatório de acordos de liquidação"
 	oReport:SetLandScape()
 /*
  * Desabilita o botão de parâmetros de customizações do relatório TReport

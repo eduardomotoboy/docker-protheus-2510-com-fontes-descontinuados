@@ -15,7 +15,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Matr425C()
+User Function Matr425C()
 
 Local oReport
 
@@ -81,7 +81,7 @@ Pergunte("MR425A",.F.)
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MTR425",cTitle,"MR425A", {|oReport| ReportPrint(oReport,aOrdem,cAliasSB8)},STR0001+" "+STR0002) //"Este programa emitira' uma relacao com a posi‡„o de estoque por Lote/Sub-Lote."
+oReport:= TReport():New("MTR425C",cTitle,"MR425A", {|oReport| ReportPrint(oReport,aOrdem,cAliasSB8)},STR0001+" "+STR0002) //"Este programa emitira' uma relacao com a posi‡„o de estoque por Lote/Sub-Lote."
 oReport:SetLandscape() 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³Criacao da secao utilizada pelo relatorio                               ³

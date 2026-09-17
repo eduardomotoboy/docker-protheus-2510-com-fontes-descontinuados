@@ -28,7 +28,7 @@ Relação de baixas por natureza
 @version 12
 /*/
 //------------------------------------
-Function U_FINR198C()
+User Function FINR198C()
 	Local oReport := Nil
 	Local lNatSint := SuperGetMV("MV_NATSINT", .F., "2" ) == "1"
 
@@ -69,7 +69,7 @@ Static Function ReportDef()
 		lExistFKD := TableInDic('FKD')
 	Endif
 
-	oReport := TReport():New("FINR198", STR0002, "FIN198", {|oReport| ReportPrint(oReport)}, STR0002) //"Relação de Baixas por Natureza"
+	oReport := TReport():New("FINR198C", STR0002, "FIN198", {|oReport| ReportPrint(oReport)}, STR0002) //"Relação de Baixas por Natureza"
 	oReport:SetLandscape(.T.)
 	oReport:SetUseGC(.F.)
 
@@ -465,7 +465,7 @@ Gera o arquivo temporário
 
 /*/
 //------------------------------------------------------------------------------------------
-Function U_F198GerC(aSelFil as Array)
+User Function F198GerC(aSelFil as Array)
 	Local aAux			as Array
 	Local aStruct		as Array
 	Local aValores		as Array
@@ -1397,7 +1397,7 @@ Totaliza as naturezas analíticas nas sintéticas
 
 /*/
 //--------------------------------
-Function U_F198TotC()
+User Function F198TotC()
 	Local aAux			:= {}
 	Local aStruct		:= {}
 	Local cNatureza		:= ""
@@ -1603,7 +1603,7 @@ mais tabelas
 @param cCarteira 	- Carteira
 @return aValores 	- Valores totalizados do movimento
 /*/
-Function U_F198To1C(cAliasQry, cCarteira, oRatSev, oQryFk1, oQryFk2, lAchouSE1, lAchouSE2)
+User Function F198To1C(cAliasQry, cCarteira, oRatSev, oQryFk1, oQryFk2, lAchouSE1, lAchouSE2)
 	Local aAreaSE1		:= {}
 	Local aDados		:= {}
 	Local aValMov		:= {}
@@ -1936,7 +1936,7 @@ Totaliza os movimentos para as naturezas sintéticas
 
 /*/
 //------------------------------------------------------------------------------------------
-Function U_F198To2C()
+User Function F198To2C()
 	Local nX			:= 0
 	Local nY			:= 0
 	Local cNatureza 	:= ""
@@ -1983,7 +1983,7 @@ Impressão de totalizadores
 
 /*/
 //------------------------------------------------------------------------------------------
-Function U_F198IncC(oReport,cNatureza,cTotaliz)
+User Function F198IncC(oReport,cNatureza,cTotaliz)
 	Local aTotalNat	:= {}
 	Local nX		:= 0
 	Local nPosNat	:= 0
@@ -2039,7 +2039,7 @@ IMPORTANTE: Para validação dos dados, o registro deve estar posicionado.
 @return lRet - Resultado da validação do movimento
 /*/
 //----------------------------------------
-Function U_F198VldC(cAlias)
+User Function F198VldC(cAlias)
 	Local lRet := .T.
 
 	Default cAlias := ""

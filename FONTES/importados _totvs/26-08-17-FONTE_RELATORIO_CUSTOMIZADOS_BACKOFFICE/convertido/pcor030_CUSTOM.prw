@@ -14,7 +14,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_PCOR030C( lCallPrg )
+User Function PCOR030C( lCallPrg )
 
 Local oReport
 Local aArea		  := GetArea()
@@ -154,7 +154,7 @@ Return oReport
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_PCOR031C( oReport, lCallPrg )
+User Function PCOR031C( oReport, lCallPrg )
 
 local cQuery1   := "QRYAKO"
 local cQuery2   := "QRYAKN"

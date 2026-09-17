@@ -23,7 +23,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_FINR840C()
+User Function FINR840C()
 
 Local oReport
 Local aArea		 := GetArea()  
@@ -937,7 +937,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_FINR841C()
+User Function FINR841C()
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Define Vari veis  ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
@@ -1026,7 +1026,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FA840ImC(lEnd,wnRel,cString)
+User Function FA840ImC(lEnd,wnRel,cString)
 LOCAL cbCont		:=0
 LOCAL CbTxt			:= Space(10)
 LOCAL nSaldoTit		:= 0
@@ -1536,7 +1536,7 @@ Return Nil
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_RetSeguC(dDataAjusta)
+User Function RetSeguC(dDataAjusta)
 
 IF dow(dDataAjusta)>=2				// Se passou de segunda-feira...
 	Do While dow(dDataAjusta)<>2	// Volta at‚ Segunda-Feira
@@ -1581,7 +1581,7 @@ Return dDataAjusta
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CriaBloC(nTipQuebra,nNumQuebras,nTipInicio)
+User Function CriaBloC(nTipQuebra,nNumQuebras,nTipInicio)
 Local dInicio:=dDataBase
 Local nAtual,dFinal
 Local aMontar:={}

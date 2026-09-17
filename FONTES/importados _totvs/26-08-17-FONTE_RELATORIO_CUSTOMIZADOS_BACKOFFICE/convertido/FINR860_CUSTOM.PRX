@@ -20,7 +20,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_FinR860C()
+User Function FinR860C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -50,7 +50,7 @@ Local oSection1
 Local oSection11
 Local oSecFil	:= Nil
 
-oReport := TReport():New("FINR860",STR0005,"FIN860",;
+oReport := TReport():New("FINR860C",STR0005,"FIN860",;
 {|oReport| ReportPrint(oReport)},STR0001+STR0002)
 
 pergunte("FIN860",.F.)

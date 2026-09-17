@@ -15,7 +15,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_CNTR030C(cNumMed)
+User Function CNTR030C(cNumMed)
 Local oReport 	:= NIL
 Default cNumMed := ""
 
@@ -82,7 +82,7 @@ Return
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
 Static Function ReportDef()
-Local oReport	:= TReport():New("CNTR030",STR0001,"CNR030",{|oReport| ReportPrin(oReport)},STR0002+STR0003+STR0004)
+Local oReport	:= TReport():New("CNTR030C",STR0001,"CNR030",{|oReport| ReportPrin(oReport)},STR0002+STR0003+STR0004)
 Local oSecMed	:= TRSection():New(oReport,STR0017,{"CND"},,,,,,,,.T.) //-- Medição
 Local oSecIMe	:= TRSection():New(oSecMed,STR0018,{"CNE"}) //-- Itens da Medição
 Local oSecMB	:= TRSection():New(oSecMed,STR0019,{"CNR"}) //-- Multas e Bonificações

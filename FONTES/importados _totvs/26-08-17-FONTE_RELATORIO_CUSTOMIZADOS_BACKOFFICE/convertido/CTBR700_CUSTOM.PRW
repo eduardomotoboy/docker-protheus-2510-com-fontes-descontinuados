@@ -16,7 +16,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Ctbr700C()
+User Function Ctbr700C()
  
 Private cProg     := "CTBR700"
 Private cPerg     := "CTR700"
@@ -679,7 +679,7 @@ Return(cRet)
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
 
-Function U_PrmCtbrC(cNumPar,lUltmVld)
+User Function PrmCtbrC(cNumPar,lUltmVld)
 
 Local lRet       := .T.
 Local aTexto1    := {}

@@ -20,7 +20,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Matr960C()
+User Function Matr960C()
 Local cReport	:= "MATR960"	//Nome do Programa
 Local cAlias	:= "SB4"		//Alias da tabela
 Local cTitle	:= STR0001		//Grade de Produtos 

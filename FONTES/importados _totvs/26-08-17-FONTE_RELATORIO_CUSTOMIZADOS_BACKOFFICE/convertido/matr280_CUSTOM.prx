@@ -13,7 +13,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MATR280C()
+User Function MATR280C()
 Local oReport
 Private cAliasSB1 := "SB1"
 Private cAliasSB2 := "SB2"
@@ -80,7 +80,7 @@ EndIf
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MATR280",STR0001,cPerg, {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003+" "+STR0004) // 'Listagem para Inventario'##'Este programa emite um relatorio que facilita a digitacao'##'das quantidades inventariadas.'##"Ele e' emitido de acordo com os parametros informados."
+oReport := TReport():New("MATR280C",STR0001,cPerg, {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003+" "+STR0004) // 'Listagem para Inventario'##'Este programa emite um relatorio que facilita a digitacao'##'das quantidades inventariadas.'##"Ele e' emitido de acordo com os parametros informados."
 oReport:SetLandScape()
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿

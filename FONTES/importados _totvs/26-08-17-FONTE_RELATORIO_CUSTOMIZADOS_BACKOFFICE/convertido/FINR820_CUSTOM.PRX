@@ -21,7 +21,7 @@ Impressao relatorio de Aplicacoes Financeiras
 @author Eduardo Riera
 @since 03/04/98
 /*/
-Function U_FinR820C()
+User Function FinR820C()
 	Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores

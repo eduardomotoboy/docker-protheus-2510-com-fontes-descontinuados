@@ -15,7 +15,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Matr126C( cAlias, nReg )
+User Function Matr126C( cAlias, nReg )
 
 Local oReport
 
@@ -82,7 +82,7 @@ Pergunte("MTR126",.F.)
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MTR126",cTitle,If(lAuto,Nil,"MTR126"), {|oReport| ReportPrint(oReport,cAliasSC3,nReg)},STR0002+" "+STR0003) //"Emite um mapa para rastreamento dos contratos de parceria ate os titulos emitidos no SE2." 
+oReport := TReport():New("MTR126C",cTitle,If(lAuto,Nil,"MTR126"), {|oReport| ReportPrint(oReport,cAliasSC3,nReg)},STR0002+" "+STR0003) //"Emite um mapa para rastreamento dos contratos de parceria ate os titulos emitidos no SE2." 
 oReport:SetLandscape() 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³Criacao da secao utilizada pelo relatorio                               ³

@@ -13,7 +13,7 @@ Movimento diário do caixa
 @since 26/06/2006
 @version 12.1.17
 /*/
-Function U_FINR020C()
+User Function FINR020C()
 
 	Local oReport
 
@@ -45,7 +45,7 @@ Static Function ReportDef()
 
 	Pergunte(cPerg, .F.)
 
-	oReport := TReport():New("FINR020", STR0030, cPerg, {|oReport| ReportPrint(oReport, @cAliasQry1)}, STR0003)
+	oReport := TReport():New("FINR020C", STR0030, cPerg, {|oReport| ReportPrint(oReport, @cAliasQry1)}, STR0003)
 
 	//GESTAO - inicio
 	oReport:SetUseGC(.F.)
@@ -319,7 +319,7 @@ Gera a tabela temporária para impressão do relatório
 @since 27/08/2013
 @version 12.1.17
 /*/
-Function U_F020GerC(cAliasQry1)
+User Function F020GerC(cAliasQry1)
 
 	Local cQuery	:= ""
 	Local nPosFil	:= 0
@@ -480,7 +480,7 @@ Prepara as filiais selecionadas para uso na query
 @since 27/08/2013
 @version 12.1.17
 /*/
-Function U_F020AgrC(aCNPJ, aFil)
+User Function F020AgrC(aCNPJ, aFil)
 
 	Local nPosFil	:= 0
 	Local nX		:= 0

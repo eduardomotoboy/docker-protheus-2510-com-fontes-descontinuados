@@ -22,7 +22,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_MATR870C()
+User Function MATR870C()
 
 Local oReport
 
@@ -78,7 +78,7 @@ Local cAliasQRY := GetNextAlias()
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MATR870",STR0001,cPerg, {|oReport| ReportPrint(oReport, cAliasQRY)},STR0002+" "+STR0003+" "+STR0004+If(lVeic," "+STR0009,"")) //"Custos de Reposicao dos materiais"##"Este programa ira imprimir uma rela‡„o dos materiais"##"e seus respectivos Custos de Reposi‡ao"##"Na Gestão de Concessionarias a ordem do relatorio e : Grupo + Cod. Item."
+oReport := TReport():New("MATR870C",STR0001,cPerg, {|oReport| ReportPrint(oReport, cAliasQRY)},STR0002+" "+STR0003+" "+STR0004+If(lVeic," "+STR0009,"")) //"Custos de Reposicao dos materiais"##"Este programa ira imprimir uma rela‡„o dos materiais"##"e seus respectivos Custos de Reposi‡ao"##"Na Gestão de Concessionarias a ordem do relatorio e : Grupo + Cod. Item."
 
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿

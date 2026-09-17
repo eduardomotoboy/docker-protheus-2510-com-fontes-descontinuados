@@ -30,7 +30,7 @@ Static _oQueries := Nil
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_CNTR040C()
+User Function CNTR040C()
 	Local oReport := NIL
 	Local cRelease := GetRpoRelease()
 	Local dDtCorte := CTOD("01/07/2026")
@@ -91,7 +91,7 @@ Static Function ReportDef()
 	Local cTamVlTot	:= GetSx3Cache( 'CND_VLTOT', 'X3_TAMANHO' )
 	Local cPictQtdMd:= PesqPict("CNB","CNB_QTDMED")
 
-	oReport	:= TReport():New("CNTR040",STR0016,"CNR040",{|oReport| ReportPrin(oReport, cSecCab, cSecItens)},STR0002+STR0003+STR0004)
+	oReport	:= TReport():New("CNTR040C",STR0016,"CNR040",{|oReport| ReportPrin(oReport, cSecCab, cSecItens)},STR0002+STR0003+STR0004)
 	oSecMed	:= TRSection():New(oReport,STR0017,{"CND"},,,,,,,,.T.) //-- Medição
 	oSecIMe	:= TRSection():New(oSecMed,STR0075,{"CNE"}) //-- Itens da Medição
 	oSecTot	:= TRSection():New(oSecMed,STR0077) //-- "Totalizadores"
@@ -435,7 +435,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_CNR040VC(cNumMed,cContra,cRevisa,cPlanil,cFilCtr)
+User Function CNR040VC(cNumMed,cContra,cRevisa,cPlanil,cFilCtr)
 	Local aArea  := GetArea()
 	Local cQuery := ""
 	Local cAlias := ""
@@ -495,7 +495,7 @@ Return nTot
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_CNR0401C(cNumMed,lAcumulado,cContra,cRevisa,cNumPla,cTipo,cFilCtr)
+User Function CNR0401C(cNumMed,lAcumulado,cContra,cRevisa,cNumPla,cTipo,cFilCtr)
 	Local aArea		:= GetArea()
 	Local cQuery	:= ""
 	Local cAlias	:= ""
@@ -573,7 +573,7 @@ Return nTot
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_CNR0402C(cNumMed,lAcumulado,cContra,cRevisa,cPlanil,cFilCtr)
+User Function CNR0402C(cNumMed,lAcumulado,cContra,cRevisa,cPlanil,cFilCtr)
 	Local aArea  := GetArea()
 	Local cQuery := ""
 	Local cAlias := GetNextAlias()
@@ -634,7 +634,7 @@ Return nTot
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CNR040CC(cTipo)
+User Function CNR040CC(cTipo)
 	Local aSaveArea	:= GetArea()
 	Local nTamA2Cod := GetSx3Cache( 'A2_COD', 'X3_TAMANHO' )
 	Local nTamA1Cod := GetSx3Cache( 'A1_COD', 'X3_TAMANHO' )

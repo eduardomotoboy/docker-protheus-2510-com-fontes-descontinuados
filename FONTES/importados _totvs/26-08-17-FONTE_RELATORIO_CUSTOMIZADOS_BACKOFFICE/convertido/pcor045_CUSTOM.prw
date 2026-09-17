@@ -22,7 +22,7 @@
 
 
 //----------------------------NOVO RELATORIO RELEASE 4---------------------------//
-Function U_PCOR045C(aPerg)
+User Function PCOR045C(aPerg)
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
 U_PCOR041C(aPerg)
@@ -51,7 +51,7 @@ Return()
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_PCOR041C(aPerg)
+User Function PCOR041C(aPerg)
 Local aArea		:= GetArea()
 Local nX
 Local aNovPer		:= {}
@@ -200,7 +200,7 @@ Local nX
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("PCOR045",STR0001+" "+STR0018,"PCR015", ;
+oReport := TReport():New("PCOR045C",STR0001+" "+STR0018,"PCR015", ;
 			{|oReport| ReportPrint(oReport)},;
 			STR0001+" "+STR0018 )
 

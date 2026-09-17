@@ -22,7 +22,7 @@
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
 
-Function U_Matr958C()
+User Function Matr958C()
 
 Local cReport	:= "MATR958"	//Nome do Programa
 Local cAlias	:= "SAH"		//Alias da tabela

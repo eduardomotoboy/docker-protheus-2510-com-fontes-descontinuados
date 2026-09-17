@@ -22,7 +22,7 @@
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
 
-Function U_Matr030C()
+User Function Matr030C()
 
 Local cReport	:= "MATR030"	//Nome do Programa
 Local cAlias	:= "SA2"		//Alias da tabela

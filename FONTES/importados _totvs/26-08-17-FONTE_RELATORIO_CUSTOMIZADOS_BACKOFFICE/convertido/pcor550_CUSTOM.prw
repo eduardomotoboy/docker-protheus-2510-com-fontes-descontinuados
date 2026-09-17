@@ -16,7 +16,7 @@
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
 
-Function U_PCOR550C(aPerg)
+User Function PCOR550C(aPerg)
 Default aPerg	:=	{}
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -42,7 +42,7 @@ _F_U_N_C_ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_PCOR551C(aPerg)
+User Function PCOR551C(aPerg)
 Local aArea		:= GetArea()
 Local lOk		:= .F.
 Local dIniPer, dFimPer, dIniAno
@@ -150,7 +150,7 @@ Local oComparativo
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("PCOR550",STR0004,"PCR550", ; //"Cubos Comparativos - Demonstrativo de Saldos Mensais"
+oReport := TReport():New("PCOR550C",STR0004,"PCR550", ; //"Cubos Comparativos - Demonstrativo de Saldos Mensais"
 			{|oReport| ReportPrint(oReport) },;
 			STR0004 ) //"Cubos Comparativos - Demonstrativo de Saldos Mensais"
 
@@ -267,7 +267,7 @@ Return
 ±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß*/
-Function U_Pcor552C(cConfig,cChave)
+User Function Pcor552C(cConfig,cChave)
 Local aRetorno := {}
 Local aRetIni,aRetFim
 

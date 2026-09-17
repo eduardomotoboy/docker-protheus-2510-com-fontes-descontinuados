@@ -22,7 +22,7 @@ Relacao Lancamentos Classificados por Sublote
 @obs	 
 */
 //-------------------------------------------------------------------
-Function U_CTBR080C()
+User Function CTBR080C()
 
 Local aArea 	:= GetArea()
 Local oReport
@@ -551,7 +551,7 @@ Filtro da rotina
 @obs	 
 */
 //-------------------------------------------------------------------
-Function U_Ctr080FC(lAllSL)
+User Function Ctr080FC(lAllSL)
 
 Local cIndex
 Local cChave
@@ -624,7 +624,7 @@ Return cFiltro
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
 
-Function U_CodRedC(cConta,cTipo)
+User Function CodRedC(cConta,cTipo)
 
 Default cConta := ""
 Default cTipo  := ""
@@ -657,7 +657,7 @@ Return (cConta)
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
 
-Function U_CTBR081C()
+User Function CTBR081C()
 Local aSaveArea := GetArea()
 Local lUseDocHis := X3USADO("CTC_DOCHIS")
 Local aSaveCTC	  := CTC->(GetArea())
@@ -689,7 +689,7 @@ Return cRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_C080RetC(cRet)
+User Function C080RetC(cRet)
 Default cRet := ""
 
 Do Case

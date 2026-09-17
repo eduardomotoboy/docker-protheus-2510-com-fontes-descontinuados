@@ -19,7 +19,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MATR330C()
+User Function MATR330C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 ou superiores
@@ -70,7 +70,7 @@ Local cAliasTop := GetNextAlias()
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR330",STR0001,"MTR330", {|oReport| ReportPrint(oReport,aOrdem,cAliasTop)},STR0002+" "+STR0003+" "+STR0004) //"Mapa das Movimentacoes"
+oReport:= TReport():New("MATR330C",STR0001,"MTR330", {|oReport| ReportPrint(oReport,aOrdem,cAliasTop)},STR0002+" "+STR0003+" "+STR0004) //"Mapa das Movimentacoes"
 oReport:DisableOrientation()
 oReport:SetLandscape() 
 

@@ -28,7 +28,7 @@ Impressão do Retorno da Comunicação Bancária
 @since 03/02/2023
 @param aParam, array, parâmetros
 /*/
-Function U_FINR650C(aParam As Array)
+User Function FINR650C(aParam As Array)
 	Local oReport    As Object
 
 	DEFAULT aParam := {}
@@ -82,7 +82,7 @@ Static Function ReportDef(aParam As Array) As Object
 		Next nI
 	EndIf
 	
-	oReport := TReport():New("FINR650",STR0004,"FIN650",{|oReport| ReportPrint(oReport)},STR0001+STR0002+STR0003)
+	oReport := TReport():New("FINR650C",STR0004,"FIN650",{|oReport| ReportPrint(oReport)},STR0001+STR0002+STR0003)
 
 	If lExecJob
 		oReport:nDevice := 6

@@ -13,7 +13,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MATR851C()
+User Function MATR851C()
 
 Local oReport
 Private cAliasQry
@@ -62,7 +62,7 @@ Private cCampoCus
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR851",STR0001,"MTR851", {|oReport| ReportPrint(oReport)},STR0002+STR0003) //'RELACAO POR ORDEM DE PRODUCAO FIFO'##'O objetivo deste relat¢rio ‚ exibir detalhadamente todas as movimenta-'##'‡äes feitas para cada Ordem de Produ‡Æo ,mostrando inclusive os custos.'
+oReport:= TReport():New("MATR851C",STR0001,"MTR851", {|oReport| ReportPrint(oReport)},STR0002+STR0003) //'RELACAO POR ORDEM DE PRODUCAO FIFO'##'O objetivo deste relat¢rio ‚ exibir detalhadamente todas as movimenta-'##'‡äes feitas para cada Ordem de Produ‡Æo ,mostrando inclusive os custos.'
 oReport:SetLandscape() //Define a orientacao de pagina do relatorio como paisagem.
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿

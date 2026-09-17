@@ -21,7 +21,7 @@ Static lFWCodFil := FindFunction("FWCodFil")
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_FinR590C()
+User Function FinR590C()
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
 Pergunte("FINR590",.F.)
@@ -100,7 +100,7 @@ Local nOffSet := 1
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("FINR590",STR0003,"FIR590", {|oReport| ReportPrint(oReport,cAlias)},STR0001+" "+STR0002) //"Mapa de Distribuição de Multiplas Naturezas"##"Este relatorio ir  imprimir o mapa de rateios de Multipla Natureza e  ""Multipla Natureza por Centro de Custo"
+oReport := TReport():New("FINR590C",STR0003,"FIR590", {|oReport| ReportPrint(oReport,cAlias)},STR0001+" "+STR0002) //"Mapa de Distribuição de Multiplas Naturezas"##"Este relatorio ir  imprimir o mapa de rateios de Multipla Natureza e  ""Multipla Natureza por Centro de Custo"
 oReport:SetTotalInLine(.F.)
 
 /********************************************************************/
@@ -894,7 +894,7 @@ Return NIL
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FinR591C()
+User Function FinR591C()
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Define Variaveis                                             ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ

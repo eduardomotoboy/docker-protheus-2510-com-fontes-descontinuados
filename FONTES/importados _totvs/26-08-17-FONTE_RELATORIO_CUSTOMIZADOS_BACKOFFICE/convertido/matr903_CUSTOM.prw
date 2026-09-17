@@ -17,7 +17,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_MATR903C()
+User Function MATR903C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 ou superiores
@@ -64,7 +64,7 @@ Local oCell
 //³ExpB4 : Bloco de codigo que sera executado na confirmacao da impressao  ³
 //³ExpC5 : Descricao                                                       ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MATR903",STR0001,/*cPerg*/, {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003)//'RELACAO DE PRODUTOS COM PROBLEMAS NA BAIXA"##"O objetivo deste relatorio e exibir detalhadamente todos os produtos com"##"problemas na baixa quando do processamento do custo FIFO.
+oReport := TReport():New("MATR903C",STR0001,/*cPerg*/, {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003)//'RELACAO DE PRODUTOS COM PROBLEMAS NA BAIXA"##"O objetivo deste relatorio e exibir detalhadamente todos os produtos com"##"problemas na baixa quando do processamento do custo FIFO.
 
 oSection := TRSection():New(oReport,STR0009,{"TRB"}) //"Produtos"
 oSection:SetHeaderPage()

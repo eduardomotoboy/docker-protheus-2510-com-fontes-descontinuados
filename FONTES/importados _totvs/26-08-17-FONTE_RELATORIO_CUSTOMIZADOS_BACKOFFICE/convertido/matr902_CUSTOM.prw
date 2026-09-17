@@ -12,7 +12,7 @@
 ±±ÃÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´±±
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß*/
-Function U_MATR902C()
+User Function MATR902C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 ou superiores
@@ -74,7 +74,7 @@ Local oReport
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR902",Titulo,"MTR902", {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003) //'KARDEX FISICO FIFO/LIFO'##"Este programa emitir  uma rela‡„o com as movimenta‡”es"##"dos produtos selecionados, ordenados sequencialmente."
+oReport:= TReport():New("MATR902C",Titulo,"MTR902", {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003) //'KARDEX FISICO FIFO/LIFO'##"Este programa emitir  uma rela‡„o com as movimenta‡”es"##"dos produtos selecionados, ordenados sequencialmente."
 oReport:SetLandscape()
 oReport:SetTotalInLine(.F.)
 

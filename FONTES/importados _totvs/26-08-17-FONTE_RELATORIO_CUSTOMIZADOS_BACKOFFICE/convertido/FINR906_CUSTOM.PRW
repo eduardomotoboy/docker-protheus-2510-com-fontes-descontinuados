@@ -33,7 +33,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FINR906C()
+User Function FINR906C()
 Local oReport		:= nil
 
 Private cTitulo		:= STR0001//"Conferencia de Processo de AVP Contas a Pagar"

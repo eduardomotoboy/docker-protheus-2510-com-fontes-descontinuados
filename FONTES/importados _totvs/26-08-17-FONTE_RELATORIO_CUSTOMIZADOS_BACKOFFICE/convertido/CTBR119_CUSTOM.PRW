@@ -15,7 +15,7 @@ Diário do Plano Referencial
 @obs	 
 */
 //-------------------------------------------------------------------
-Function U_CTBR119C()
+User Function CTBR119C()
 
 Local oReport 
 Local lTReport	:= TRepInUse()

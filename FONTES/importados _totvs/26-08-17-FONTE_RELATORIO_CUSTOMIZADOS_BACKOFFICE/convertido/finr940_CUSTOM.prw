@@ -16,7 +16,7 @@ Relação de Titulos a Receber com Retenção PIS / COFINS e CSLL
 @since   24/06/2015
 /*/
 //-------------------------------------------------------------------
-Function U_FINR940C()
+User Function FINR940C()
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
 Pergunte( "FIN940", .F. )
@@ -47,7 +47,7 @@ Else
 	cAliasTrb	:=	GetNextAlias()
 EndIf
 
-oReport := TReport():New("FINR940",cTitle,"FIN940", {|oReport| ReportPrint(oReport)},STR0002) //"Relatório utilizado pelo usuário para levantar a retenções de PIS / COFINS e CSLL dos clientes afim de confirmar os valores das retenções" 
+oReport := TReport():New("FINR940C",cTitle,"FIN940", {|oReport| ReportPrint(oReport)},STR0002) //"Relatório utilizado pelo usuário para levantar a retenções de PIS / COFINS e CSLL dos clientes afim de confirmar os valores das retenções" 
 oReport:SetLandscape()
 
 oReport:lHeaderVisible := .T.
@@ -586,7 +586,7 @@ Return ( nTotAbImp )
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FVPccBxC(cChave,nPis,nCofins,nCsll) 
+User Function FVPccBxC(cChave,nPis,nCofins,nCsll) 
 
 Local aArea := GetArea()
 

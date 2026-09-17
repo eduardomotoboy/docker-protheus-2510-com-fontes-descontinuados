@@ -11,7 +11,7 @@ Static lIsRedStor := FindFunction("IsRedStor") .and. IsRedStor() //Used to check
 Static nTamCdoCusto := 20
 
 //--------------------------RELEASE 04------------------------------------------------//
-Function U_Ctbr285C()
+User Function Ctbr285C()
 
 	//Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
 	U_Ctbr282C()
@@ -32,7 +32,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_Ctbr282C()
+User Function Ctbr282C()
 Local aArea 		:= GetArea()
 Local cMensagem		:= ""
 
@@ -158,7 +158,7 @@ nTamConta	:= aTamConta[1] + Len(cMascara)
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
 
-oReport := TReport():New("CTBR285",cTitulo, cPerg, ;
+oReport := TReport():New("CTBR285C",cTitulo, cPerg, ;
 			{|oReport| If(!ct040Valid(mv_par08), oReport:CancelPrint(), ReportPrint(oReport,cSayCC, cString, cTitulo))},;
 			cDesc1+CRLF+cDesc2+CRLF+cDesc3 )
 

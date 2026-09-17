@@ -4,7 +4,7 @@
 Static oFINR4051 := Nil
 Static aRecnos := {}
 
-Function U_FINR405C(aRecFon)
+User Function FINR405C(aRecFon)
 Local oReport := Nil
 
 Private aSelFil := {}
@@ -34,7 +34,7 @@ Local oSec2 := Nil
 Local cPergunt := "FIN405"
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
-oReport := TReport():New("FINR405", OemToAnsi(STR0001), cPergunt, {|oReport| ReportPrint(oReport)}, (STR0001)) 
+oReport := TReport():New("FINR405C", OemToAnsi(STR0001), cPergunt, {|oReport| ReportPrint(oReport)}, (STR0001)) 
 
 pergunte("FIN405",.F.)
 

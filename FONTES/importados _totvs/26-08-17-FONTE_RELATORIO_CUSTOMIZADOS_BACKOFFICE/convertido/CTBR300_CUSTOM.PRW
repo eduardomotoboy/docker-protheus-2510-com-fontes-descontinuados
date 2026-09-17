@@ -27,7 +27,7 @@ Static lIsRedStor := FindFunction("IsRedStor") .and. IsRedStor() //Used to check
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Ctbr300C()
+User Function Ctbr300C()
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
 U_Ctbr301C()
@@ -51,7 +51,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_Ctbr301C()
+User Function Ctbr301C()
 
 Local aArea 		:= GetArea()
 Local cSayItem		:= CtbSayApro("CTD")
@@ -172,7 +172,7 @@ Local aOrdem := {}
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
 
-oReport := TReport():New("CTBR300",cTitulo, cPerg, ;
+oReport := TReport():New("CTBR300C",cTitulo, cPerg, ;
 			{|oReport| If(!ct040Valid(mv_par12), oReport:CancelPrint(), ReportPrint(oReport, cSayItem, cSayClVl, cString, cTitulo))},;
 			cDesc1+CRLF+cDesc2+CRLF+cDesc3 )
 

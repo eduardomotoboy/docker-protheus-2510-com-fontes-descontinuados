@@ -9,7 +9,7 @@ Relatório de Prestação de Contas.
 @type       function
 @since      01/11/13
 /*/
-Function U_FINR677C()
+User Function FINR677C()
 
 	Local oReport As Object
 

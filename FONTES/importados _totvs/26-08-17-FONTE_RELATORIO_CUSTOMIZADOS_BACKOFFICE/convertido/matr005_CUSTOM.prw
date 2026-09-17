@@ -19,7 +19,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß*/
 
-Function U_MATR005C()
+User Function MATR005C()
 Local olReport                  //Objeto TReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 ou superiores

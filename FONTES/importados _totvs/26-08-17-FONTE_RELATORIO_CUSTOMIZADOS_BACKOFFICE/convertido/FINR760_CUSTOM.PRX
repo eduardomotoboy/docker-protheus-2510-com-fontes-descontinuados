@@ -13,7 +13,7 @@ Eficiência da Contas a Pagar.
 @since	18/08/2006
 /*/
 //-----------------------------------------------------------------------------------------------------
-Function U_FINR760C()
+User Function FINR760C()
 
 Local oReport	:= NIL
 Local aArea		:= GetArea()
@@ -863,7 +863,7 @@ Monta a expressão do NOT IN da query
 @version 12.1.7
 /*/
 //-------------------------------------------------------------------
-Function U_FinTipoC(cTipos As Character)
+User Function FinTipoC(cTipos As Character)
 
 	Default cTipos := MVPROVIS+"/"+MVRECANT+"/"+MV_CPNEG+"/"+MVABATIM
 

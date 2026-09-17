@@ -20,7 +20,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_MATR952C( cAlias, nReg )
+User Function MATR952C( cAlias, nReg )
 Local oReport
 PRIVATE lAuto := (nReg!=Nil) 
 
@@ -82,7 +82,7 @@ Endif
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR952",STR0001,If(lAuto,Nil,"MTR952"), {|oReport| ReportPrint(oReport,cAliasSC3,nReg)},STR0002+" "+STR0003) //"Contratos em Aberto"##"Emite uma relacao com as informacoes referentes"##"aos Contratos de Parceria."
+oReport:= TReport():New("MATR952C",STR0001,If(lAuto,Nil,"MTR952"), {|oReport| ReportPrint(oReport,cAliasSC3,nReg)},STR0002+" "+STR0003) //"Contratos em Aberto"##"Emite uma relacao com as informacoes referentes"##"aos Contratos de Parceria."
 oReport:SetLandscape()    
 oReport:SetTotalInLine(.F.)
 Pergunte("MTR952",.F.)

@@ -12,7 +12,7 @@
 @obs	 
 */
 //-------------------------------------------------------------------
-Function U_CTBR025C()
+User Function CTBR025C()
 
 Local oReport
 Local lTReport	:= TRepInUse()

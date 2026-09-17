@@ -15,7 +15,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */                                                
-Function U_ATFR074C()
+User Function ATFR074C()
 Local oReport   
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -74,7 +74,7 @@ If !Pergunte(cPerg074,.T.)
 	Return .F.
 EndIf
 
-oReport := TReport():New("ATFR074",STR0001,cPerg074,{|| GetQry(), Afr074PrtTop(oReport) }, "") //#"Demonstrativo de depreciação de bens com controle de rateio"
+oReport := TReport():New("ATFR074C",STR0001,cPerg074,{|| GetQry(), Afr074PrtTop(oReport) }, "") //#"Demonstrativo de depreciação de bens com controle de rateio"
 
 oSecCab 	:= TRSection():New(oReport,,{"TRBATF"})
 oSecIte		:= TRSection():New(oSecCab,,{"TRBATF"})

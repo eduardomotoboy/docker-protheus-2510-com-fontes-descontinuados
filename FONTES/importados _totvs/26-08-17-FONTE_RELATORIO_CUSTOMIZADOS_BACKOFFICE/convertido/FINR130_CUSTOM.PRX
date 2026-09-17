@@ -66,7 +66,7 @@ Static __nValCM
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FINR130C()
+User Function FINR130C()
     Local   oReport     As Object
     Private oFINR130    As Object
     Private cMVBR10925	As Character
@@ -165,7 +165,7 @@ Static Function ReportDef()
     __lBQ10925		:= SuperGetMV("MV_BQ10925",,"2") == "1"
     __lProcSaldoTit	:= ExistProc( IIf( FindFunction( "GetSPName" ), GetSPName( "FIN002", "10" ), "FIN002" ), VERIDPROC() )
 
-    oReport := TReport():New("FINR130",STR0005,"FIN130",{|oReport| ReportPrint(oReport)},STR0001+STR0002)
+    oReport := TReport():New("FINR130C",STR0005,"FIN130",{|oReport| ReportPrint(oReport)},STR0001+STR0002)
 
     //oReport:DisableOrientation(.T.)// Opção de impressão no formato Retrato desabilitada devido a não comportar mais informações.
     oReport:SetLandScape(.T.)
@@ -2454,7 +2454,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function u_STot130R(nTit0,nTit1,nTit2,nTit3,nTit4,nOrdem,cCarAnt,nTotJur,nDecs,oReport,aDados,oSection)
+User Function STot130R(nTit0,nTit1,nTit2,nTit3,nTit4,nOrdem,cCarAnt,nTotJur,nDecs,oReport,aDados,oSection)
 
 Local cQuebra       := ""
 Local cCarteira     := ""
@@ -2681,7 +2681,7 @@ Return(.T.)
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
 
-Function u_fr130IR()
+User Function fr130IR()
 Local cString
 
 cString := 'SE1->E1_FILIAL=="'+FwxFilial("SE1")+'".And.'
@@ -2847,7 +2847,7 @@ Return .T.
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function u_F130RIMP(cFiltro)
+User Function F130RIMP(cFiltro)
     Local aTitulos := {}
     Local aAreaSE1	:= SE1->(GetArea())
 
@@ -2908,7 +2908,7 @@ Return aTitulos
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
 
-Function u_FTITPAI()
+User Function FTITPAI()
 Local cAlias := Alias()
 Local cTitP
 Local cQuery
@@ -3230,7 +3230,7 @@ Formata a expressão para IN ou NOT IN
 @version 12.1.7
 /*/
 //-------------------------------------------------------------------
-Function u_F130MtaIn(cTipoIn)
+User Function F130MtaIn(cTipoIn)
 Local cTiposAbt	:= MVABATIM +"|"+MVFUABT
 Default cTipoIn   := ""
 
@@ -3257,7 +3257,7 @@ Função para transformar o ano em 2 caracteres.
     aDtsTit	:= {E1_EMISSAO, E1_VENCTO, E1_VENCREA}
 /*/
 //-------------------------------------------------------------------
-Function u_F130Dta2(cAliasSE1 As Character) As Array
+User Function F130Dta2(cAliasSE1 As Character) As Array
 
     Local cData1  As Character
     Local nI      As Numeric

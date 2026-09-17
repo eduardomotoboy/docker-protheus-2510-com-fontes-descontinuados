@@ -45,7 +45,7 @@ Static __oStTemFi := NIL
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FINR610C()
+User Function FINR610C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -68,7 +68,7 @@ Static Function ReportDef()
 
 	nTamCli	:= TamSx3("A1_NOME")[1]
 
-	oReport := TReport():New("FINR610",STR0003,"FIN610", {|oReport| ReportPrint(oReport)},STR0001+STR0002)
+	oReport := TReport():New("FINR610C",STR0003,"FIN610", {|oReport| ReportPrint(oReport)},STR0001+STR0002)
 
 	pergunte("FIN610",.F.)
 
@@ -1216,7 +1216,7 @@ Return .T.
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_FA610CoC(aBases,cChaveSE3,nBases,cTipo,cParcela,nValorFat,nBaseCom,nComissao, cChvSE3I2, cLiqSE1)
+User Function FA610CoC(aBases,cChaveSE3,nBases,cTipo,cParcela,nValorFat,nBaseCom,nComissao, cChvSE3I2, cLiqSE1)
 
 Local aAreaSE1	:= SE1->(GetArea())
 Local nPercBase := 0
@@ -1425,7 +1425,7 @@ Return aVend610
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Fr610PrC(oReport As Object,lEnd As Logical, aSelFil As Array)
+User Function Fr610PrC(oReport As Object,lEnd As Logical, aSelFil As Array)
 
 	Local nJX			As Numeric
 	Local nVendTit 		As Numeric
@@ -1662,7 +1662,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Fr610P1C(oReport,lEnd, aSelFil)
+User Function Fr610P1C(oReport,lEnd, aSelFil)
 
 Local JX 		as numeric
 Local nJ 		as numeric
@@ -1957,7 +1957,7 @@ Função para geração da TRB e query para a geração dos registros da função Fr610P
 /*/
 //-----------------------------------------------------------------------------------------------------
 
-Function U_GeraTRBC(lComiLiq as logical)
+User Function GeraTRBC(lComiLiq as logical)
 
 Local cAliasQry1 	as character
 Local nBigInt 		as numeric

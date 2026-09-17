@@ -23,7 +23,7 @@ Static lLGPD		:= FindFunction("SuprLGPD") .And. SuprLGPD()
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Matr110C( cAlias, nReg, nOpcx )
+User Function Matr110C( cAlias, nReg, nOpcx )
 
 Local oReport
 Local lTRepInUse := .T.
@@ -166,7 +166,7 @@ Pergunte("MTR110",.F.)
 //³ExpB4 : Bloco de codigo que sera executado na confirmacao da impressao  ³
 //³ExpC5 : Descricao                                                       ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR110",cTitle,"MTR110", {|oReport| ReportPrint(oReport,nReg,nOpcx)},STR0001+" "+STR0002)
+oReport:= TReport():New("MATR110C",cTitle,"MTR110", {|oReport| ReportPrint(oReport,nReg,nOpcx)},STR0001+" "+STR0002)
 oReport:SetPortrait()
 oReport:HideParamPage()
 oReport:HideHeader()
@@ -1467,7 +1467,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_MATR111C(cAlias,nReg,nOpcx)
+User Function MATR111C(cAlias,nReg,nOpcx)
 
 LOCAL wnrel		:= "MATR110"
 LOCAL cDesc1	:= STR0001	//"Emissao dos pedidos de compras ou autorizacoes de entrega"
@@ -3459,7 +3459,7 @@ Parametros cUserId 	: Id do usuario
  Uso       MatR110
  Versão 2: Vitor Pires	25/10/2019
 /*/
-Function U_ChkPergC(cUserId,cGrupo,cSeq,xDefault)
+User Function ChkPergC(cUserId,cGrupo,cSeq,xDefault)
 
 Local xRet   := Nil
 Local cParam := "MV_PAR"+cSeq
@@ -3640,7 +3640,7 @@ Return cBitmap
 @since 09/05/2018
 @version 1.0
 /*/
-Function U_R110cObC(aAux1, nTamLinha)	
+User Function R110cObC(aAux1, nTamLinha)	
 	Local cVar
 	Local nObs := 1
 	Local nTam := 0
@@ -3668,7 +3668,7 @@ Return Nil
 @since 19/10/2022
 @version 1.0
 /*/
-Function U_R110HasC()
+User Function R110HasC()
 	Local aAllusers  := FWSFALLUSERS()
 	Local nM 		 := 0 
 	 	

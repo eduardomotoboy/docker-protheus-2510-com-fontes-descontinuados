@@ -22,7 +22,7 @@
 ±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß*/
-Function U_CTBR240C()
+User Function CTBR240C()
 
 Local aArea := GetArea()
 Local oReport          
@@ -625,7 +625,7 @@ Return (lDeixa)
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_f240ValC( aCtbMoeda, nDivide )
+User Function f240ValC( aCtbMoeda, nDivide )
 
 Local lOk := .T.
 
@@ -697,7 +697,7 @@ Return lOk
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CtbSX1OC(cGrupo,nOrdAtu1,cOrdRet1,cOrdRet2,nTotret)
+User Function CtbSX1OC(cGrupo,nOrdAtu1,cOrdRet1,cOrdRet2,nTotret)
 
 Local aSaveArea	:= GetArea()
 
@@ -774,7 +774,7 @@ Return .T.
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CtbOpcaC(cRetorno1,cRetorno2,cSayEnt,cPerg1,cPerg2,cF3,nTotRet,cGrupo,cOrdRet1,cOrdRet2)
+User Function CtbOpcaC(cRetorno1,cRetorno2,cSayEnt,cPerg1,cPerg2,cF3,nTotRet,cGrupo,cOrdRet1,cOrdRet2)
 
 //Não mais Utilizado
 
@@ -789,7 +789,7 @@ Consulta F3
 /*/
 //-------------------------------------------------------------------
 
-Function U_CB240F3C()
+User Function CB240F3C()
 Local cReturn
 
 	If (readvar()=="MV_PAR06" .and. MV_PAR05= 1) ;

@@ -35,7 +35,7 @@
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
 */
-Function U_MATR485C()
+User Function MATR485C()
 
 Local oReport
 
@@ -83,7 +83,7 @@ Local cAliasQRY := "SB6"
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MATR485",STR0001 ,"MTR485", {|oReport| ReportPrint(oReport,@cAliasQRY)},STR0002+" "+STR0003) //"Relatorio de NF's De / Em Terceiros"##"Emite a relacao de todas as NF's envolvidas no processo de  controle"##"de Poder de Terceiros"
+oReport := TReport():New("MATR485C",STR0001 ,"MTR485", {|oReport| ReportPrint(oReport,@cAliasQRY)},STR0002+" "+STR0003) //"Relatorio de NF's De / Em Terceiros"##"Emite a relacao de todas as NF's envolvidas no processo de  controle"##"de Poder de Terceiros"
 oReport:SetTotalInLine(.F.)
 //oReport:SetLandScape()
 

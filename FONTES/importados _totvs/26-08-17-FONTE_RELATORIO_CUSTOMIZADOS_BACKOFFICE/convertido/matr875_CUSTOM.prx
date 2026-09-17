@@ -17,7 +17,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_MATR875C()
+User Function MATR875C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 ou superiores
@@ -61,7 +61,7 @@ Local cAliasSG1 := GetNextAlias()
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR875",cTitle,"MTR875", {|oReport| ReportPrint(oReport,cAliasSG1)},OemToAnsi(STR0002)+" "+OemToAnsi(STR0003)+" "+OemToAnsi(STR0004)) //##"Este relat¢rio demonstra a situa‡„o de cada item da estrutura"##"do produto Pai em rela‡„o ao seu saldo , seu empenho , suas  "##"entradas previstas e sua classe ABC."
+oReport:= TReport():New("MATR875C",cTitle,"MTR875", {|oReport| ReportPrint(oReport,cAliasSG1)},OemToAnsi(STR0002)+" "+OemToAnsi(STR0003)+" "+OemToAnsi(STR0004)) //##"Este relat¢rio demonstra a situa‡„o de cada item da estrutura"##"do produto Pai em rela‡„o ao seu saldo , seu empenho , suas  "##"entradas previstas e sua classe ABC."
 oReport:SetLandscape() //Define a orientacao de pagina do relatorio como paisagem.
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Verifica as perguntas selecionadas (MTR875)                  ³

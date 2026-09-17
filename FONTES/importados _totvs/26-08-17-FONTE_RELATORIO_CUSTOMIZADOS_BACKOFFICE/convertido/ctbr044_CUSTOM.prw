@@ -18,7 +18,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_ctbr044C()
+User Function ctbr044C()
 Private titulo		:= ""             
 Private nomeprog	:= "CTBR044"
 Private oReport		:= Nil 
@@ -416,7 +416,7 @@ EndIF
 
 Return .T. 
 
-Function U_CTR044OC( lPula, lQbConta)
+User Function CTR044OC( lPula, lQbConta)
                                                                         
 Local lRet := .T.           
 

@@ -21,7 +21,7 @@ Static lFWCodFil := FindFunction("FWCodFil")
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
 
-Function U_FinR355C()
+User Function FinR355C()
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
 #IFNDEF CDX
@@ -83,7 +83,7 @@ Local nGestao 		:= Iif(lFWCodFil, FWSizeFilial() ,2)
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("FINR355",STR0004,"FIN355", {|oReport| ReportPrint(oReport, @cAliasSE2, @cAliasSE5)},STR0001+" "+STR0002+" "+STR0003) //"Demonstrar os títulos a pagar por fornecedor e "##"status da retenção dos impostos, ‡„o"##"quando efetuados na baixa."
+oReport := TReport():New("FINR355C",STR0004,"FIN355", {|oReport| ReportPrint(oReport, @cAliasSE2, @cAliasSE5)},STR0001+" "+STR0002+" "+STR0003) //"Demonstrar os títulos a pagar por fornecedor e "##"status da retenção dos impostos, ‡„o"##"quando efetuados na baixa."
 oReport:SetTotalInLine(.F.)
 oReport:SetEdit(.F.)//-- Desabilitado botao personalizar, se o usuario incluir campo numerico nao eh possivel totalizar corretamente,
                     //--  segundo Framework teria de reescrever o relatorio.

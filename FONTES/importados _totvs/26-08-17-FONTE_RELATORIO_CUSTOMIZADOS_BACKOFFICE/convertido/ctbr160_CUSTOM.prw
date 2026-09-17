@@ -24,7 +24,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Ctbr160C(wnRel)
+User Function Ctbr160C(wnRel)
 
 	Local oReport
 
@@ -75,7 +75,7 @@ Local cDesc3		:= STR0003	//"sao tambem impressos colunas do saldo a debito e a c
 Local aTamConta		:= TamSX3("CT1_CONTA")
 Local aTamCtaRes	:= TamSX3("CT1_RES")
 
-oReport := TReport():New("CTBR160",STR0004,cPerg,{|oReport| Pergunte(cPerg,.F.),;
+oReport := TReport():New("CTBR160C",STR0004,cPerg,{|oReport| Pergunte(cPerg,.F.),;
 						Iif( ReportPrint(oReport), .T., oReport:CancelPrint() ) },cDesc1+cDesc2+cDesc3)
 		
 oReport:SetLandscape(.T.)

@@ -18,7 +18,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_MATR450C()
+User Function MATR450C()
 Local oReport
 
 // Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -68,7 +68,7 @@ Private cTamCod    := TamSX3("D3_COD")[1]
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MATR450",cTitle,"MTR451",{|oReport| ReportPrint(oReport)},STR0001) //"Consumo Real x Standard"
+oReport := TReport():New("MATR450C",cTitle,"MTR451",{|oReport| ReportPrint(oReport)},STR0001) //"Consumo Real x Standard"
 oReport:SetLandscape()
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿

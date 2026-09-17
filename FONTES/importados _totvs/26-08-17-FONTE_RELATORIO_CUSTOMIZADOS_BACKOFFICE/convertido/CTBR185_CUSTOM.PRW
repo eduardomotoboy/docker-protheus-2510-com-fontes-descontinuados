@@ -20,7 +20,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_CtbR185C()
+User Function CtbR185C()
 	Private NomeProg := FunName()
 
 	//Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -47,7 +47,7 @@ Return
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
 
-Function U_CtbR181C()
+User Function CtbR181C()
 Local aArea := GetArea()
 
 Local nQuadro
@@ -159,7 +159,7 @@ Local aOrdem := {}
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
 
-oReport := TReport():New("CTBR185",cTitulo, cPerg, ;
+oReport := TReport():New("CTBR185C",cTitulo, cPerg, ;
 			{|oReport| If(!ct040Valid(mv_par10), oReport:CancelPrint(), ReportPrint(oReport, cSayCC, cSayItem, cString, cTitulo))},;
 			cDesc1+CRLF+cDesc2+CRLF+cDesc3 )
 
@@ -553,7 +553,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Ctb185_C(oReport, Tamanho,lDigVer,dData,cMoeda,aQuadro,cDescMoeda,nomeprog,dDataLP,cPicture,nDecimais,lPrintZero,cTpSald,cCusto,cMascara2,cSepara2)
+User Function Ctb185_C(oReport, Tamanho,lDigVer,dData,cMoeda,aQuadro,cDescMoeda,nomeprog,dDataLP,cPicture,nDecimais,lPrintZero,cTpSald,cCusto,cMascara2,cSepara2)
 
 Local aSaveArea	:= GetArea()
 Local cData 	:=	StrZero(Month(dData),2) +"/" + Str(Year(dData),4)

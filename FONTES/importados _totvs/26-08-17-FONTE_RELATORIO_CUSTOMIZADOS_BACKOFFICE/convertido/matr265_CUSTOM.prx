@@ -13,7 +13,7 @@
 ±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 */
-Function U_MATR265C()
+User Function MATR265C()
 Local oReport
 
 // Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -59,7 +59,7 @@ Private cPerg   :="MTR265"
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR265",cTitle,cPerg, {|oReport| ReportPrint(oReport,cQryRel)},OemToAnsi(STR0001)+" "+OemToAnsi(STR0002)+" "+OemToAnsi(STR0003)) //##"Este relatorio tem o objetivo de facilitar a retirada de materiais"##"apos o Faturamento de uma NF ou a Criacao de uma OP caso consumam"##"materiais que utilizam o controle de Localizacao Fisica"
+oReport:= TReport():New("MATR265C",cTitle,cPerg, {|oReport| ReportPrint(oReport,cQryRel)},OemToAnsi(STR0001)+" "+OemToAnsi(STR0002)+" "+OemToAnsi(STR0003)) //##"Este relatorio tem o objetivo de facilitar a retirada de materiais"##"apos o Faturamento de uma NF ou a Criacao de uma OP caso consumam"##"materiais que utilizam o controle de Localizacao Fisica"
 oReport:SetLandscape() //Define a orientacao de pagina do relatorio como paisagem.
 
 // tratamento provisorio, pois as perguntas serao disponibilizadas somente na release 12.1.17 Agosto/2017.

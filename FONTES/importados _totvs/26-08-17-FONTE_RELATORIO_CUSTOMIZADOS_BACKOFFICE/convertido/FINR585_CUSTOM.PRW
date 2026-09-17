@@ -14,7 +14,7 @@ Relatorio que formaliza a liberacao para pagamento de um titulo a pagar.
 /*/
 //-------------------------------------------------------------------
 
-Function U_FINR585C()
+User Function FINR585C()
 
 	Local oReport	:= Nil
 	
@@ -52,7 +52,7 @@ Static Function ReportDef()
 
 	Pergunte("FINR585R01",.F.)
 	
-	oReport := TReport():New( "FINR585", STR0001, "FINR585R01", { |oReport| PrintReport(oReport) }, , , , , , , .T., )
+	oReport := TReport():New( "FINR585C", STR0001, "FINR585R01", { |oReport| PrintReport(oReport) }, , , , , , , .T., )
 	
 	oSection1 := TRSection():New(	oReport, STR0003, { "SE2" }, , , , , , , , .T., , 2, , , , , 0, , , , )
 

@@ -14,7 +14,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MATR242C()
+User Function MATR242C()
 
 Local oReport
 
@@ -69,7 +69,7 @@ Local oSection1
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MATR242",STR0018,cPerg, {|oReport| ReportPrint(oReport,@cAliasQRY)},STR0002+" "+STR0003) //'Comparativo de Custos'##"Este programa ira' emitir um comparativo de custos, em valores e "##'quantidades, dos produtos em estoque.'
+oReport := TReport():New("MATR242C",STR0018,cPerg, {|oReport| ReportPrint(oReport,@cAliasQRY)},STR0002+" "+STR0003) //'Comparativo de Custos'##"Este programa ira' emitir um comparativo de custos, em valores e "##'quantidades, dos produtos em estoque.'
 oReport:SetTotalInLine(.F.)
 oReport:SetLandScape()
 

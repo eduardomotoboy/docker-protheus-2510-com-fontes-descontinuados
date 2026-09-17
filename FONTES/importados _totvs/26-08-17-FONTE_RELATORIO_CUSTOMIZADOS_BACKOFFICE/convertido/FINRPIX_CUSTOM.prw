@@ -25,7 +25,7 @@ Static __oTituPos := Nil
 	de título
 	@return cFilePrint, Char, Diretório+Nome do relatório criado
 	/*/
-Function U_FINRPIXC(cFilCli, cCliente, cLojaCli, aIdDocs) As Char
+User Function FINRPIXC(cFilCli, cCliente, cLojaCli, aIdDocs) As Char
 	Local cNomeArq   As Character
 	Local cFile 	 As Character
 	Local cQry		 As Character

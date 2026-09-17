@@ -27,7 +27,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FINR870C()
+User Function FINR870C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -59,7 +59,7 @@ Local nTamNum
 Local cPictVal
 Local oSecFil //Gestão Corporativa
 
-oReport := TReport():New("FINR870",STR0003,"FIR870", {|oReport| ReportPrint(oReport)},STR0001+STR0002)
+oReport := TReport():New("FINR870C",STR0003,"FIR870", {|oReport| ReportPrint(oReport)},STR0001+STR0002)
 
 pergunte("FIR870",.F.)
 

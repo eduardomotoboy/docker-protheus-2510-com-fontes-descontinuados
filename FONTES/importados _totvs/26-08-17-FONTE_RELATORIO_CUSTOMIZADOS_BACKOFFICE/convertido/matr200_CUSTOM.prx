@@ -16,7 +16,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Matr200C()
+User Function Matr200C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -66,7 +66,7 @@ Local oCell
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MATR200",STR0003,"MTR200", {|oReport| ReportPrint(oReport)},STR0001+" "+STR0002) ////"Relacao de Divergencias de SC E Pedidos de Compras"##"Emissao da Relacao de Itens para Compras"##"com divergencias"
+oReport := TReport():New("MATR200C",STR0003,"MTR200", {|oReport| ReportPrint(oReport)},STR0001+" "+STR0002) ////"Relacao de Divergencias de SC E Pedidos de Compras"##"Emissao da Relacao de Itens para Compras"##"com divergencias"
 Pergunte("MTR200",.F.)
 
 oSection1 := TRSection():New(oReport,STR0013,{"SC1","SA2","SB1"}) //"Relacao de Divergencias de SC E Pedidos de Compras"

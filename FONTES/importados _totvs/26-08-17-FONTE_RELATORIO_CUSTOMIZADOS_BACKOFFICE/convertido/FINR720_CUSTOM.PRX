@@ -45,7 +45,7 @@ Comparativo entre Valores Orçados x Reais Mensal
 /*/
 //-----------------------------------------------------------------------------------------------------
 
-Function U_FINR720C()
+User Function FINR720C()
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
 oReport := ReportDef()
@@ -71,7 +71,7 @@ Local oSection1, oTotalMes, oCompara
 Local oFilial //Gestão Corporativa
 Local oSecFil //Gestão Corporativa
 
-oReport := TReport():New("FINR720",STR0055,"FIN720",{|oReport| ReportPrint(oReport)},STR0001+STR0002+STR0003)
+oReport := TReport():New("FINR720C",STR0055,"FIN720",{|oReport| ReportPrint(oReport)},STR0001+STR0002+STR0003)
 
 oReport:SetPortrait(.T.)
 
@@ -745,7 +745,7 @@ Filtra o arquivo A Receber para analisar o "A Realizar"
 /*/
 //-----------------------------------------------------------------------------------------------------
 
-Function U_FR720ChC()
+User Function FR720ChC()
 Local cFiltro	:= 'E1_FILIAL="'+xFilial("SE1")+'" .AND. '
 Local cDtAcum	:= dTos( ctod("01/01/" + str( year( MV_PAR08 ), 4 ), "ddmmyy" ) )
 Local cDtRefIni	:= dTos( FirstDay( MV_PAR08 ) )
@@ -803,7 +803,7 @@ Filtra o arquivo A Receber para analisar o "A Realizar"
 /*/
 //-----------------------------------------------------------------------------------------------------
 
-Function U_FR721ChC()
+User Function FR721ChC()
 Local cFiltro	:= 'E2_FILIAL="'+xFilial("SE2")+'" .And. '
 Local cDtAcum	:= dTos( ctod( "01/01/" + str( year( mv_par08 ), 4 ), "ddmmyy" ) )
 Local cDtRefIni	:= dTos( FirstDay( mv_par08 ) )
@@ -862,7 +862,7 @@ Filtra o arquivo de Movimenta‡„o Banc ria para analisar o Realizado.
 /*/
 //-----------------------------------------------------------------------------------------------------
 
-Function U_FR722ChC()
+User Function FR722ChC()
 
 Local cFiltro	:= ""
 
@@ -936,7 +936,7 @@ Retorna o orcamento registrado para a Natureza no Mes.
 /*/
 //-----------------------------------------------------------------------------------------------------
 
-Function U_GetOrcaC(nMes)
+User Function GetOrcaC(nMes)
 
 Local nValOrcado 	:= 0
 Local dData         := mv_par08
@@ -1002,7 +1002,7 @@ Retorna o orcamento registrado para a Natureza no Mes.
 /*/
 //-----------------------------------------------------------------------------------------------------
 
-Function U_Fin720CC(cArqTmp, cIndex1, cIndex2, cIndex3, lRelato, aNiveis, aQuebras, lR4,cFilt,aSelFil)
+User Function Fin720CC(cArqTmp, cIndex1, cIndex2, cIndex3, lRelato, aNiveis, aQuebras, lR4,cFilt,aSelFil)
 
 Local aTotais	:= {0,0,0,0,0,0,0,0,0,0,0,0}	// Vetor com 12 Totalizadores
 Local nMoedaBco	:= 1, aArrayQ := {}

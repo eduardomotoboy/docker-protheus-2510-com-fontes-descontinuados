@@ -15,7 +15,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FinR295C()
+User Function FinR295C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -45,7 +45,7 @@ Local oSection1
 Local aTam0 := {}
 Local nTam0 := 0
 
-oReport := TReport():New("FINR295",STR0005,"FINR295",;  //"Relacao de faturas"
+oReport := TReport():New("FINR295C",STR0005,"FINR295",;  //"Relacao de faturas"
 {|oReport| ReportPrint(oReport)},STR0006) //"Este programa ira emitir a Relacao das faturas a pagar, e o detalhe dos titulos que compoem cada fatura. "
 
 oReport:lDynamic := .T.

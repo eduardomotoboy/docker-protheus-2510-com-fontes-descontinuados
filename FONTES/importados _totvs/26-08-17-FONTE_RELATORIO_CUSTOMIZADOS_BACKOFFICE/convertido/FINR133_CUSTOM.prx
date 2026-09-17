@@ -40,7 +40,7 @@ Static __nSldChq
 /*/
 //
 
-Function U_FINR133C()
+User Function FINR133C()
 Local oReport
 
 Private aSelFil	:= {}

@@ -16,7 +16,7 @@ Títulos a receber por natureza
 @Since 26/12/2012
 /*/
 //-------------------------------------------------------------------------------------------
-Function U_Finr138C()
+User Function Finr138C()
 Local oReport
 Private lExistFKD := TableInDic('FKD')
 
@@ -56,7 +56,7 @@ Local oSecTit
 Local oSecTot
 Local oReport
 
-oReport:= TReport():New("FINR138",STR0002 /*Titulos a Receber por Natureza*/,"FIN138",{|oReport| ReportPrint(oReport)},STR0002)
+oReport:= TReport():New("FINR138C",STR0002 /*Titulos a Receber por Natureza*/,"FIN138",{|oReport| ReportPrint(oReport)},STR0002)
 oReport:SetLandscape(.T.)
 
 dbSelectArea("SE1")
@@ -328,7 +328,7 @@ Gera o arquivo temporário
 
 /*/
 //------------------------------------------------------------------------------------------
-Function U_F138GerC()
+User Function F138GerC()
 
 Local aStruct		As Array
 Local aSaldo		As Array
@@ -748,7 +748,7 @@ Totaliza as naturezas analíticas nas sintéticas
 
 /*/
 //------------------------------------------------------------------------------------------
-Function U_F138TotC()
+User Function F138TotC()
 
 Local aStruct		:= {}
 Local cNatureza		:= ""

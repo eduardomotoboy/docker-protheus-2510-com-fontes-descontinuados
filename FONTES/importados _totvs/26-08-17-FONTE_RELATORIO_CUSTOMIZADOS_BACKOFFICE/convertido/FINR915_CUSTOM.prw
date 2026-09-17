@@ -12,7 +12,7 @@ Emissão do relatório de conferencia
 /*/
 
 //-------------------------------------------------------------------
-Function U_FINR915C()
+User Function FINR915C()
 
 Local oReport		:= Nil
 Local lTReport	:= TRepInUse()

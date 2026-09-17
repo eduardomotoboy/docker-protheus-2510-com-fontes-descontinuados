@@ -21,7 +21,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_COMR100C()
+User Function COMR100C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -75,7 +75,7 @@ Local cTamQtd := TamSX3('DH_QUANT')[1]
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("COMR100",STR0001,"COM100", {|oReport| ReportPrint(oReport,cAliasSDH)},STR0002+" "+STR0003) // "Relação dos documentos de cobertura "##"Este relatório demonstra os documentos de cobertura recebidos e pendentes"##"com o objetivo de auxiliar no follow-up destes documentos."
+oReport:= TReport():New("COMR100C",STR0001,"COM100", {|oReport| ReportPrint(oReport,cAliasSDH)},STR0002+" "+STR0003) // "Relação dos documentos de cobertura "##"Este relatório demonstra os documentos de cobertura recebidos e pendentes"##"com o objetivo de auxiliar no follow-up destes documentos."
 oReport:SetLandscape() 
 oReport:SetTotalInLine(.F.)
 oReport:SetUseGC(.F.)

@@ -13,7 +13,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MATR320C()
+User Function MATR320C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 ou superiores
@@ -65,7 +65,7 @@ Local cProcNam := GetSPName("MAT056","22")
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR320",STR0001,"MTR320", {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003+" "+STR0004) //"Resumo das Entradas e Saidas"##"Este programa mostra um resumo ,por tipo de material ,de todas  as  suas"##"entradas e saidas. A coluna SALDO INICIAL  e' o  resultado da  soma  das"##"outras colunas do relatorio e nao o saldo inicial cadastrado no estoque."
+oReport:= TReport():New("MATR320C",STR0001,"MTR320", {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003+" "+STR0004) //"Resumo das Entradas e Saidas"##"Este programa mostra um resumo ,por tipo de material ,de todas  as  suas"##"entradas e saidas. A coluna SALDO INICIAL  e' o  resultado da  soma  das"##"outras colunas do relatorio e nao o saldo inicial cadastrado no estoque."
 oReport:SetLandscape()    
 oReport:SetTotalInLine(.F.)
 
@@ -804,7 +804,7 @@ Utilizada para fazer ajustes no codigo ja adaptado ao banco de dados em uso
 @param cError, character, Passada por referencia, deve conter a mensagem de erro caso ocorra
 @return logical, .T. caso tudo ok
 /*/
-Function U_EngPos2C(cProcesso as character, cEmpresa as character, cProcName as character, cLocalDB as character, cBuffer as character, cError as character)
+User Function EngPos2C(cProcesso as character, cEmpresa as character, cProcName as character, cLocalDB as character, cBuffer as character, cError as character)
 
 	Do Case
 
@@ -829,7 +829,7 @@ Faz a execucao da funcao static VerIdProc
 @param cProcesso, character, Codigo do processo
 @return character, Retorna a assinatura do processo
 /*/
-Function U_EngSPS2C(cProcess as character)
+User Function EngSPS2C(cProcess as character)
 
 	Local cAssinatura as character
 

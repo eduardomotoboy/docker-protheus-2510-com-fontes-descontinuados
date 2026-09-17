@@ -33,7 +33,7 @@
 ±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 */
-Function U_MATR091C()
+User Function MATR091C()
 	
 	Local oReport := Nil
 	
@@ -80,7 +80,7 @@ Local cTamCod	:= TamSX3('D1_FORNECE')[1]+5
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR091",STR0003,"MTR091", {|oReport| ReportPrint(oReport,cAliasSA2)},STR0001+" "+STR0002) //"Relacao de compras (fornecedor) "##"Este relatório irá imprimir a relaçäo de itens "##"referentes as compras e devolucoes. " 
+oReport:= TReport():New("MATR091C",STR0003,"MTR091", {|oReport| ReportPrint(oReport,cAliasSA2)},STR0001+" "+STR0002) //"Relacao de compras (fornecedor) "##"Este relatório irá imprimir a relaçäo de itens "##"referentes as compras e devolucoes. " 
 oReport:SetTotalInLine(.F.)
 oReport:SetLandscape(.T.)
 

@@ -22,7 +22,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_MATR440C()
+User Function MATR440C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -91,7 +91,7 @@ Pergunte("MTR440",.F.)
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MTR440",STR0005,"MTR440",{|oReport| ReportPrint(oReport,cAliasSB1)},STR0001+" "+STR0002) //"Emite uma relacao com os itens em estoque que atingiram o Ponto de Pedido ,sugerindo a quantidade a comprar."
+oReport := TReport():New("MTR440C",STR0005,"MTR440",{|oReport| ReportPrint(oReport,cAliasSB1)},STR0001+" "+STR0002) //"Emite uma relacao com os itens em estoque que atingiram o Ponto de Pedido ,sugerindo a quantidade a comprar."
 oReport:SetTotalInLine(.F.)
 oReport:SetTotalText(STR0010) // "TOTAL GERAL A COMPRAR"
 oReport:SetLandscape()

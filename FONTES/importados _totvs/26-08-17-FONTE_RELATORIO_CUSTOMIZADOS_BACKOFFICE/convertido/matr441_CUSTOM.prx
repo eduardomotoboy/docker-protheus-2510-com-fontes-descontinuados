@@ -13,7 +13,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_MATR441C( cAlias, nReg )
+User Function MATR441C( cAlias, nReg )
 
 Local oReport
 PRIVATE lAuto := (nReg!=Nil) 
@@ -72,7 +72,7 @@ Endif
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MATR441",STR0005,If(lAuto,Nil,"MTR441"), {|oReport| ReportPrint(oReport,cAliasSC3,nReg)},STR0001+" "+STR0002) //"Itens do Contrato de Parceria que gerarao Autorizacao de Entrega"##"Emite uma relacao com os itens do Contrato de Parceria que serao"##"gerados as Autoriza‡”es de Entrega"
+oReport := TReport():New("MATR441C",STR0005,If(lAuto,Nil,"MTR441"), {|oReport| ReportPrint(oReport,cAliasSC3,nReg)},STR0001+" "+STR0002) //"Itens do Contrato de Parceria que gerarao Autorizacao de Entrega"##"Emite uma relacao com os itens do Contrato de Parceria que serao"##"gerados as Autoriza‡”es de Entrega"
 oReport:SetLandscape()    
 Pergunte("MTR441",.F.)
 

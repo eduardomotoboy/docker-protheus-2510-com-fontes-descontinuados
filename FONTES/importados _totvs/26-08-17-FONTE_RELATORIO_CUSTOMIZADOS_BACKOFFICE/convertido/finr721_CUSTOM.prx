@@ -20,7 +20,7 @@ Static __oFinr721
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FINR721C()
+User Function FINR721C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -505,7 +505,7 @@ Return Nil
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FR721SeC()
+User Function FR721SeC()
 
 Local cFiltro := ""
 
@@ -584,7 +584,7 @@ Return( aRet )
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_GetOrc1C(nAno,nMes,nMoeda,cNatur,cCcusto,dDtRef)	
+User Function GetOrc1C(nAno,nMes,nMoeda,cNatur,cCcusto,dDtRef)	
 Local nValOrcado := 0
 Local aArea	:= GetArea()
 Local aAreaSEW := SEW->(GetArea())
@@ -631,7 +631,7 @@ Return nValOrcado
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_Fin721CC(cArqTmp, cIndex1, cIndex2, cIndex3, lRelato, aNiveis, aQuebras, lR4)
+User Function Fin721CC(cArqTmp, cIndex1, cIndex2, cIndex3, lRelato, aNiveis, aQuebras, lR4)
 
 Local aTotais		:= {0,0,0,0,0,0,0,0,0,0,0,0}	// Vetor com 12 Totalizadores
 Local nMoedaBco	:= 1, aArrayQ := {}

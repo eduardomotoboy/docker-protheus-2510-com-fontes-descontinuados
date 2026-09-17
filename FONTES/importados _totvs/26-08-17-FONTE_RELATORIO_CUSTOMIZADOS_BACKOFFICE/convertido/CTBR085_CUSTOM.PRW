@@ -30,7 +30,7 @@ Relacao Lancamentos Classificados por Sublote/Doc.Fiscal
 @obs	 
 */
 //-------------------------------------------------------------------
-Function U_CTBR085C()
+User Function CTBR085C()
 
 Local aCtbMoeda	:= {}
 Local lOk 		:= .T.

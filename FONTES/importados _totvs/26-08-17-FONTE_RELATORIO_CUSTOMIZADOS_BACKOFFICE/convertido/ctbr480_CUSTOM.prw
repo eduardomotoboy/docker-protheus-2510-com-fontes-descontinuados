@@ -31,7 +31,7 @@ Static lIsRedStor := FindFunction("IsRedStor") .and. IsRedStor() //Used to check
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Ctbr480C(cItemIni, cItemFim, dDataIni, dDataFim, cMoeda, cSaldo, cBook, cContaIni,; 
+User Function Ctbr480C(cItemIni, cItemFim, dDataIni, dDataFim, cMoeda, cSaldo, cBook, cContaIni,; 
 			cContaFim, lCusto, cCustoIni, cCustoFim, lCLVL,	cCLVLIni, cCLVLFim,lSalLin,aSelFil)
 
 Local aArea			:= GetArea()
@@ -185,7 +185,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTBR481C( cPerg,lCusto, lCLVL,aCtbMoeda,aSelFil)
+User Function CTBR481C( cPerg,lCusto, lCLVL,aCtbMoeda,aSelFil)
 Local oReport
 
 oReport := ReportDef( cPerg, lCusto, lCLVL, aCtbMoeda, aSelFil )

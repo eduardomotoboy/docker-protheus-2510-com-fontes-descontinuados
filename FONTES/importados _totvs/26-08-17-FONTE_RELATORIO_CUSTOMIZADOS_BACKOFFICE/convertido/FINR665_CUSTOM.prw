@@ -12,7 +12,7 @@ Relatório - Mapa de Viagem
 
 @return Nil
 /*/
-function U_FINR665C()
+User Function FINR665C()
 
 	Local lRet		:= .T.
 	Local cPerg		:= "FINR665"
@@ -72,7 +72,7 @@ Local oSessao9		:= Nil
 Local oReport		:= Nil
 
                                    ///"Mapa de Viagens"                                 ///"Mapa de Viagens" 
-oReport := TReport():New("FINR665",STR0001,cPerg,{|oReport| PrintReport(oReport,cPerg)},STR0001	,.T.		,			,.F.			,			,				,				,			)
+oReport := TReport():New("FINR665C",STR0001,cPerg,{|oReport| PrintReport(oReport,cPerg)},STR0001	,.T.		,			,.F.			,			,				,				,			)
 									
 										///"Viagem"
 oSection := TRSection():New( oReport	,STR0002	,"FL5"	,		,			,			,			,.F.			,				,				,			,			,				,			,			,			,				,				,		,			,			,			) //Viagem
@@ -615,7 +615,7 @@ Função para identificar a descrição do status da prestação de contas
 
 @return Nil
 /*/
-Function U_FINR662C(cStatus)
+User Function FINR662C(cStatus)
 
 	Local cDescStat := ""
 

@@ -12,7 +12,7 @@
 ±±ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ±±
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß*/
-Function U_MATR040C()
+User Function MATR040C()
 
 Local oReport
 
@@ -44,7 +44,7 @@ Local oFichaFor
 
 Local cAliasQry := GetNextAlias()
 
-oReport := TReport():New("MATR040",STR0009,"MTR040", {|oReport| ReportPrint(oReport,cAliasQry,oFichaCli,oFichaFor)},STR0010 + " " + STR0011 + " " + STR0012)	// "Ficha Cadastral de Clientes/Fornecedores."###"Emissao da relacao de Clientes/Fornecedores"###"em forma de Ficha Cadastral, imprimindo 1"###"registro por folha."
+oReport := TReport():New("MATR040C",STR0009,"MTR040", {|oReport| ReportPrint(oReport,cAliasQry,oFichaCli,oFichaFor)},STR0010 + " " + STR0011 + " " + STR0012)	// "Ficha Cadastral de Clientes/Fornecedores."###"Emissao da relacao de Clientes/Fornecedores"###"em forma de Ficha Cadastral, imprimindo 1"###"registro por folha."
 oReport:SetPortrait() 
 oReport:SetTotalInLine(.F.)
 

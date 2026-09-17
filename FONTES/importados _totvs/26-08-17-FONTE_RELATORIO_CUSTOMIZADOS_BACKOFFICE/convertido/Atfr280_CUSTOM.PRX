@@ -26,7 +26,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_ATFR280C()
+User Function ATFR280C()
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
 oReport:=ReportDef()

@@ -37,7 +37,7 @@ STATIC __oFinr730
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FINR730C()
+User Function FINR730C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -69,7 +69,7 @@ Local oSection1, oResumo
 Local oFilial //Gestão Corporativa
 Local oSecFil //Gestão Corporativa
 
-oReport := TReport():New("FINR730",STR0037,"FIN730", {|oReport| ReportPrint(oReport)},STR0001+STR0002)
+oReport := TReport():New("FINR730C",STR0037,"FIN730", {|oReport| ReportPrint(oReport)},STR0001+STR0002)
 
 pergunte("FIN730",.F.)
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
@@ -892,7 +892,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_BegOfYeC(dData)
+User Function BegOfYeC(dData)
 If ValType( dData ) # "D"
 	 dData := mv_par07
 Endif
@@ -915,7 +915,7 @@ Return cTod("01/01" + "/" + StrZero(Year(dData),4,0),"ddmmyy" )
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_EndOfYeC(dData)
+User Function EndOfYeC(dData)
 If ValType( dData ) # "D"
 	dData := mv_par07
 Endif
@@ -939,7 +939,7 @@ Return cTod("31/12" + "/" + StrZero(Year(dData),4,0),"ddmmyy" )
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_fr733PoC(cNaturez,dData,cEntr,cSaid)
+User Function fr733PoC(cNaturez,dData,cEntr,cSaid)
 Local cMes := "  "
 Local nMeses := 0        
 
@@ -991,7 +991,7 @@ Return Nil
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_Fin730CC(cArqTmp As Character, cIndex1 As Character, cIndex2 As Character, cIndex3 As Character, lRelato As Logical, ;
+User Function Fin730CC(cArqTmp As Character, cIndex1 As Character, cIndex2 As Character, cIndex3 As Character, lRelato As Logical, ;
 			aNiveis As Array, aQuebR As Array, aQuebO As Array, aQuebA As Array, lR4 As Logical, oReport As Object, cSitua As Character) As Array
 
 Local nMoedaBco	As Numeric

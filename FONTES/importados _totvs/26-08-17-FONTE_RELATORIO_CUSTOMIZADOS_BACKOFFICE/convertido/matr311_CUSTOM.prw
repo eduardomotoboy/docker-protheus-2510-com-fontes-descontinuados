@@ -14,7 +14,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MATR311C()
+User Function MATR311C()
 
 Local oReport
 
@@ -84,7 +84,7 @@ Pergunte("MTR311",.F.)
 //³ExpB4 : Bloco de codigo que sera executado na confirmacao da impressao  ³
 //³ExpC5 : Descricao                                                       ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR311",STR0027,"MTR311", {|oReport| ReportPrint(oReport,@nTotLuc)},STR0002+" "+STR0003+" "+STR0004) //'RELACAO DOS PRODUTOS VENDIDOS'##'Este relatorio apresenta o valor total das vendas de cada produto,'###//'Este relatorio apresenta o valor total das vendas de cada produto,'###'bem o custo de cada venda e o custo de reposicao do produto.'
+oReport:= TReport():New("MATR311C",STR0027,"MTR311", {|oReport| ReportPrint(oReport,@nTotLuc)},STR0002+" "+STR0003+" "+STR0004) //'RELACAO DOS PRODUTOS VENDIDOS'##'Este relatorio apresenta o valor total das vendas de cada produto,'###//'Este relatorio apresenta o valor total das vendas de cada produto,'###'bem o custo de cada venda e o custo de reposicao do produto.'
 oReport:SetLandscape()    
 oReport:SetTotalInLine(.F.)
 oReport:SetEdit(.F.)

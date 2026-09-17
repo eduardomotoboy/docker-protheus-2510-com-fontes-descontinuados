@@ -13,7 +13,7 @@ Informe de Fechamento dos caixinhas
 @since	19/07/2006
 /*/
 //-----------------------------------------------------------------------------------------------------
-Function U_FinR580C()
+User Function FinR580C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -49,7 +49,7 @@ Local cPValor
 
 Pergunte("FIR580", .F.)
 
-oReport := TReport():New("FINR580",STR0001,"FIR580",{|oReport| ReportPrint(oReport)},STR0001)
+oReport := TReport():New("FINR580C",STR0001,"FIR580",{|oReport| ReportPrint(oReport)},STR0001)
 oReport:SetEdit(.F.)
 
 aTam0 := TamSX3("EU_FILIAL") //Gestão Corporativa

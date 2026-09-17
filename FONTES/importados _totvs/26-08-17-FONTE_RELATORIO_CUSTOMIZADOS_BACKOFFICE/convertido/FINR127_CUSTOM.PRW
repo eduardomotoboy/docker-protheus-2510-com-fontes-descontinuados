@@ -8,7 +8,7 @@
 @author Clovis Magenta
 @since 16/06/10
 -----------------------------------------------------------------*/
-Function U_FINR127C()
+User Function FINR127C()
 
 	Local oReport
 
@@ -25,7 +25,7 @@ Static Function ReportDef()
 	Local oSection2
 	Local cAlias	:= " "
 
-	oReport := TReport():New("FINR127",STR0002,"FIN127",{|oReport| PrintReport(oReport)},STR0003) //"LEI Nº 12.007" //"Relatório de quitação de Debitos"
+	oReport := TReport():New("FINR127C",STR0002,"FIN127",{|oReport| PrintReport(oReport)},STR0003) //"LEI Nº 12.007" //"Relatório de quitação de Debitos"
 
 	Pergunte("FIN127",.T.)
 

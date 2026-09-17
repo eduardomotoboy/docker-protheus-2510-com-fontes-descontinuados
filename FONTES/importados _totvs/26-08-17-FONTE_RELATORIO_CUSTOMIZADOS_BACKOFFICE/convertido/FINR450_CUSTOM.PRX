@@ -20,7 +20,7 @@
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
 
-Function U_FinR450C()
+User Function FinR450C()
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
 If TRepInUse()
@@ -70,7 +70,7 @@ pergunte("FIN450",.F.)
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("FINR450",STR0006,"FIN450", {|oReport| ReportPrint(oReport)},STR0001+" "+STR0002) //"Sugestao de Bloqueio"##"Este programa ira emitir a rela‡ao de "##"Sugestao de Bloqueio"
+oReport := TReport():New("FINR450C",STR0006,"FIN450", {|oReport| ReportPrint(oReport)},STR0001+" "+STR0002) //"Sugestao de Bloqueio"##"Este programa ira emitir a rela‡ao de "##"Sugestao de Bloqueio"
 
 oSection := TRSection():New(oReport,STR0016,{"SA1"}) // "Clientes"
 
@@ -220,7 +220,7 @@ Return NIL
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_FinR451C()
+User Function FinR451C()
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Define Variaveis                                             ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ

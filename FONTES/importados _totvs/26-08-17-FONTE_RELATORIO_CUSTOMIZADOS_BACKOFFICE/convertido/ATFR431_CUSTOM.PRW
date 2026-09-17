@@ -28,7 +28,7 @@ STATIC lIsRussia	:= If(cPaisLoc$"RUS",.T.,.F.) // CAZARINI - Flag to indicate if
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_ATFR431C()
+User Function ATFR431C()
 Local oReport
 
 Private cPerg   := "AFR431"
@@ -297,7 +297,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_AF431SAC(oFNC)
+User Function AF431SAC(oFNC)
 
 Local nRet     := 0
 Local nPeriodo := 0
@@ -324,7 +324,7 @@ Return nRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_AFR431PC(cFilX , cCodPrj,cRevis,cEtapa,cItemPrj ,nPeriodo,nTipoAtf,cTipoSld)
+User Function AFR431PC(cFilX , cCodPrj,cRevis,cEtapa,cItemPrj ,nPeriodo,nTipoAtf,cTipoSld)
 
 Local nDeprec := 0
 Local dDataIni := STOD("")  

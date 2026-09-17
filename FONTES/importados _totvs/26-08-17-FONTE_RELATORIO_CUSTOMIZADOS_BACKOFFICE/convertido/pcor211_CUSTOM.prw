@@ -1,14 +1,14 @@
 #INCLUDE "PCOR211C.ch"
 #INCLUDE "PROTHEUS.ch"
 
-Function U_PCOR211C(aOrigem,aComparado,cVersao1,cVersao2,aPerg)
+User Function PCOR211C(aOrigem,aComparado,cVersao1,cVersao2,aPerg)
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
 U_PCOR212C(aOrigem,aComparado,cVersao1,cVersao2,aPerg)
 
 Return
 
-Function U_PCOR212C(aOrigem,aComparado,cVersao1,cVersao2,aPerg)
+User Function PCOR212C(aOrigem,aComparado,cVersao1,cVersao2,aPerg)
 Local aArea		:= GetArea()
 
 //OBSERVACAO NAO TIRAR A LINHA ABAIXO POIS VARIAVEL SERA UTILIZADA NA CONSULTA PADRAO AKE1
@@ -85,7 +85,7 @@ DEFAULT aPerg  		:= {}
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
 
-oReport := TReport():New("PCOR211",STR0003, cPerg, ;
+oReport := TReport():New("PCOR211C",STR0003, cPerg, ;
 			{|oReport| ReportPrint(oReport,aOrigem,aComparado,cVersao1,cVersao2,aPerg)},;
 			STR0001+CRLF+STR0002+CRLF+STR0003 )
 

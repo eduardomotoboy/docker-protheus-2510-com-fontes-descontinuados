@@ -13,7 +13,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MATR245C()
+User Function MATR245C()
 
 Local oReport
 
@@ -64,7 +64,7 @@ Private cAliasQRY := "SDA"
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MATR245",STR0001,"MTR245", {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003) //"Relat¢rio de Produtos a Distribuir"##"Emite a rela‡„o dos produtos que aguardam distribui‡„o"##"para suas localiza‡”es fisicas especificas."
+oReport := TReport():New("MATR245C",STR0001,"MTR245", {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003) //"Relat¢rio de Produtos a Distribuir"##"Emite a rela‡„o dos produtos que aguardam distribui‡„o"##"para suas localiza‡”es fisicas especificas."
 oReport:SetLandscape()
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿

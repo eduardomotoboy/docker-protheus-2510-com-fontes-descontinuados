@@ -17,7 +17,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/ 
-Function U_Matr120C()
+User Function Matr120C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -71,7 +71,7 @@ PRIVATE cPerg := "MTR120"
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR120",STR0007,"MTR120", {|oReport| ReportPrint(oReport,cAliasSC7)},STR0001+" "+STR0002+" "+STR0003) //"Relacao de Pedidos de Compras"##"Emissao da Relacao de  Pedidos de Compras."##"Sera solicitado em qual Ordem, qual o Intervalo para"##"a emissao dos pedidos de compras."
+oReport:= TReport():New("MATR120C",STR0007,"MTR120", {|oReport| ReportPrint(oReport,cAliasSC7)},STR0001+" "+STR0002+" "+STR0003) //"Relacao de Pedidos de Compras"##"Emissao da Relacao de  Pedidos de Compras."##"Sera solicitado em qual Ordem, qual o Intervalo para"##"a emissao dos pedidos de compras."
 oReport:SetLandscape()
 oReport:SetTotalInLine(.F.)
 Pergunte("MTR120",.F.)
@@ -672,7 +672,7 @@ Return(nVlrDesc)
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
 
-FUNCTION U_Form120C(cFormula)
+User Function Form120C(cFormula)
 Local xAlias 
 Local cForm		:= "" , xValor
 Local cString 	:= "SC7->"

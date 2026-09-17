@@ -25,7 +25,7 @@ Static lIsRedStor := FindFunction("IsRedStor") .and. IsRedStor() //Used to check
 北北北北北北北北北北北北北北北北北北北北北北北北北北北北北北北北北北北北北北北
 哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌哌
 /*/
-Function U_CtbR250C()
+User Function CtbR250C()
 
 Local cMensagem
 Local lAtSlBase	   		:= Iif(	GETMV("MV_ATUSAL")=="S", .T., .F.	)

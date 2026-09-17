@@ -8,7 +8,7 @@ Relatório de movimentos de apuração contábil.
 @since 12/02/2015
 @version 1.0
 /*/
-Function U_CTBR750C()
+User Function CTBR750C()
 	//MV_PAR01 - Apuração de?
 	//MV_PAR02 - Apuração até?
 	//MV_PAR03 - Tipo de Saldo.
@@ -236,7 +236,7 @@ Static Function PrintReport(oReport,cAliasMov,aFilial)
 	EndIf
 Return
 
-Function U_CBR750TC(cAliasMov)
+User Function CBR750TC(cAliasMov)
 Local cOcor :=  (cAliasMov)->CQI_OCOR
 
 Do Case

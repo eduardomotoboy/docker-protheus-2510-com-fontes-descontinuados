@@ -37,7 +37,7 @@ Static __oTBxCanc
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_FinR350C()
+User Function FinR350C()
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
 If GetHlpLGPD({"A2_NOME"})
@@ -105,7 +105,7 @@ Local nTamNum2 		:= TamSX3("E2_NUM")[1] + TamSX3("E2_PREFIXO")[1] + 9
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("FINR350",STR0005,"FIN350", {|oReport| ReportPrint(oReport)},STR0001+" "+STR0002) //"Movimento Financeiro Diario"##"Este programa ir  emitir o resumo da Movimenta‡„o"##"Bancaria de um determinado dia."
+oReport := TReport():New("FINR350C",STR0005,"FIN350", {|oReport| ReportPrint(oReport)},STR0001+" "+STR0002) //"Movimento Financeiro Diario"##"Este programa ir  emitir o resumo da Movimenta‡„o"##"Bancaria de um determinado dia."
 oReport:SetTotalInLine(.F.)
 
 Pergunte( "FIN350", .F. )
@@ -1213,7 +1213,7 @@ Return NIL
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_AndaTRBC(xMyAlias)
+User Function AndaTRBC(xMyAlias)
 
 Local cAlias:= Alias()
 

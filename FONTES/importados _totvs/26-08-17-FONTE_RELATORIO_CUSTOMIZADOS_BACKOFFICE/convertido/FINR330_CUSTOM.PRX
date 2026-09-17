@@ -7,7 +7,7 @@ Posição geral do contas a pagar.
 @author	  Adrianne Furtado
 @since    06/06/2006
 /*/
-Function U_FINR330C()
+User Function FINR330C()
 
 Local oReport
 Local aArea := GetArea()
@@ -144,7 +144,7 @@ Return oReport
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FINR331C( oReport )
+User Function FINR331C( oReport )
 Local oFornece  := oReport:Section(1)
 Local oSection1 := oReport:Section(1):Section(1)
 Local oSection2 := oReport:Section(1):Section(2)
@@ -402,7 +402,7 @@ Return lRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_Fa330SaC()
+User Function Fa330SaC()
 LOCAL nRetSaldo := 0
 
 If (C7_QUANT-C7_QUJE) > 0

@@ -18,7 +18,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_FINR560C()
+User Function FINR560C()
 Private oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -50,7 +50,7 @@ Local oSecFil //Gestão Corporativa
 
 Local aDados := Array(10)
 
-oReport := TReport():New("FINR560",STR0004,"FIR560",;
+oReport := TReport():New("FINR560C",STR0004,"FIR560",;
 {|oReport| ReportPrint(oReport,aDados)},STR0001+STR0002+STR0003)
 
 pergunte("FIR560",.F.)

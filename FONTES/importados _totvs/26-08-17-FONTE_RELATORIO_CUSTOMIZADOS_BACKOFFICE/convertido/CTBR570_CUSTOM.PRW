@@ -24,7 +24,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CtbR570C()
+User Function CtbR570C()
 
 Local lRet        := .T.
 Private cRetSX5SL := ""
@@ -94,7 +94,7 @@ Return
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
 
-Function U_CTBR571C()
+User Function CTBR571C()
 
 Local cDescMoeda  := AllTrim(aCtbMoeda[3])
 Local lMovPeriodo := mv_par06 == 1
@@ -179,7 +179,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Ctr570DC(oPrint,i,cTitulo,cProcesso,lLandScape)
+User Function Ctr570DC(oPrint,i,cTitulo,cProcesso,lLandScape)
 
 Local cArqTmp
 Local nTraco      := 0
@@ -507,7 +507,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTR570EC(oPrint,cDescMoeda,aPosCol,nTamLin)
+User Function CTR570EC(oPrint,cDescMoeda,aPosCol,nTamLin)
 
 Local nPosCol
 

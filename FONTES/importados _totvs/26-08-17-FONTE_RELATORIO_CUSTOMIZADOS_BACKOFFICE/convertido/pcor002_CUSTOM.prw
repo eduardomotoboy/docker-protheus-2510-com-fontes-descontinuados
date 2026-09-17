@@ -17,7 +17,7 @@
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
 
-Function U_PCOR002C()
+User Function PCOR002C()
 
 Local cReport	:= "PCOR002"				// Nome do Programa
 Local cAlias	:= "AK6"					// Alias da tabela

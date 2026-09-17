@@ -1,0 +1,21 @@
+#ifndef _INKEY_CH
+#define _INKEY_CH
+
+#DEFINE K_ENTER     13
+#DEFINE K_RETURN    13
+#DEFINE K_ESC       27
+#DEFINE K_UP        5
+#DEFINE K_DOWN      24
+#DEFINE K_LEFT      19
+#DEFINE K_RIGHT     4
+#DEFINE K_PGUP      18
+#DEFINE K_PGDN      3
+#DEFINE K_HOME      1
+#DEFINE K_END       6
+#DEFINE K_INS       22
+#DEFINE K_DEL       7
+#DEFINE K_BS        8
+#DEFINE K_TAB       9
+#DEFINE K_SH_TAB    271
+
+#endif

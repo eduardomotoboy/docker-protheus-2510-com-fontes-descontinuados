@@ -36,7 +36,7 @@ Impressao de Cheques
 @since     09/07/1992
 //------------------------------------------------------------------------------------------
 /*/
-Function U_FinR480C()
+User Function FinR480C()
 
 LOCAL cDesc1 := STR0001  //"Este programa ir  imprimir os Cheques do Banco, atrav‚s de"
 LOCAL cDesc2 := STR0002  //"formul rio pr‚-impresso."
@@ -489,7 +489,7 @@ Imprime um determinado cheque
 @since     09/07/1992
 //------------------------------------------------------------------------------------------
 /*/
-Function U_ImpCheqC(cBanco,cAgencia,cConta,lMovBco,cFilAtual,nLayOut,cMunic,aDriver)
+User Function ImpCheqC(cBanco,cAgencia,cConta,lMovBco,cFilAtual,nLayOut,cMunic,aDriver)
 Local lRet		:=	.F.
 Local nLinLoc
 Local nColLoc
@@ -1547,7 +1547,7 @@ Teste da emissao do cheque
 @since     14/02/1992
 //------------------------------------------------------------------------------------------
 /*/
-Function U_FA480TEC(nColVlr,aDriver)
+User Function FA480TEC(nColVlr,aDriver)
 
 Local oDlg
 Local oFont
@@ -1635,7 +1635,7 @@ Ponto de entrada para teste do n§ cheque e outros
 @since     24/06/1998
 //------------------------------------------------------------------------------------------
 /*/
-Function U_FA480CHC()
+User Function FA480CHC()
 LOCAL lRet := .T.
 If !Execblock("FA480CH",.f.,.f.)
 	lRet := .f.
@@ -1653,7 +1653,7 @@ Imprime um determinado cheque (Localizacoes)
 @since     15/06/2000
 //------------------------------------------------------------------------------------------
 /*/
-Function U_ImpChe1C(cBanco,cAgencia,cConta,lMovBco,cFilAtual,aCheques,lChInm)
+User Function ImpChe1C(cBanco,cAgencia,cConta,lMovBco,cFilAtual,aCheques,lChInm)
 Local cSeqFRF
 Local lRet			:=	.F.
 LOCAL cValor
@@ -1983,7 +1983,7 @@ no SX1
 @since     24/06/2004
 //------------------------------------------------------------------------------------------
 /*/
-Function U_Fr480CCC(nOpcao)
+User Function Fr480CCC(nOpcao)
 
 Local lRet := .T.
 Local aArea := GetArea()
@@ -2008,7 +2008,7 @@ Retorna qual o indice ref ao e5_proctra
 @since     08/09/2008
 //------------------------------------------------------------------------------------------
 /*/
-Function U_OrdProcC()
+User Function OrdProcC()
 	Local nOrdPTransf := 1
 	Local aArea := GetArea()
 	dbSelectarea("SE5")
@@ -2040,7 +2040,7 @@ Verifica quais cheques devem ser endossados
 @since     26/12/2011
 //------------------------------------------------------------------------------------------
 /*/
-Function U_FaVerEnC()  
+User Function FaVerEnC()  
 
 Local aArea 	:= GetArea()
 Local aAreaSEF 	:= {}

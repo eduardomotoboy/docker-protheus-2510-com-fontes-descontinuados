@@ -18,7 +18,7 @@ Static lLGPD  := FindFunction("SuprLGPD") .And. SuprLGPD()
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Matr210C() 
+User Function Matr210C() 
 Local lSigaCusOk := .T.
 Local oReport
 
@@ -83,7 +83,7 @@ pergunte("MTR210",.F.)
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MTR210",cTitle,"MTR210",{|oReport| ReportPrint(oReport,cAliasTRB)},STR0001) //"Emissao da Relacao de Analise das Cotacoes"
+oReport := TReport():New("MTR210C",cTitle,"MTR210",{|oReport| ReportPrint(oReport,cAliasTRB)},STR0001) //"Emissao da Relacao de Analise das Cotacoes"
 oReport:SetLandscape() 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³Criacao da secao utilizada pelo relatorio                               ³

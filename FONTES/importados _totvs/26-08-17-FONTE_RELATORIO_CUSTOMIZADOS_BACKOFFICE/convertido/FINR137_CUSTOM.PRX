@@ -29,7 +29,7 @@ Static __cSGBD As Character
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Finr137C()
+User Function Finr137C()
 
 	Local oReport
 
@@ -93,7 +93,7 @@ Local nTamNat  := 0
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
 Pergunte("FIN137",.F.)
 
-oReport := TReport():New("FINR137",STR0001+" "+STR0005+GetMv("MV_MOEDA" + Str(mv_par13,1,0) ),"FIN137",{|oReport| ReportPrint(oReport)},STR0001) // Este relatorio ira imprimir os Titulos a Receber, não baixados, por Vendedor.
+oReport := TReport():New("FINR137C",STR0001+" "+STR0005+GetMv("MV_MOEDA" + Str(mv_par13,1,0) ),"FIN137",{|oReport| ReportPrint(oReport)},STR0001) // Este relatorio ira imprimir os Titulos a Receber, não baixados, por Vendedor.
 
 //Acerta a database de acordo com a database real do sistema
 If mv_par15 == 1    // Considera Data Base
@@ -816,7 +816,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_TitPrinC(FILIAL,PREFIXO,NUMERO,PARCELA,TIPO,AliasSE1,aVendedor,nIndexSE5,cAliasQry)	
+User Function TitPrinC(FILIAL,PREFIXO,NUMERO,PARCELA,TIPO,AliasSE1,aVendedor,nIndexSE5,cAliasQry)	
 	Local aVends As Array
 	Local aComis As Array
 	Local aBase As Array

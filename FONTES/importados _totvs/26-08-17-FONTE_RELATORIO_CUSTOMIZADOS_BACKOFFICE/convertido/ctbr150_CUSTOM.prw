@@ -27,7 +27,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Ctbr150C(wnRel)
+User Function Ctbr150C(wnRel)
 
 	Local aArea := GetArea()
 	Local oReport
@@ -567,7 +567,7 @@ Return (lDeixa)
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTR150TC(cGrupo, Limite, oReport)
+User Function CTR150TC(cGrupo, Limite, oReport)
 
 Local cArqAbert:=GetMv("MV_LBALABE")
 Local cArqEncer:=GetMv("MV_LBALFEC")

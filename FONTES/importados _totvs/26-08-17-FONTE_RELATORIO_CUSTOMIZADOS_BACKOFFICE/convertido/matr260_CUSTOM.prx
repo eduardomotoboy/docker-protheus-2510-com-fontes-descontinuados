@@ -22,7 +22,7 @@ Static __cNameIndex := NIL
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß*/
 
-Function U_MATR260C()
+User Function MATR260C()
 Local oReport
 
 Private aMV_PAR		:= array(25) // total de perguntas do grupo MTR260R1
@@ -72,7 +72,7 @@ If __oTmpTab <> NIL
 	cAliasTRB := __oTmpTab:GetAlias()
 EndIf
 
-oReport:= TReport():New("MATR260",STR0001,cPerg,,)
+oReport:= TReport():New("MATR260C",STR0001,cPerg,,)
 
 IIf( !( IsBlind() ), Pergunte( cPerg, .F. ), Nil )
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
@@ -118,7 +118,7 @@ IIf( !( IsBlind() ), Pergunte( cPerg, .F. ), Nil )
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
 oSection := TRSection():New(oReport,STR0053,{"SB2","SB1"},aOrdem) //"Saldos em Estoque"
 MontaTrab(oReport,oSection:GetOrder(),cAliasTRB,oSection,.T.)
-oReport := TReport():New("MATR260",STR0001,cPerg, {|oReport| ReportPrint(oreport,aOrdem,cAliasTRB)},STR0002+" "+STR0003+" "+STR0004) //"Relacao da Posicao do Estoque"
+oReport := TReport():New("MATR260C",STR0001,cPerg, {|oReport| ReportPrint(oreport,aOrdem,cAliasTRB)},STR0002+" "+STR0003+" "+STR0004) //"Relacao da Posicao do Estoque"
 oReport:SetUseGC(.F.) //-- Desabilita GE para não conflitar com perguntas do relatório
 If TamSX3("B1_COD")[1] > 15
 	oReport:SetLandscape()

@@ -9,7 +9,7 @@ Relatório de Relação dos Juros devidos e não Pagos.
 @version 	1.0
 @return		Nil
 /*/
-Function U_FinR290C()
+User Function FinR290C()
 
 	Local oReport	As Object
 
@@ -38,7 +38,7 @@ Static Function ReportDef()
 
 	cAliasQry1	:= GetNextAlias()
 
-	oReport 	:= TReport():New("FINR290", STR0004, "FIN290", {|oReport| ReportPrint(oReport, @cAliasQry1)}, STR0001 + STR0002 + STR0003)
+	oReport 	:= TReport():New("FINR290C", STR0004, "FIN290", {|oReport| ReportPrint(oReport, @cAliasQry1)}, STR0001 + STR0002 + STR0003)
 
 	oReport:SetPortrait(.T.)
 
@@ -268,7 +268,7 @@ Calcula o valor dos juros de acordo com o numero de dias em atraso passando por 
 @param		cAlias, character, alias da query
 @return		array, array de duas posições, sendo {1=Juros Devido;2=Juros Pago}
 /*/
-Function U_FR290JuC(nMoeda As Numeric, lBaixados As Logical, dUltBaixa As Date,cAlias As Character) As Array
+User Function FR290JuC(nMoeda As Numeric, lBaixados As Logical, dUltBaixa As Date,cAlias As Character) As Array
 
 	Local cAliasOld		:= Alias()
 	Local aJurCalc		:= {0, 0} 	//total de juros devido do titulo e total de juros pago do titulo

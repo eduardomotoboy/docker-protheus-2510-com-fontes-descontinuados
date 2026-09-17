@@ -31,7 +31,7 @@ Jose Glez 29/05/17 Se reajusta el orden para el informe
 FINR470 por RECNO.  
 /*/
 //-----------------------------------------------------------------
-Function U_FINR470C()
+User Function FINR470C()
 	Local lExec		:= .T.
 	
 	//Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -75,7 +75,7 @@ Static Function ReportDef()
 
 	Pergunte("FIN470",.F.)
 	
-	oReport := TReport():New("FINR470",STR0004,"FIN470", {|oReport| ReportPrint(oReport)},STR0001+" "+STR0002+" "+STR0003)
+	oReport := TReport():New("FINR470C",STR0004,"FIN470", {|oReport| ReportPrint(oReport)},STR0001+" "+STR0002+" "+STR0003)
 	oReport:SetUseGC(.f.)
 
 	oBanco := TRSection():New(oReport, STR0035, {"SA6"}, Nil /*[Ordem]*/)

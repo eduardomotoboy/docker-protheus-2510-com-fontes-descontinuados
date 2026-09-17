@@ -16,7 +16,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_GCPR003C(cNumPro,cCodEdt)
+User Function GCPR003C(cNumPro,cCodEdt)
 Local aDados	:= {}
 Local aRet		:= {}                               
 Local aItemEdt	:= {}                           

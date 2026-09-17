@@ -54,7 +54,7 @@ STATIC __lMovEnt05    := CtbIsCube()
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTBR430C()
+User Function CTBR430C()
 
 	//Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
 	U_CTBR431C()
@@ -79,7 +79,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTBR431C()
+User Function CTBR431C()
 
 Local oReport	
 
@@ -225,7 +225,7 @@ Local nAlignTot		:= 0
 Local cTpValor		:= GetMV("MV_TPVALOR")
 Local nTaVal              
 
-oReport :=	TReport():New( "CTBR430", OemToAnsi(STR0006), cPerg,;	//"Emissao do Razao Contabil"
+oReport :=	TReport():New( "CTBR430C", OemToAnsi(STR0006), cPerg,;	//"Emissao do Razao Contabil"
 			{ |oReport|	Pergunte( cPerg, .F. ),;
 				aRelat := U_C430R4PC(wnRel,cString,aSetOfBook,lCusto,lItem,lCLVL,lAnalitico,Titulo,nTamlinha,aCtbMoeda,nTamCta),;
 				If(!Empty(aRelat),ReportPrint(WnRel,cString,aSetOfBook,lCusto,lItem,lCLVL,lAnalitico,Titulo,nTamlinha,aCtbMoeda,nTamCta,oReport,aRelat),.F.) },;
@@ -684,7 +684,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_C430R4PC(WnRel,cString,aSetOfBook,lCusto,lItem,lCLVL,lAnalitico,Titulo,nTamlinha,;
+User Function C430R4PC(WnRel,cString,aSetOfBook,lCusto,lItem,lCLVL,lAnalitico,Titulo,nTamlinha,;
 						aCtbMoeda,nTamCta)
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
@@ -1165,7 +1165,7 @@ Return aRet
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CtbGerRC(oMeter,oText,oDlg,lEnd,cArqTmp,cEntGerIni,cEntGerFim,cMoeda,dDataIni,dDataFim,;
+User Function CtbGerRC(oMeter,oText,oDlg,lEnd,cArqTmp,cEntGerIni,cEntGerFim,cMoeda,dDataIni,dDataFim,;
 						aSetOfBook,lNoMov,cSaldo,lAnalitico,cCodPlGer,lCusto,lItem,lClVl,lR4)
 
 Local aSaveArea	:= GetArea()
@@ -1267,7 +1267,7 @@ Return cArqTmp
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CtbRazGC(oMeter,oText,oDlg,lEnd,cEntGerIni,cEntGerFim,cMoeda,dDataIni,dDataFim,;
+User Function CtbRazGC(oMeter,oText,oDlg,lEnd,cEntGerIni,cEntGerFim,cMoeda,dDataIni,dDataFim,;
 				  aSetOfBook,lNoMov,cSaldo,lAnalitico,cCodPlGer,lR4)
 
 Local lNoMovDeb, lNoMovCrd
@@ -1738,7 +1738,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CtbGrvRC(cMoeda,cSaldo,cTipo,cContaG,cNormal,cIdent)
+User Function CtbGrvRC(cMoeda,cSaldo,cTipo,cContaG,cNormal,cIdent)
 
 Local cConta
 Local cCusto
@@ -1825,7 +1825,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Ctr430SC(cConta,cDescSint,cMoeda,cDescConta,cCodPlGer)
+User Function Ctr430SC(cConta,cDescSint,cMoeda,cDescConta,cCodPlGer)
       
 Local aSaveArea := GetArea()
 Local nPosCTS					//Guarda a posicao no CT1

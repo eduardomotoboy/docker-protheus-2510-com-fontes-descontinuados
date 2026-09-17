@@ -14,7 +14,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MATR240C()
+User Function MATR240C()
 
 Local oReport
 
@@ -70,7 +70,7 @@ Local aSizeQTF  := TamSX3("B2_QFIM")
 //³ExpB4 : Bloco de codigo que sera executado na confirmacao da impressao  ³
 //³ExpC5 : Descricao                                                       ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR240",STR0001,cPerg, {|oReport| ReportPrint(oReport,@cAliasTOP,@cAliasSB2,lVeic,aOrdem,@cAliasSB5)},STR0002+" "+STR0003) //'Saldos em Estoque'##"Este programa ira' emitir um resumo dos saldos, em quantidade,"##'dos produtos em estoque.'
+oReport:= TReport():New("MATR240C",STR0001,cPerg, {|oReport| ReportPrint(oReport,@cAliasTOP,@cAliasSB2,lVeic,aOrdem,@cAliasSB5)},STR0002+" "+STR0003) //'Saldos em Estoque'##"Este programa ira' emitir um resumo dos saldos, em quantidade,"##'dos produtos em estoque.'
 oReport:SetPortrait() //Define a orientacao default de pagina do relatorio como retrato.
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿

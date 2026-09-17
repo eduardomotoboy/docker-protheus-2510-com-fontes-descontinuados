@@ -19,7 +19,7 @@ STATIC aComboATF
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_ATFR072C()
+User Function ATFR072C()
 Local oReport
 Local lTReport	:= TRepInUse()
 Local lDefTop 	:= IfDefTopCTB() // verificar se pode executar query (TOPCONN)
@@ -2176,7 +2176,7 @@ Return cDescription
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_GetCombC(cCampo, cCombo)
+User Function GetCombC(cCampo, cCombo)
 Local aArea    := GetArea()		//Guarda a area atual
 Local cBox     := ""			//Conteudo do ComboBox
 Local aBox     := {}			//Array com os dados do Combo

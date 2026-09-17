@@ -18,7 +18,7 @@
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 
 /*/
-Function U_MATR125C()
+User Function MATR125C()
 
 Local oReport := NIL
 CHKFILE("SC3")
@@ -52,7 +52,7 @@ Local cField    := 'B1_DESC'
 
 Pergunte("MTR125",.F.)
 
-oReport := TReport():New("MATR125",STR0001,"MTR125",{|oReport| ReportPrin(oReport)},STR0002)
+oReport := TReport():New("MATR125C",STR0001,"MTR125",{|oReport| ReportPrin(oReport)},STR0002)
 
 oSection1 := TRSection():New(oReport,STR0001,{"SC3"})
 oSection1:lHeaderVisible := .T.

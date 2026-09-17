@@ -14,7 +14,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MATR331C()
+User Function MATR331C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 ou superiores
@@ -59,7 +59,7 @@ Local oCell
 //³ExpB4 : Bloco de codigo que sera executado na confirmacao da impressao  ³
 //³ExpC5 : Descricao                                                       ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MATR331",STR0001,"MTR331", {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003+" "+STR0004) //"Recursividade por Movimentacao"##"Este relatorio tem como objetivo listar as movimentacoes"###"que geram recursividade no processamento do recalculo do"####"custo medio."
+oReport:= TReport():New("MATR331C",STR0001,"MTR331", {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003+" "+STR0004) //"Recursividade por Movimentacao"##"Este relatorio tem como objetivo listar as movimentacoes"###"que geram recursividade no processamento do recalculo do"####"custo medio."
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Verifica as perguntas selecionadas                           ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ

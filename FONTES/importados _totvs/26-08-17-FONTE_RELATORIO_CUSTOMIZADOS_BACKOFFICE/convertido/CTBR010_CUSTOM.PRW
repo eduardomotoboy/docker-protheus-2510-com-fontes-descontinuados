@@ -24,7 +24,7 @@ STATIC __oTempTable
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Ctbr010C()
+User Function Ctbr010C()
 
 	Private titulo		:= ""
 	Private nomeprog	:= "CTBR010"
@@ -49,7 +49,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTBR011C( cMoeda )
+User Function CTBR011C( cMoeda )
 Local oReport
 Local lExterno	:= ( cMoeda <> Nil )
 
@@ -302,7 +302,7 @@ Return
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
 
-Function U_CT10onpC( oReport )
+User Function CT10onpC( oReport )
 Local lPula	:= Iif( mv_par10 == 1 , .T. , .F. )
 
 IF lPula .And. CT1->CT1_CLASSE == "1"
@@ -329,7 +329,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-FUNCTION U_AddcFilC( cStrFilter , cStrAdd )
+User Function AddcFilC( cStrFilter , cStrAdd )
 	LOCAL cCond := " "
 
 	DEFAULT cStrFilter := ""
@@ -365,7 +365,7 @@ RETURN cStrFilter
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Ctbr012C(wnRel,dDataRef,cMoeda)
+User Function Ctbr012C(wnRel,dDataRef,cMoeda)
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Define Variaveis                                             ³

@@ -19,7 +19,7 @@ Static _aGCList := Nil // Variável para permitir automação do filtro Gestão de E
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CNTR121C()
+User Function CNTR121C()
 	Local oReport
 
 	oReport := ReportDef()
@@ -47,7 +47,7 @@ Static Function ReportDef()
 	Local oPlanTot
 	Local oPlanDet
 
-	oReport := TReport():New("CNTR121",STR0001 ,"CNTR121",{|oReport| ReportPrint(oReport)},STR0002)//Medições não Efetuadas
+	oReport := TReport():New("CNTR121C",STR0001 ,"CNTR121",{|oReport| ReportPrint(oReport)},STR0002)//Medições não Efetuadas
 	Pergunte("CNTR121",.F.)
 
 	oCN9 := TRSection():New(oReport, STR0003,{"CN9","CN1"})
@@ -950,7 +950,7 @@ Return cResult
 @param lSet, logical, se deve atualizar a variável <_aGCList>
 @return _aGCList, array, lista de filiais consideradas na consulta
 /*/
-Function U_CNR121FC(aFiliais, lSet)
+User Function CNR121FC(aFiliais, lSet)
 	Default lSet := .T.
 
 	If lSet
@@ -964,7 +964,7 @@ Return _aGCList
 @since 20/03/2025
 @param cAliasQry, char, alias do relatório
 /*/
-Function U_CNR121GC(cAliasQry)
+User Function CNR121GC(cAliasQry)
 	Local aGoTo 	:= {'RECCNA', 'RECCNF', 'RECCNL', 'RECCN1'}
 	Local cAliasTo	:= ""
 	Local nRecId 	:= 0

@@ -18,7 +18,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_AtfR010C()
+User Function AtfR010C()
 
 Local cReport	:= "ATFR010"				// Nome do Programa
 Local cAlias	:= "SN1"					// Alias da tabela

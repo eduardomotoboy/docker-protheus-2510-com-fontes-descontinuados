@@ -76,7 +76,7 @@ Static Function ReportDef()
 					STR0014}	//"Por Cod.Fornec."
 
 
-	oReport := TReport():New("FINR150",STR0005,"FIN150",{|oReport| ReportPrint(oReport)},STR0001+STR0002)
+	oReport := TReport():New("FINR150C",STR0005,"FIN150",{|oReport| ReportPrint(oReport)},STR0001+STR0002)
 
 	oReport:SetLandScape(.T.)
 	oReport:SetTotalInLine(.F.)	//Imprime o total em linha
@@ -1433,7 +1433,7 @@ IMPRIMIR SUBTOTAL DO RELATORIO
 @author Daniel Tadashi Batori
 @since 01/06/92
 /*/
-Function U_ST150R(nTit0, nTit1, nTit2, nTit3, nTit4, nOrdem, cCarAnt, nTotJur, oReport, oSection1, nRegSE2)
+User Function ST150R(nTit0, nTit1, nTit2, nTit3, nTit4, nOrdem, cCarAnt, nTotJur, oReport, oSection1, nRegSE2)
 	Local cQuebra := ""
 	Local aAreaSE2:= {}
 

@@ -22,7 +22,7 @@ Static __oHash
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_FINR320C()
+User Function FINR320C()
 
 Local oReport
 Local aArea		:= GetArea()
@@ -497,7 +497,7 @@ Return (cTp$cTipos)
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_Fa320SaC()
+User Function Fa320SaC()
 LOCAL nRetSaldo := 0
 
 If (C6_QTDVEN-C6_QTDENT) > 0 .And. C6_BLQ != "R"
@@ -1461,7 +1461,7 @@ Formata a expressa para IN ou NOT IN
 @version 12.1.27
 /*/
 //-------------------------------------------------------------------
-Function U_FR320TpC(cTipoIn)
+User Function FR320TpC(cTipoIn)
 Local cTiposAbt	:= MVABATIM +"|"+MVFUABT
 Default cTipoIn   := ""
 

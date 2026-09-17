@@ -27,7 +27,7 @@ Static __cItGrdOP
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_MATR989C()
+User Function MATR989C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 ou superiores
@@ -77,7 +77,7 @@ Local oCell
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport := TReport():New("MATR989",STR0001,"MTR989", {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003+" "+STR0004)
+oReport := TReport():New("MATR989C",STR0001,"MTR989", {|oReport| ReportPrint(oReport)},STR0002+" "+STR0003+" "+STR0004)
 oReport:SetTotalInLine(.F.)
 oReport:SetTotalText(STR0014) //"TOTAL GERAL :"
 oReport:SetEdit(.T.)

@@ -25,7 +25,7 @@ Static __lMotInDb
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FinR502C()
+User Function FinR502C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -68,7 +68,7 @@ Local oSecFil	:= Nil
 
 Pergunte(cPerg, .F.)
 
-oReport := TReport():New("FINR502",STR0001,cPerg,;//"Liquidacoes Financeiras"
+oReport := TReport():New("FINR502C",STR0001,cPerg,;//"Liquidacoes Financeiras"
 {|oReport| ReportPrint(oReport)},STR0002+STR0003)//"Este relatorio irá imprimir o extrato de Liquidacoes "##"Financeiras."
 
 aTam0 := TamSX3("E2_FILIAL") //Gestão Corporativa

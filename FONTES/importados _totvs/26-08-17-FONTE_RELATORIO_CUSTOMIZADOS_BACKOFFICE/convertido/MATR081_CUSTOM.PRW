@@ -21,7 +21,7 @@
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
     
-Function U_MATR081C()
+User Function MATR081C()
 
 Local cReport	:= "MATR081"	//Nome do Programa
 Local cAlias	:= "SF4"		//Alias da tabela

@@ -28,7 +28,7 @@ Static lAutomato  := IsBlind()
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTBR410C()
+User Function CTBR410C()
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
 U_CTBR411C()
@@ -58,7 +58,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_CTBR411C()
+User Function CTBR411C()
 
 Local aSetOfBook	:= {}
 
@@ -175,7 +175,7 @@ Local aCtbMd01		:= CtbMoeda(mv_par05)
 Local lColDbCr 		:= .T. // Disconsider cTipo in ValorCTB function, setting cTipo to empty
 Local nTamConta		:= aTamConta[1]
 
-oReport :=	TReport():New( "CTBR410", OemToAnsi(STR0006), cPerg,;	//"Emissao do Razao Contabil"
+oReport :=	TReport():New( "CTBR410C", OemToAnsi(STR0006), cPerg,;	//"Emissao do Razao Contabil"
 			{ |oReport|	Pergunte( cPerg, .F. ), ReportPrint(oReport,aSetOfBook,aCtbMoeda,cPerg) },cDesc1+cDesc2+cDesc3)
 
 oReport:ParamReadOnly()

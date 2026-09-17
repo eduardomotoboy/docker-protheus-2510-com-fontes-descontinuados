@@ -21,7 +21,7 @@
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
 
-Function U_ATFR033C()
+User Function ATFR033C()
 
 Local oReport
 Local lTReport	:= TRepInUse()
@@ -119,7 +119,7 @@ Pergunte("AFR033",.f.)
 
 bFunction 	:= {|| AFR033RptPrt(oReport) }
 
-oReport :=	TReport():New("ATFR033",STR0036,"AFR033",bFunction,STR0036)//"Demonstrativo de Ativo Fixo"
+oReport :=	TReport():New("ATFR033C",STR0036,"AFR033",bFunction,STR0036)//"Demonstrativo de Ativo Fixo"
 
 If cPaisloc = "PER"
 	oReport		:SetCustomText( {|| CtCGCCabTR(,,,,,dDataBase,/*cTitulo*/STR0036,,,,,oReport) } )

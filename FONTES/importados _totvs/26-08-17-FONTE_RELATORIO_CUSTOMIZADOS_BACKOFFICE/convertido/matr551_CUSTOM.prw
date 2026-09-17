@@ -20,7 +20,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Matr551C()
+User Function Matr551C()
 Local cReport	:= "MATR551"	//Nome do Programa
 Local cAlias	:= "SBV"		//Alias da tabela
 Local cTitle	:= STR0001		//Tabelas da Grade de Produtos 

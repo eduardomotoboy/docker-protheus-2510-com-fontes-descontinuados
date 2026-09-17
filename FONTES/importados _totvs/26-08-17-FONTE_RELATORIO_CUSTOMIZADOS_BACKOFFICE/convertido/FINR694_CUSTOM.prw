@@ -9,7 +9,7 @@ Relatório de Conciliação de EBTA
 @since 17/08/15
 /*/
 /*--------------------------------------------------------------------------------------------------------------------*/
-Function U_FINR694C()
+User Function FINR694C()
 Local oReport
 Local aArea	:= GetArea()
 

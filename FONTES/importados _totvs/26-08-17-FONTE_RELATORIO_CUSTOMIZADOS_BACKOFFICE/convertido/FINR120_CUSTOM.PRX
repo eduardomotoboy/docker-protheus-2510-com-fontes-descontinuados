@@ -17,7 +17,7 @@ Movimento Diario do Caixa
 @version 12.1.17
 /*/
 //-------------------------------------------------------------------
-Function U_FINR120C()
+User Function FINR120C()
 
 Local oReport
 
@@ -48,7 +48,7 @@ Local cAliasQry2 := GetNextAlias()
 Local cAliasQry3 := GetNextAlias()
 Local aNumerario := {}
 
-oReport := TReport():New("FINR120",STR0010,"FIN120",;
+oReport := TReport():New("FINR120C",STR0010,"FIN120",;
 {|oReport| ReportPrint(oReport,@cAliasQry1,@cAliasQry2,@cAliasQry3,@aNumerario)},STR0007+STR0008+STR0009)
 
 oReport:SetLandScape()

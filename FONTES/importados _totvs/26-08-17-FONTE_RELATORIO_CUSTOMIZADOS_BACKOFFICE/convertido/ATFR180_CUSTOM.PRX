@@ -19,7 +19,7 @@ Static lFWCodFil := .T.
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_ATFR180C()
+User Function ATFR180C()
 Local oReport
 
 PRIVATE cPerg    := PadR("ATR180", Len(SX1->X1_GRUPO) )
@@ -302,7 +302,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_AFR180FC(aSelFil,oReport)
+User Function AFR180FC(aSelFil,oReport)
 Local oSecFil	:= Nil
 Local aSM0		:= {}
 Local nRegSM0	:= 0

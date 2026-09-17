@@ -36,7 +36,7 @@ Static _oFINR3001
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_FinR300C()
+User Function FinR300C()
 
 Local oReport
 
@@ -68,7 +68,7 @@ Local oReport
 Local oSection1
 Local nTamVal, cPict
 
-oReport := TReport():New("FINR300",STR0005,"FIN300",{|oReport| ReportPrint(oReport)},STR0001 + STR0002)
+oReport := TReport():New("FINR300C",STR0005,"FIN300",{|oReport| ReportPrint(oReport)},STR0001 + STR0002)
 
 Pergunte("FIN300", .F.)
 

@@ -26,7 +26,7 @@ Static _aSelFil := NIL
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_CTBR440C(cCustoIni, cCustoFim, dDataIni, dDataFim, cMoeda, cSaldo,;
+User Function CTBR440C(cCustoIni, cCustoFim, dDataIni, dDataFim, cMoeda, cSaldo,;
 			cBook, cContaIni, cContaFim, lItem, cItemIni, cItemFim, lCLVL,;
 			cCLVLIni, cCLVLFim,lSalLin,aSelFil)
 
@@ -1032,7 +1032,7 @@ Return (lDeixa)
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_TamCpoMC( cCodigo , cMascara )
+User Function TamCpoMC( cCodigo , cMascara )
 Local nTamanho
 
 // codigo não informado pelo programador

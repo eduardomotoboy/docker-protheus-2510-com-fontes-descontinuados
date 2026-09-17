@@ -13,7 +13,7 @@ Relatório de Tranasferências de Local
 */
 //+--------------------------------------------------------------------------
 
-Function U_ATFR101C()
+User Function ATFR101C()
 
 Local aArea := GetArea()
 Local oReport
@@ -43,7 +43,7 @@ Local cTitulo := OemToAnsi(STR0001) //"Transferência de Local"
 
 Pergunte("ATR101",.F.)
 
-oReport := TReport():New("ATFR101",cTitulo,"ATR101",{|oReport|ReportPrint(oReport)},OemToAnsi(STR0002)) //"Emite relacao dos bens transferidos selecionados."
+oReport := TReport():New("ATFR101C",cTitulo,"ATR101",{|oReport|ReportPrint(oReport)},OemToAnsi(STR0002)) //"Emite relacao dos bens transferidos selecionados."
 
 oReport:SetLandscape()
 

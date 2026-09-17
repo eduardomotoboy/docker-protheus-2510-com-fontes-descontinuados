@@ -11,7 +11,7 @@ Multas e bonificações aplicadas na medição - POR CONTRATO
 @version P12.00
 */
 //-------------------------------------------------------------------
-Function U_CNTR300C()
+User Function CNTR300C()
 Local oReport
 Local oBreakCTRT
 Local oBreakCTRT2

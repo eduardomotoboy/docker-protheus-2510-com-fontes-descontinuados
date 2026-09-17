@@ -18,7 +18,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FINR830C()
+User Function FINR830C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 e superiores
@@ -55,7 +55,7 @@ Private nValor2  := 0
 Private nValor3  := 0
 Private nValor4  := 0
 
-oReport := TReport():New("FINR830",STR0003,"FIR830", {|oReport| ReportPrint(oReport)},STR0001+STR0002)
+oReport := TReport():New("FINR830C",STR0003,"FIR830", {|oReport| ReportPrint(oReport)},STR0001+STR0002)
 
 pergunte("FIR830",.F.)
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿

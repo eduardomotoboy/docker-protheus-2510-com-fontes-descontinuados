@@ -1,7 +1,7 @@
 #include "protheus.ch"
 #include "report.ch"
 
-Function U_matr324C()
+User Function matr324C()
 Local oReport
 Local oDH0
 

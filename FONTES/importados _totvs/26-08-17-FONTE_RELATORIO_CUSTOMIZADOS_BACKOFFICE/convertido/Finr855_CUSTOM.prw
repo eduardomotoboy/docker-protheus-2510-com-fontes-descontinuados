@@ -24,7 +24,7 @@ STATIC _oFR855TR3	:= NIL
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Finr855C()
+User Function Finr855C()
 
 Local oReport
 
@@ -70,7 +70,7 @@ aAreaSM0 := SM0->(GetArea())
 Pergunte("FIN855",.F.)
 RestArea(aAreaSM0)
 
-oReport := TReport():New("FINR855",STR0004,"FIN855",{|oReport| ReportPrint(oReport)},STR0001+STR0002+STR0003) //"Este programa tem como objetivo imprimir relatorio com a relação Titulo Principal X Impostos, de acordo com os parametros informados pelo usuario."
+oReport := TReport():New("FINR855C",STR0004,"FIN855",{|oReport| ReportPrint(oReport)},STR0001+STR0002+STR0003) //"Este programa tem como objetivo imprimir relatorio com a relação Titulo Principal X Impostos, de acordo com os parametros informados pelo usuario."
 oReport:SetLandscape()                            
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄ¿
@@ -583,7 +583,7 @@ Return NIL
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
 
-Function U_Finr851C()
+User Function Finr851C()
 
 //ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
 //³ Declaracao de Variaveis                                             ³
@@ -922,7 +922,7 @@ Return
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_Fa855TRC(cIndexSe2,cChaveSe2,cArqTrab1,cArqTrab2,lIsR4,oReport,cAlias)
+User Function Fa855TRC(cIndexSe2,cChaveSe2,cArqTrab1,cArqTrab2,lIsR4,oReport,cAlias)
 Local nX			:= 0   
 Local nValImp	  	:= 0
 Local nOrdem 		:= 1   

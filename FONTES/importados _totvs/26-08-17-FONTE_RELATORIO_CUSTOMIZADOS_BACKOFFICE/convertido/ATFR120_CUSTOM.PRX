@@ -17,7 +17,7 @@
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 Last change:  CIA   5 Jan 96    9:16 am
 */
-Function U_ATFR120C()
+User Function ATFR120C()
 Local oReport
 /* GESTAO - inicio */
 Private _aSelFil	:= {}

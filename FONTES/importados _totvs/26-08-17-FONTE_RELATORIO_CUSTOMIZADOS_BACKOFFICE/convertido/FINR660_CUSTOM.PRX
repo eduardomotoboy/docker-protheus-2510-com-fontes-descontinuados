@@ -16,7 +16,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_FINR660C()
+User Function FINR660C()
 
 Local oReport
 
@@ -54,7 +54,7 @@ Local cAliasQry := GetNextAlias()
 Local cTmpE5	:= GetNextAlias()
 Local cAliasSA6 := "SA6"
 
-oReport := TReport():New("FINR660",OemToAnsi(STR0004),"FIN660",; //"Registro de Apuração de Antecipação"
+oReport := TReport():New("FINR660C",OemToAnsi(STR0004),"FIN660",; //"Registro de Apuração de Antecipação"
 {|oReport| ReportPrint(oReport,@cAliasQry,cAliasSA6, @cTmpE5)},OemToAnsi(STR0001)+OemToAnsi(STR0002)+OemToAnsi(STR0003)) 
 
 pergunte("FIN660",.F.)

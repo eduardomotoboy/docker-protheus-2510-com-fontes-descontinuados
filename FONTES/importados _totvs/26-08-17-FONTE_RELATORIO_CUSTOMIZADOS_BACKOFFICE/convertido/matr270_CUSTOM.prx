@@ -495,7 +495,7 @@ RETURN
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
-Function U_MR270OrC()
+User Function MR270OrC()
 LOCAL nC,cVar:=&(ReadVar())
 For nC:= 1 To 3
 	If Val(Subs(cVar,nC,1)) > 3
@@ -521,7 +521,7 @@ Return .T.
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
 
-Function U_A270ImpC(aOrd,lEnd,wnRel,cString,Titulo)
+User Function A270ImpC(aOrd,lEnd,wnRel,cString,Titulo)
 
 LOCAL cLinha	:= "|"+Replicate("-",128)+"|"
 LOCAL cLinha1	:= Replicate("=",130)

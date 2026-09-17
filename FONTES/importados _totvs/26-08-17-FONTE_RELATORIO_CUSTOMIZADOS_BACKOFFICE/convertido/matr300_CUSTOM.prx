@@ -18,7 +18,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_MATR300C()
+User Function MATR300C()
 Local oReport
 
 //Validação de aviso/bloqueio do relatório em Release 12.1.2510 ou superiores
@@ -93,7 +93,7 @@ cCampoCus := "D3_CUSTO"+Str(mv_par15,1)
 //³ExpC5 : Descricao                                                       ³
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-oReport:= TReport():New("MTR300",cTitle,"MTR300", {|oReport| ReportPrint(oReport,aOrdem,cAliasSD3)},STR0002+" "+ STR0003 ) //"Lista  as  movimentacoes  internas  da empresa  ,ou seja ,Requisicoes ,""Devolucoes ,Producoes e Estornos de Producao."
+oReport:= TReport():New("MTR300C",cTitle,"MTR300", {|oReport| ReportPrint(oReport,aOrdem,cAliasSD3)},STR0002+" "+ STR0003 ) //"Lista  as  movimentacoes  internas  da empresa  ,ou seja ,Requisicoes ,""Devolucoes ,Producoes e Estornos de Producao."
 oReport:SetTotalInLine(.F.)
 oReport:SetLandscape()
 

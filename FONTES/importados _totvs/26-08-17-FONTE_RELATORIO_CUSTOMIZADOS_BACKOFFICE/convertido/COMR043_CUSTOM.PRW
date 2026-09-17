@@ -17,7 +17,7 @@
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */                  
 
-Function U_COMR043C()
+User Function COMR043C()
 Local oReport
 Local cPerg1 := "C043P" // por produto
 Local cPerg2 := "C043G" // por grupo
@@ -65,7 +65,7 @@ Local lPageBreak := .T.
 
 //Define o Relatorio - TReport
 
-oReport := TReport():New("COMR043",cTitulo,cPerg,{|oReport| DefPrint(oReport,cPerg,cAlias1,cAlias2)},"Lista de Fornecedores do Item com preço e Data do último preço") 
+oReport := TReport():New("COMR043C",cTitulo,cPerg,{|oReport| DefPrint(oReport,cPerg,cAlias1,cAlias2)},"Lista de Fornecedores do Item com preço e Data do último preço") 
 oReport:SetLandscape()			// Escolhe o padrao de Impressao como Paisagem
 oReport:nFontBody   := 9			// Tamanho da fonte inicial do Reltorio
 oReport:nLineHeight := 40		// Largura da Linha 

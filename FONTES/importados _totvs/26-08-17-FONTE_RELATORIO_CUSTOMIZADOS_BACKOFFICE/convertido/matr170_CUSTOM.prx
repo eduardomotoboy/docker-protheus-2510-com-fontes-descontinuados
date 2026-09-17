@@ -20,7 +20,7 @@
 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 /*/
-Function U_Matr170C(cAlias,nReg,nOpcx)
+User Function Matr170C(cAlias,nReg,nOpcx)
 
 Local oReport
 
@@ -92,7 +92,7 @@ Local lAuto		:= (nReg!=Nil)
 //³                                                                        ³
 //ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
 
-oReport := TReport():New("MATR170",STR0002,"MTR170", {|oReport| ReportPrint(oReport,@aVencto,@aImps,nReg,@cAliasSF1,@cAliasSD1)},STR0001) ////"Boletim de Entrada"##"Este programa ira emitir o Boletim de Entrada."
+oReport := TReport():New("MATR170C",STR0002,"MTR170", {|oReport| ReportPrint(oReport,@aVencto,@aImps,nReg,@cAliasSF1,@cAliasSD1)},STR0001) ////"Boletim de Entrada"##"Este programa ira emitir o Boletim de Entrada."
 oReport:SetPortrait()	// Define a orientacao default de pagina do relatorio como Retrato.
 
 If lAuto

@@ -35,7 +35,7 @@ Static cQryAlias := ""
 ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 */
 
-Function U_ATFR100C()
+User Function ATFR100C()
 
 Local oReport    
 
