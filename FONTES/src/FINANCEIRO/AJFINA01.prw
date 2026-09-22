@@ -9,7 +9,7 @@ liberar os titulos correspondentes no Contas a Receber (SE1) retornando-os para 
 
 @type function
 @version 2.0
-@author Eduardo Jose Da Silva
+@author AJE Ind. de Acessorios Automotivos Ltda
 @since 22/09/2026
 @return logical, .T.
 /*/
@@ -73,7 +73,7 @@ Return(lRet)
 Executa query SQL na tabela SEA e preenche tabela temporaria com os registros encontrados
 @type function
 @version 2.0
-@author Eduardo Jose Da Silva
+@author AJE
 @since 22/09/2026
 /*/
 Static Function CarregaSEA(cBordero, nTipoFilt, cAliasTRB, nTotalReg)
@@ -314,7 +314,6 @@ Static Function ExecExclusao(cAliasTRB, cMarca, lLiberaSE1, oMark)
 	Local nQtdMarc   := 0
 	Local nRecAtual  := (cAliasTRB)->(Recno())
 	Local aExcluir   := {}
-	Local nI         := 0
 	Local nExcluidos := 0
 	Local nSE1Ajust  := 0
 	Local cMsg       := ""
@@ -355,41 +354,8 @@ Static Function ExecExclusao(cAliasTRB, cMarca, lLiberaSE1, oMark)
 		Return Nil
 	EndIf
 
-	// Processamento transacional
-	Processa({|| ;
-		Begin Transaction
-			dbSelectArea("SEA")
-			dbSelectArea("SE1")
-			SE1->(dbSetOrder(1)) // E1_FILIAL + E1_PREFIXO + E1_NUM + E1_PARCELA + E1_TIPO
-
-			For nI := 1 To Len(aExcluir)
-				ProcRegua(Len(aExcluir))
-				IncProc("Excluindo ocorrencia " + AllTrim(Str(nI)) + " de " + AllTrim(Str(Len(aExcluir))) + "...")
-
-				// 1. Exclui registro da tabela SEA
-				SEA->(dbGoTo(aExcluir[nI][1]))
-				If !SEA->(EoF()) .And. !SEA->(Deleted())
-					RecLock("SEA", .F.)
-					SEA->(dbDelete())
-					SEA->(MsUnlock())
-					nExcluidos++
-				EndIf
-
-				// 2. Libera o titulo em SE1 se solicitado
-				If lLiberaSE1
-					If SE1->(dbSeek(xFilial("SE1") + aExcluir[nI][3] + aExcluir[nI][4] + aExcluir[nI][5] + aExcluir[nI][6]))
-						If AllTrim(SE1->E1_NUMBOR) == AllTrim(aExcluir[nI][7])
-							RecLock("SE1", .F.)
-							SE1->E1_NUMBOR  := Space(Len(SE1->E1_NUMBOR))
-							SE1->E1_SITUACA := "0" // Carteira
-							SE1->(MsUnlock())
-							nSE1Ajust++
-						EndIf
-					EndIf
-				EndIf
-			Next nI
-		End Transaction
-	}, "Processando...", "Excluindo ocorrencias do Gestor Financeiro...", .F.)
+	// Processamento transacional via funcao auxiliar
+	Processa({|| DoExclusao(aExcluir, lLiberaSE1, @nExcluidos, @nSE1Ajust)}, "Processando...", "Excluindo ocorrencias do Gestor Financeiro...", .F.)
 
 	cMsg := "Processo concluido com sucesso!" + CRLF + CRLF
 	cMsg += "• Ocorrencias excluidas da SEA: " + AllTrim(Str(nExcluidos)) + CRLF
@@ -404,4 +370,52 @@ Static Function ExecExclusao(cAliasTRB, cMarca, lLiberaSE1, oMark)
 	If oMark != Nil
 		oMark:End()
 	EndIf
+Return Nil
+
+/*/{Protheus.doc} DoExclusao
+Funcao auxiliar executada dentro do Processa com controle transacional
+@type function
+@version 2.0
+@author AJE
+@since 22/09/2026
+/*/
+Static Function DoExclusao(aExcluir, lLiberaSE1, nExcluidos, nSE1Ajust)
+	Local nI         := 0
+	Local nTamSE1Bor := 0
+
+	Begin Transaction
+		dbSelectArea("SEA")
+		dbSelectArea("SE1")
+		SE1->(dbSetOrder(1)) // E1_FILIAL + E1_PREFIXO + E1_NUM + E1_PARCELA + E1_TIPO
+
+		ProcRegua(Len(aExcluir))
+
+		For nI := 1 To Len(aExcluir)
+			IncProc("Excluindo ocorrencia " + AllTrim(Str(nI)) + " de " + AllTrim(Str(Len(aExcluir))) + "...")
+
+			// 1. Exclui registro da tabela SEA
+			SEA->(dbGoTo(aExcluir[nI][1]))
+			If !SEA->(EoF()) .And. !SEA->(Deleted())
+				RecLock("SEA", .F.)
+				SEA->(dbDelete())
+				SEA->(MsUnlock())
+				nExcluidos++
+			EndIf
+
+			// 2. Libera o titulo em SE1 se solicitado
+			If lLiberaSE1
+				If SE1->(dbSeek(xFilial("SE1") + aExcluir[nI][3] + aExcluir[nI][4] + aExcluir[nI][5] + aExcluir[nI][6]))
+					If AllTrim(SE1->E1_NUMBOR) == AllTrim(aExcluir[nI][7])
+						RecLock("SE1", .F.)
+						nTamSE1Bor := Len(SE1->E1_NUMBOR)
+						SE1->E1_NUMBOR  := Space(nTamSE1Bor)
+						SE1->E1_SITUACA := "0" // Carteira
+						SE1->(MsUnlock())
+						nSE1Ajust++
+					EndIf
+				EndIf
+			EndIf
+		Next nI
+	End Transaction
+
 Return Nil
